@@ -61,7 +61,8 @@ class net {
   String[] inpnames;
   String[] outnames;
 
-  net copy() {
+/*
+  net ncopy() {
     net ret = new net(layernc, xpos, ypos+200);
     
     ret.numlayers = numlayers;
@@ -89,8 +90,8 @@ class net {
     
     return ret;
   }
-
-
+*/
+  
   void recurrent() {
     layer l = layers[numlayers-1];
     layer f = layers[0];
@@ -121,8 +122,9 @@ class net {
       player(i);
     }
   }
-  net(int[] nc, int x, int y) {
-
+  net(int[] nc, String[] in, String[] on, int x, int y) {
+    inpnames = in;
+    outnames = on;
     xpos = x;
     ypos = y;
     numlayers = nc.length;
@@ -183,6 +185,21 @@ class net {
       if (i==numlayers-1) stroke(#b6ff85);
       n.render();
     }
+    
+     for (int nn = 0; nn<layernc[0]; nn++){
+       neuron cn = layers[0].neurons[nn];
+       fill(255);
+       textSize(20);
+       String w = inpnames[nn];
+       text(w,cn.xpos-w.length()*10-circlesize/2,cn.ypos+10);
+     }
+     for (int nn = 0; nn<layernc[numlayers-1]; nn++){
+       neuron cn = layers[numlayers-1].neurons[nn];
+       fill(255);
+       textSize(20);
+       String w = outnames[nn];
+       text(w,cn.xpos+circlesize,cn.ypos+10);
+     }
 
     int ai=0;
     for (float[][] a : weights) {
@@ -190,6 +207,8 @@ class net {
       for (float[] b : a) {
         int ci = 0;
         for (float c : b) {
+          
+          
 
           neuron frontn = layers[ai+1].neurons[bi];
           neuron backn = layers[ai].neurons[ci];

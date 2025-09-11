@@ -15,7 +15,9 @@ class creature{
   
   void rebrain(){
     
-    brain = new net(new int[]{4,5,4,3,2},50,250); 
+    brain = new net(new int[]{4,5,4,3,2},
+                new String[]{"posX","posY","nearestX","nearestY",}, 
+                new String[]{"vX","vY",},100,250); 
     col = (int) (Math.random()*100);
     c2 = (int) (Math.random()*70+30);
     c3 = (int) (Math.random()*30+70);

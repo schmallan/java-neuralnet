@@ -7,10 +7,10 @@ net selectednet;
 creature selectedc = null;
 void setup() {
   namegen();
-  size(1000, 800);
+  size(1200, 600);
   //fullScreen();
 
-  centerx = width/2+130;
+  centerx = width/2+200;
   centery = height/2;
   
   for (int i = 0; i<50; i++){
