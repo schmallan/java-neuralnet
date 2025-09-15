@@ -5,6 +5,7 @@ class creature{
   int col = 0;
   int c2 = 0;
   int c3 = 0;
+  int health = 1;
   String name;
   
   creature(int x, int y){
@@ -27,11 +28,13 @@ class creature{
   
   float mm = 5;
   void tick(){
+   // health--;
    float rx = mouseX-centerx-posx;
    float ry = mouseY-centery-posy;
    
     int mx = (int)max(abs(posx),abs(posy));
-    if (mx>250){ 
+    if (mx>250 || health<0){ 
+      health=250;
       rebrain() ;
       posx=(float)(Math.random()-0.5)*100;
       posy=(float)(Math.random()-0.5)*100;

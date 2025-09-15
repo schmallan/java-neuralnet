@@ -56,7 +56,7 @@ void renderninfo(){
     int cs = 50;
     textSize(30);
     fill(255,255,255);
-  text(selectedc.name,100,50);
+  text(selectedc.name + " / hp:" + selectedc.health,100,50);
   stroke(0,0,0);
   fill(0,0,0,0);
     ellipse(selectedc.posx+centerx, selectedc.posy+centery, cs, cs);

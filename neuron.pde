@@ -7,6 +7,10 @@ class neuron {
   float wsum = -1;
   float output = -1;
   float bias;
+  
+  neuron ncopy(float bm){
+     return new neuron(xpos,ypos,bias+bm); 
+  }
 
   neuron(int x, int y, float b) {
     xpos = x;
@@ -61,20 +65,26 @@ class net {
   String[] inpnames;
   String[] outnames;
 
-/*
+
   net ncopy() {
-    net ret = new net(layernc, xpos, ypos+200);
+    net ret = new net(layernc, inpnames, outnames, xpos, ypos+200);
     
     ret.numlayers = numlayers;
-    layers = new layer[numlayers];
+    ret.layers = new layer[numlayers];
     ret.weights = new float[numlayers-1][][];
+    
+    //copy neurons
     for (int i = 0; i<numlayers; i++) {
-      layers[i] = new layer(layernc[i], xpos + (sidespacing+circlesize)*i, ypos);
-      for (int j = 0; j<layers[i].neurons.length; j++){
-        neuron cn = ret.layers[i].neurons[j];
-        cn.bias = layers[i].neurons[j].bias;
+      layer li = new layer(layernc[i], xpos + (sidespacing+circlesize)*i, ypos);
+      layers[i] = li;
+      layer oi = layers[i];
+      for (int j = 0; j<oi.neurons.length; j++){
+        neuron cn = oi.neurons[j].ncopy((float)(Math.random()-0.5)/80);
+        li.neurons[j] = cn;
       }
     }
+    
+    //copy weights
     for (int back = 0; back<numlayers-1; back++) { //1
       int front = back+1;
       float[][] wlay = new float[layernc[front]][];
@@ -83,14 +93,14 @@ class net {
         float[] wlay2 = new float[layernc[back]];
         wlay[i] = wlay2;
         for (int k = 0; k<layernc[back]; k++) { //3
-          wlay2[k] = weights[back][i][k];
+          wlay2[k] = weights[back][i][k] + (float)(Math.random()-0.5)/80;
         }
       }
     }
     
     return ret;
   }
-*/
+
   
   void recurrent() {
     layer l = layers[numlayers-1];
