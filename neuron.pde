@@ -20,9 +20,9 @@ class neuron {
 
   void render() {
     int col = 0;
-    if (output>0) col = 70;
+    if (output>0.5) col = 70;
     colorMode(HSB, 255, 50, 255);
-    fill(col, Math.abs(output)*100, 255);
+    fill(col, Math.abs(output-0.5)*100, 255);
     //  strokeWeight(Math.abs(bias));
     ellipse(xpos, ypos, circlesize, circlesize);
   }
@@ -41,7 +41,7 @@ class layer {
     int gap = circlesize+spacing;
     int sh = y- gap/2*(nc-1);
     for (int i = 0; i<nc; i++) {
-      neuron n = new neuron(xpos, sh+i*gap, (float)(Math.random()-0.5)/3);
+      neuron n = new neuron(xpos, sh+i*gap, (float)(Math.random()-0.5));
       neurons[i] = n;
     }
   }
@@ -245,5 +245,5 @@ class net {
 float activationfunction(float x) {
   //return x;
   //return Math.max(0,x); // rectified linear
-  return (1/(1+exp(-x))-0.5)*1.6; //sigmoid function
+  return (1/(1+exp(-x))); //sigmoid function
 }

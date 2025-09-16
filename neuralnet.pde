@@ -1,5 +1,6 @@
 ArrayList<creature> creatures = new ArrayList<>();
 int[] selected;
+int arenasize = 250;
 neuron selectedn;
 int centerx;
 int centery;
@@ -14,11 +15,27 @@ void setup() {
   centery = height/2;
   
   for (int i = 0; i<50; i++){
-   creatures.add(new creature(i,0)); 
+    cc();
   }
   
   selectedc=creatures.get(0);
   
+  for (int i = 0; i<30; i++){
+      foods.add(rpos());
+  }
+  
+}
+
+void cc(){
+  
+    colorMode(HSB,100,100,100);
+    int col = (int) (Math.random()*100);
+    int c2 = (int) (Math.random()*70+30);
+    int c3 = (int) (Math.random()*30+70);
+    
+    color creaturecolor = color(col,c2,c3);
+    
+   creatures.add(new creature(0,0,creaturecolor)); 
 }
 
 void keyPressed(){
@@ -27,22 +44,43 @@ void keyPressed(){
 
 void draw(){
   
+  if (creatures.size()<20){
+    
+   for (int i = 0; i<20; i++){
+   cc();
+   }
+   selectedc = creatures.get(0);
+  }
   
+  if (key=='s' & keyPressed) cc();
   
   background(#222222);
   rectMode(CENTER);
   noStroke();
   fill(#FFFFFF);
-  rect(centerx,centery,500,500);
+  rect(centerx,centery,arenasize*2,arenasize*2);
  
-  selectedc.brain.render();
-  for (creature c : creatures){
-    c.brain.propagate();
-    c.render();
-    //if (keyPressed){
-    c.tick();
+  for (int i = 0; i<foods.size(); i++){
+    int[] c = foods.get(i);
+    fill(#FF00FF);
+    ellipse(centerx+c[0],centery+c[1],10,10);
+    
     //};
   }
+  
+  selectedc.brain.render();
+  for (int i = 0; i<creatures.size(); i++){
+    creature c = creatures.get(i);
+    c.brain.propagate();
+    c.render();
+    if (true){
+    c.tick();
+    
+    }if (c.dead) {creatures.remove(i); i--;}
+    
+    //};
+  }
+  
   
   renderninfo();
   

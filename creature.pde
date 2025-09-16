@@ -1,74 +1,96 @@
+ArrayList<int[]> foods = new ArrayList<>();
+
 class creature{
   net brain;
   float posx;
+  int size = 10;
   float posy;
   int col = 0;
-  int c2 = 0;
-  int c3 = 0;
-  int health = 1;
+  int health = 2000;
   String name;
+  boolean dead = false;
   
-  creature(int x, int y){
+  creature(int x, int y,int c){
     posx = x;
     posy = y;
     rebrain();
+    col = c;
+  }
+  
+  void reproduce(){
+   creature offspring = new creature((int)posx,(int)posy,col); 
+   creatures.add(offspring);
   }
   
   void rebrain(){
     
-    brain = new net(new int[]{4,5,4,3,2},
-                new String[]{"posX","posY","nearestX","nearestY",}, 
+    brain = new net(new int[]{4,4,4,2},
+                new String[]{"nearestX+","nearestX-","nearestY+","nearestY-",}, 
                 new String[]{"vX","vY",},100,250); 
-    col = (int) (Math.random()*100);
-    c2 = (int) (Math.random()*70+30);
-    c3 = (int) (Math.random()*30+70);
-    
     name = namegen();
   }
   
   float mm = 5;
   void tick(){
-   // health--;
-   float rx = mouseX-centerx-posx;
-   float ry = mouseY-centery-posy;
+    health--;
+   
+   //EAT!!
+   for (int i = 0; i<foods.size(); i++){
+    int[] c = foods.get(i);
+    if (abs(posx-c[0])+abs(posy-c[1])<  size*1.5  ){
+      foods.set(i,rpos());
+      health+=555;
+      
+      creature baby = new creature((int)posx,(int)posy,col);
+      creatures.add(baby);
+      net bc = brain.ncopy();
+      for (int i2 = 0; i2<bc.layers.size(); i2++){
+       println("a"); 
+      }
+    }
+  }
    
     int mx = (int)max(abs(posx),abs(posy));
-    if (mx>250 || health<0){ 
-      health=250;
-      rebrain() ;
-      posx=(float)(Math.random()-0.5)*100;
-      posy=(float)(Math.random()-0.5)*100;
+    if (mx>arenasize || health<0){ 
+      dead = true;
       
     }
     float nx = 0;
     float ny = 0;
     int cd = 9999;
-    for (creature c:creatures){
-      if (c!=this){
-        int cont = (int)sqrt(pow((posx-c.posx),2)+pow((posy-c.posy),2));
+    for (int[] f:foods){
+      
+        int cont = (int)sqrt(pow((posx-f[0]),2)+pow((posy-f[1]),2));
         if (cont<cd){
           cd=cont;
-          nx = posx-c.posx;
-          ny = posy-c.posy;
+          nx = posx-f[0];
+          ny = posy-f[1];
           
         }
-      }
+      
     }
     nx/=100;
     ny/=100;
-   brain.setinputs(new float[] {posx/250,posy/250,/*rx/250,ry/250,*/nx,ny}); 
+     
+    float pnx = Math.max(0,nx);
+    float pny = Math.max(0,ny);
+    float nnx = abs(Math.min(0,nx));
+    float nny = abs(Math.min(0,ny));
+    
+    
+    
+   brain.setinputs(new float[] {pnx,nnx,pny,nny}); 
     
    neuron[] outputlayer = brain.layers[brain.layers.length-1].neurons; 
-   posx+=outputlayer[0].output*mm;
-   posy+=outputlayer[1].output*mm;
+   posx+=(outputlayer[0].output-0.5)*mm;
+   posy+=(outputlayer[1].output-0.5)*mm;
    
   }
   
   void render(){
-    colorMode(HSB,100,100,100);
     noStroke();
-    fill(col,c2,c3);
-    ellipse(centerx+posx,centery+posy,20,20);
+    fill(col);
+    ellipse(centerx+posx,centery+posy,size*2,size*2);
   }
   
 }
@@ -90,4 +112,8 @@ String namegen(){
   
   print(name);
   return name;
+}
+
+int[] rpos(){
+  return new int[]{   (int)((Math.random()-0.5)*arenasize*2),(int)((Math.random()-0.5)*2*arenasize) };
 }
