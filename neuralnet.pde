@@ -1,5 +1,7 @@
 ArrayList<creature> creatures = new ArrayList<>();
 int[] selected;
+
+boolean paused = false;
 int arenasize = 250;
 neuron selectedn;
 int centerx;
@@ -9,6 +11,7 @@ creature selectedc = null;
 void setup() {
   namegen();
   size(1200, 600);
+  
   //fullScreen();
 
   centerx = width/2+200;
@@ -33,23 +36,30 @@ void cc(){
     int c2 = (int) (Math.random()*70+30);
     int c3 = (int) (Math.random()*30+70);
     
-    color creaturecolor = color(col,c2,c3);
-    
-   creatures.add(new creature(0,0,creaturecolor)); 
+   creatures.add(new creature((int)((Math.random()-0.5)*200),(int)((Math.random()-0.5)*200),col,c2,c3)); 
 }
 
 void keyPressed(){
-  
+  if (key ==' '){
+   paused = !paused; 
+  }
 }
-
+int f = 0;
 void draw(){
+  f = (f+1)%15;
+  if (f==0 & foods.size()<50){
+      for (int i = 0; i<20; i++){
+      foods.add(rpos());
+      }
+  
+  }
   
   if (creatures.size()<20){
     
    for (int i = 0; i<20; i++){
    cc();
    }
-   selectedc = creatures.get(0);
+  // selectedc = creatures.get(0);
   }
   
   if (key=='s' & keyPressed) cc();
@@ -73,9 +83,11 @@ void draw(){
     creature c = creatures.get(i);
     c.brain.propagate();
     c.render();
-    if (true){
+    if (!paused){
     c.tick();
     
+    c.tick();
+    c.tick();
     }if (c.dead) {creatures.remove(i); i--;}
     
     //};
@@ -142,13 +154,17 @@ void mousePressed() {
   for (creature c: creatures){
     float d = sqrt(pow((mouseX-c.posx-centerx),2)+pow((mouseY-c.posy-centery),2));
     if (d<20) selectedc = c;
-    net n = c.brain;
+    
+    net n = selectedc.brain;
+    
     selected = n.checkmouse(mouseX, mouseY);
+    
     if (selected!=null){
       selectedn = n.layers[selected[0]].neurons[selected[1]];
       selectednet=n;
       return;
     }
+    
   }
   
   

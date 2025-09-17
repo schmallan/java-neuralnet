@@ -67,7 +67,7 @@ class net {
 
 
   net ncopy() {
-    net ret = new net(layernc, inpnames, outnames, xpos, ypos+200);
+    net ret = new net(layernc, inpnames, outnames, xpos, ypos);
     
     ret.numlayers = numlayers;
     ret.layers = new layer[numlayers];
@@ -75,11 +75,14 @@ class net {
     
     //copy neurons
     for (int i = 0; i<numlayers; i++) {
+      print("layer: ");
       layer li = new layer(layernc[i], xpos + (sidespacing+circlesize)*i, ypos);
-      layers[i] = li;
-      layer oi = layers[i];
-      for (int j = 0; j<oi.neurons.length; j++){
-        neuron cn = oi.neurons[j].ncopy((float)(Math.random()-0.5)/80);
+      ret.layers[i] = li;
+      layer oi = ret.layers[i];
+      for (int j = 0; j<oi.neurons.length; j++){ 
+        print("neuron: ");
+     
+        neuron cn = oi.neurons[j].ncopy((float)(Math.random()-0.5)/20); 
         li.neurons[j] = cn;
       }
     }
@@ -93,7 +96,7 @@ class net {
         float[] wlay2 = new float[layernc[back]];
         wlay[i] = wlay2;
         for (int k = 0; k<layernc[back]; k++) { //3
-          wlay2[k] = weights[back][i][k] + (float)(Math.random()-0.5)/80;
+          wlay2[k] = weights[back][i][k] + (float)(Math.random()-0.5)/8;
         }
       }
     }
@@ -245,5 +248,5 @@ class net {
 float activationfunction(float x) {
   //return x;
   //return Math.max(0,x); // rectified linear
-  return (1/(1+exp(-x))); //sigmoid function
+  return (1/(1+exp(-x))); //sigmoid function //sigma
 }
