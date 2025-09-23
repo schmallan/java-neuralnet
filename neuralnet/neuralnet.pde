@@ -8,6 +8,7 @@ int centerx;
 int centery;
 net selectednet;
 creature selectedc = null;
+ArrayList<int[]> foods = new ArrayList<>();
 void setup() {
   namegen();
   size(1200, 600);

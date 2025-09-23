@@ -1,4 +1,4 @@
-ArrayList<int[]> foods = new ArrayList<>();
+
 
 class creature {
   net brain;
