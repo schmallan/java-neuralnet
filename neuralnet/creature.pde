@@ -34,19 +34,12 @@ class creature {
     creature offspring = new creature((int)posx, (int)posy, (int)((col+Math.random()-0.5)*1)%100, (int)((c2+Math.random()-0.5)*1)%100, (int)((c3+Math.random()-0.5)*1)%100, name + " jr");
     offspring.brain = brain.ncopy();
     net n = offspring.brain;
-    for (layer l : n.layers) {
-      print("[");
-      if (l==null) {
-        print("?");
-      }
-      print("]\n");
-    }
     creatures.add(offspring);
   }
 
   void rebrain() {
 
-    brain = new net(new int[]{4, 5, 4, 2},
+    brain = new net(new int[]{4, 4, 2},
       new String[]{"nearestX", "nearestY", "nearestppX", "nearestppY", },
       new String[]{"vX", "vY", }, 130, 250);
     name = namegen();
@@ -57,7 +50,7 @@ class creature {
     // if (health>3000) health*=0.97;
     health--;
 
-    size = health/100;
+    size = (int)sqrt(health/3);
 
     //EAT!!
     for (int i = 0; i<foods.size(); i++) {
@@ -65,6 +58,9 @@ class creature {
       if (abs(posx-c[0])+abs(posy-c[1])<  size*1.5  ) {
         foods.remove(i);
         health+=555;
+        if (health>2000){
+          reproduce();
+        }
       }
     }
 
@@ -102,12 +98,11 @@ class creature {
         if (cont<size) {
           int div = abs(col-c.col) + abs(c2-c.c2) + abs(c3-c.c3);
           if (div>20) {
-
-            if (size<c.size) {
-              this.health = 0;
-            } else {
+            if (size>c.size){
+              c.dead = true;
+              c.health=0;
               if (this.health>0) {
-                this.health+=555*(c.health/this.health);
+                this.health+=c.health;
               }
             }
           }

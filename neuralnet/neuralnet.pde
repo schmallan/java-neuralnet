@@ -1,8 +1,9 @@
 ArrayList<creature> creatures = new ArrayList<>();
 int[] selected;
 
+int simspeed = 1;
 boolean paused = false;
-int arenasize = 250;
+int arenasize = 350;
 neuron selectedn;
 int centerx;
 int centery;
@@ -13,7 +14,7 @@ void setup() {
   namegen();
   size(1200, 600);
   
-  //fullScreen();
+  fullScreen();
 
   centerx = width/2+200;
   centery = height/2;
@@ -37,39 +38,55 @@ void cc(){
     int c2 = (int) (Math.random()*70+30);
     int c3 = (int) (Math.random()*30+70);
     
-   creatures.add(new creature((int)((Math.random()-0.5)*200),(int)((Math.random()-0.5)*200),col,c2,c3)); 
+   creatures.add(new creature((int)((Math.random()-0.5)*arenasize*0.8),(int)((Math.random()-0.5)*arenasize*0.8),col,c2,c3)); 
 }
 
 void keyPressed(){
-  if (key ==' '){
+  if (key =='p'){
    paused = !paused; 
+  }
+  if (key =='['){
+   simspeed++;
+  }
+  if (key =='['){
+   simspeed = max(1,--simspeed);
+  }
+  if (key =='n'){
+   creatures = new ArrayList<>();
+   cc();
   }
 }
 int f = 0;
+int f2 = 0;
+
 void draw(){
-  f = (f+1)%15;
-  if (f==0 & foods.size()<50){
-      for (int i = 0; i<20; i++){
-      foods.add(rpos());
-      }
-  
+  if(!paused){
+    for(int i = 0; i<simspeed; i++){
+      supertick();
+    }
   }
-  
-  if (creatures.size()<20){
-    
-   for (int i = 0; i<20; i++){
-   cc();
-   }
-  // selectedc = creatures.get(0);
-  }
+  rendertick();
   
   if (key=='s' & keyPressed) cc();
+
+  
+  renderninfo();
+  
+}
+
+void rendertick(){
   
   background(#222222);
   rectMode(CENTER);
   noStroke();
   fill(#FFFFFF);
   rect(centerx,centery,arenasize*2,arenasize*2);
+  selectedc.brain.render();
+  for (int i = 0; i<creatures.size(); i++){
+    creature c = creatures.get(i);
+    c.render();
+    //};
+  }
  
   for (int i = 0; i<foods.size(); i++){
     int[] c = foods.get(i);
@@ -79,46 +96,56 @@ void draw(){
     //};
   }
   
-  selectedc.brain.render();
+}
+
+void supertick(){
+  f = (f+1)%3;
+  f2 = (f2+1)%10; 
+  
+  if (f==0 & foods.size()<50){
+      //for (int i = 0; i<1; i++){
+      foods.add(rpos());
+     // }
+  
+  }
+  
+  if(f2==0 && creatures.size()<80) cc();
+  
+  
   for (int i = 0; i<creatures.size(); i++){
     creature c = creatures.get(i);
     c.brain.propagate();
-    c.render();
-    if (!paused){
     c.tick();
-    
-    c.tick();
-    c.tick();
-    }if (c.dead) {creatures.remove(i); i--;}
+    if (c.dead) {creatures.remove(i); i--;}
     
     //};
   }
-  
-  
-  renderninfo();
   
 }
 
 void renderninfo(){
   colorMode(RGB);
   strokeWeight(5);
-  if (selectedc==null) return;
-  
-    int cs = 50;
     textSize(30);
     fill(255,255,255);
-  text(selectedc.name + " / hp:" + selectedc.health,100,50);
+  text("simspeed: "+simspeed+( (paused)?" (paused)":"" ),100,50);
+  if (selectedc==null) return;
+  if (selectedc.dead) selectedc = creatures.get(0);
+  
+    int cs = 50;
+  text(selectedc.name + " / hp:" + selectedc.health,100,100);
   stroke(0,0,0);
   fill(0,0,0,0);
     ellipse(selectedc.posx+centerx, selectedc.posy+centery, cs, cs);
     stroke(255,0,0);
     strokeWeight(3);
     ellipse(selectedc.posx+centerx, selectedc.posy+centery, cs, cs);
+   
     
   
   if (selectedn==null) return;
   if (selected==null) return;
-  
+    
   
     strokeWeight(5);
     stroke(255, 255, 0);

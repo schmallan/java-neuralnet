@@ -75,12 +75,10 @@ class net {
     
     //copy neurons
     for (int i = 0; i<numlayers; i++) {
-      print("layer: ");
       layer li = new layer(layernc[i], xpos + (sidespacing+circlesize)*i, ypos);
       ret.layers[i] = li;
       layer oi = ret.layers[i];
-      for (int j = 0; j<oi.neurons.length; j++){ 
-        print("neuron: ");
+      for (int j = 0; j<oi.neurons.length; j++){
      
         neuron cn = oi.neurons[j].ncopy((float)(Math.random()-0.5)/20); 
         li.neurons[j] = cn;
