@@ -3,7 +3,8 @@
 class creature {
   net brain;
   float posx;
-  int size = 10;
+  int age = 0;
+  int size = 20;
   float posy;
   int col = 0;
   int c2;
@@ -21,36 +22,54 @@ class creature {
     c3 = c3ah;
   }
 
-  creature(int x, int y, int c, int c2uah, int c3ah, String n) {
+  creature(int x, int y, int c, int c2uah, int c3ah, String n, int s) {
     posx = x;
     posy = y;
     col = c;
     name = n;
     c2 = c2uah;
     c3 = c3ah;
+    health = s;
   }
   void reproduce() {
-
-    creature offspring = new creature((int)posx, (int)posy, (int)((col+Math.random()-0.5)*1)%100, (int)((c2+Math.random()-0.5)*1)%100, (int)((c3+Math.random()-0.5)*1)%100, name + " jr");
+    
+    int bhealth = (int)( health*0.2);
+    health-=bhealth;
+    creature offspring = new creature((int)posx, (int)posy, (int)((col+Math.random()-0.5)*1)%100, (int)((c2+Math.random()-0.5)*1)%100, (int)((c3+Math.random()-0.5)*1)%100, name + "\'",(int)bhealth);
     offspring.brain = brain.ncopy();
-    net n = offspring.brain;
-    creatures.add(offspring);
+    creatures.add(offspring); 
   }
 
   void rebrain() {
 
-    brain = new net(new int[]{4, 4, 2},
-      new String[]{"nearestX", "nearestY", "nearestppX", "nearestppY", },
-      new String[]{"vX", "vY", }, 130, 250);
+    brain = new net(new int[]{3, 4, 3},
+      new String[]{"nearestX", "nearestY", /*"nearestppX", "nearestppY",*/ "health"},
+      new String[]{"vX", "vY", "reproduce"}, 130, 250);
     name = namegen();
   }
 
-  float mm = 5;
+  float mm = 10;
   void tick() {
-    // if (health>3000) health*=0.97;
-    health--;
+    age++;
+    int mx = (int)max(abs(posx), abs(posy));
+    if (health<10) {
+      dead = true;
+    }
+    if (mx>arenasize){
+      dead = true;
+      /*
+      posx = max(posx,-arenasize);
+      posy = max(posy,-arenasize);
+      posx = min(posx,arenasize);
+      posy = min(posy,arenasize);
+    */  
+    }
 
-    size = (int)sqrt(health/3);
+    if (dead) return;
+    //if (health>3000) health*=0.996;
+    health-=1;
+
+    //size = (int)sqrt(health/3);
 
     //EAT!!
     for (int i = 0; i<foods.size(); i++) {
@@ -58,16 +77,9 @@ class creature {
       if (abs(posx-c[0])+abs(posy-c[1])<  size*1.5  ) {
         foods.remove(i);
         health+=555;
-        if (health>2000){
-          reproduce();
-        }
       }
     }
 
-    int mx = (int)max(abs(posx), abs(posy));
-    if (mx>arenasize || health<10) {
-      dead = true;
-    }
     float nx = 0;
     float ny = 0;
     int cd = 9999;
@@ -87,6 +99,7 @@ class creature {
     float pny = 0;
     int pcd = 9999;
     for (creature c : creatures) {
+      /*
       if (c!=this) {
         float dx = c.posx-this.posx;
         float dy = c.posy-this.posy;
@@ -108,6 +121,7 @@ class creature {
           }
         }
       }
+        */
     }
     pnx/=100;
     pny/=100;
@@ -118,18 +132,21 @@ class creature {
 
 
 
-    brain.setinputs(new float[] {nx, ny, pnx, pny});
+    brain.setinputs(new float[] {nx, ny, /*pnx, pny,*/ log(health)/10});
 
     neuron[] outputlayer = brain.layers[brain.layers.length-1].neurons;
     posx+=(outputlayer[0].output-0.5)*mm;
     posy+=(outputlayer[1].output-0.5)*mm;
+    if (outputlayer[2].output > 0.5){
+      reproduce();
+    }
   }
 
   void render() {
     noStroke();
     colorMode(HSB, 100, 100, 100);
     fill(col, c2, c3);
-    ellipse(centerx+posx, centery+posy, size*2, size*2);
+    ellipse(centerx+posx/ratio, centery+posy/ratio, size*2/ratio, size*2/ratio);
   }
 }
 
@@ -150,7 +167,7 @@ String namegen() {
 
   return name;
 }
-
+float dd = 1.5;
 int[] rpos() {
-  return new int[]{   (int)((Math.random()-0.5)*arenasize*2), (int)((Math.random()-0.5)*2*arenasize) };
+  return new int[]{   (int)((Math.random()-0.5)*arenasize*dd), (int)((Math.random()-0.5)*arenasize*dd) };
 }

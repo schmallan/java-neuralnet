@@ -3,12 +3,13 @@ int[] selected;
 
 int simspeed = 1;
 boolean paused = false;
-int arenasize = 350;
+int arenasize = 1000;
 neuron selectedn;
 int centerx;
 int centery;
 net selectednet;
 creature selectedc = null;
+float ratio = (float)arenasize/350;
 ArrayList<int[]> foods = new ArrayList<>();
 void setup() {
   namegen();
@@ -38,14 +39,14 @@ void cc(){
     int c2 = (int) (Math.random()*70+30);
     int c3 = (int) (Math.random()*30+70);
     
-   creatures.add(new creature((int)((Math.random()-0.5)*arenasize*0.8),(int)((Math.random()-0.5)*arenasize*0.8),col,c2,c3)); 
+   creatures.add(new creature((int)((Math.random()-0.5)*arenasize*1.8),(int)((Math.random()-0.5)*arenasize*1.8),col,c2,c3)); 
 }
 
 void keyPressed(){
-  if (key =='p'){
+  if (key ==' '){
    paused = !paused; 
   }
-  if (key =='['){
+  if (key ==']'){
    simspeed++;
   }
   if (key =='['){
@@ -80,7 +81,7 @@ void rendertick(){
   rectMode(CENTER);
   noStroke();
   fill(#FFFFFF);
-  rect(centerx,centery,arenasize*2,arenasize*2);
+  rect(centerx,centery,arenasize*2/ratio,arenasize*2/ratio);
   selectedc.brain.render();
   for (int i = 0; i<creatures.size(); i++){
     creature c = creatures.get(i);
@@ -91,7 +92,7 @@ void rendertick(){
   for (int i = 0; i<foods.size(); i++){
     int[] c = foods.get(i);
     fill(#FF00FF);
-    ellipse(centerx+c[0],centery+c[1],10,10);
+    ellipse(centerx+c[0]/ratio,centery+c[1]/ratio,5,5);
     
     //};
   }
@@ -99,17 +100,17 @@ void rendertick(){
 }
 
 void supertick(){
-  f = (f+1)%3;
+  f = (f+1)%10;
   f2 = (f2+1)%10; 
   
-  if (f==0 & foods.size()<50){
-      //for (int i = 0; i<1; i++){
+  if (f==0){
+      for (int i = 0; i<3; i++){
       foods.add(rpos());
-     // }
-  
+        
+      }
   }
   
-  if(f2==0 && creatures.size()<80) cc();
+  if(f2==0) cc();
   
   
   for (int i = 0; i<creatures.size(); i++){
@@ -133,13 +134,13 @@ void renderninfo(){
   if (selectedc.dead) selectedc = creatures.get(0);
   
     int cs = 50;
-  text(selectedc.name + " / hp:" + selectedc.health,100,100);
+  text(selectedc.name + " / hp:" + selectedc.health + " / age: "+selectedc.age,100,100);
   stroke(0,0,0);
   fill(0,0,0,0);
-    ellipse(selectedc.posx+centerx, selectedc.posy+centery, cs, cs);
+    ellipse(selectedc.posx/ratio+centerx, selectedc.posy/ratio+centery, cs, cs);
     stroke(255,0,0);
     strokeWeight(3);
-    ellipse(selectedc.posx+centerx, selectedc.posy+centery, cs, cs);
+    ellipse(selectedc.posx/ratio+centerx, selectedc.posy/ratio+centery, cs, cs);
    
     
   
@@ -180,7 +181,7 @@ void renderninfo(){
 
 void mousePressed() {
   for (creature c: creatures){
-    float d = sqrt(pow((mouseX-c.posx-centerx),2)+pow((mouseY-c.posy-centery),2));
+    float d = sqrt(pow(((mouseX-c.posx/ratio)-centerx),2)+pow(((mouseY-c.posy/ratio)-centery),2));
     if (d<20) selectedc = c;
     
     net n = selectedc.brain;
