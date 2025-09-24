@@ -3,15 +3,20 @@
 class creature {
   net brain;
   float posx;
+  int hatch = 300;
   int age = 0;
-  int size = 20;
+  int size = 15;
   float posy;
   int col = 0;
   int c2;
   int c3;
-  int health = 1000;
+  int health = 500;
   String name;
   boolean dead = false;
+
+  float adjr(float m){
+    return (float) (Math.random()-0.5)*m;
+  }
 
   creature(int x, int y, int c, int c2uah, int c3ah) {
     posx = x;
@@ -32,10 +37,10 @@ class creature {
     health = s;
   }
   void reproduce() {
-    
     int bhealth = (int)( health*0.2);
     health-=bhealth;
-    creature offspring = new creature((int)posx, (int)posy, (int)((col+Math.random()-0.5)*1)%100, (int)((c2+Math.random()-0.5)*1)%100, (int)((c3+Math.random()-0.5)*1)%100, name + "\'",(int)bhealth);
+    //if (bhealth<hatch*3+1300) return;
+    creature offspring = new creature((int)(posx + random(-15,15)), (int)(posy + random(-15,15)), (int)((col+Math.random()-0.5)*1)%100, (int)((c2+Math.random()-0.5)*1)%100, (int)((c3+Math.random()-0.5)*1)%100, name + "\'",(int)bhealth);
     offspring.brain = brain.ncopy();
     creatures.add(offspring); 
   }
@@ -51,6 +56,7 @@ class creature {
   float mm = 10;
   void tick() {
     age++;
+    
     int mx = (int)max(abs(posx), abs(posy));
     if (health<10) {
       dead = true;
@@ -66,9 +72,11 @@ class creature {
     }
 
     if (dead) return;
-    //if (health>3000) health*=0.996;
-    health-=1;
 
+    if (hatch>0) {hatch-=1; return;}
+    //if (health>3000) health*=0.996;
+
+    health-=1;
     //size = (int)sqrt(health/3);
 
     //EAT!!
@@ -132,7 +140,7 @@ class creature {
 
 
 
-    brain.setinputs(new float[] {nx, ny, /*pnx, pny,*/ log(health)/10});
+    brain.setinputs(new float[] {nx, ny, /*pnx, pny,*/ log(health)/10-0.5});
 
     neuron[] outputlayer = brain.layers[brain.layers.length-1].neurons;
     posx+=(outputlayer[0].output-0.5)*mm;
@@ -146,6 +154,11 @@ class creature {
     noStroke();
     colorMode(HSB, 100, 100, 100);
     fill(col, c2, c3);
+    if (hatch>0){
+      
+    ellipse(centerx+posx/ratio, centery+posy/ratio, size/ratio, size/ratio);
+      return;
+    }
     ellipse(centerx+posx/ratio, centery+posy/ratio, size*2/ratio, size*2/ratio);
   }
 }

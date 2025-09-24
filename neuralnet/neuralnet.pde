@@ -42,7 +42,48 @@ void cc(){
    creatures.add(new creature((int)((Math.random()-0.5)*arenasize*1.8),(int)((Math.random()-0.5)*arenasize*1.8),col,c2,c3)); 
 }
 
+int curc = 0;
 void keyPressed(){
+  print(keyCode);
+  if (keyCode>=49 && keyCode<=57){
+    int mm = keyCode-49;
+    switch (mm){
+      case (0):
+        simspeed = 1;
+        break;
+      case (1):
+        simspeed = 2;
+        break;
+      case (2):
+        simspeed = 5;
+        break;
+      case (3):
+        simspeed = 10;
+        break;
+      case (4):
+        simspeed = 20;
+        break;
+      case (5):
+        simspeed = 50;
+        break;
+      case (6):
+        simspeed = 100;
+        break;
+      case (7):
+        simspeed = 200;
+        break;
+      case (8):
+        simspeed = 500;
+        break;
+      
+        
+        
+    }
+  }
+  if (keyCode==9){
+    curc=(curc+1)%creatures.size();
+    selectedc=creatures.get(curc);
+  }
   if (key ==' '){
    paused = !paused; 
   }
@@ -115,7 +156,9 @@ void supertick(){
   
   for (int i = 0; i<creatures.size(); i++){
     creature c = creatures.get(i);
+    if (!(c.hatch>0)){
     c.brain.propagate();
+    }
     c.tick();
     if (c.dead) {creatures.remove(i); i--;}
     

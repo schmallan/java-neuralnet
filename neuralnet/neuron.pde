@@ -80,7 +80,10 @@ class net {
       layer oi = ret.layers[i];
       for (int j = 0; j<oi.neurons.length; j++){
      
-        neuron cn = oi.neurons[j].ncopy((float)(Math.random()-0.5)/20); 
+        //NEURON BIAS MOD
+        float nb = (float)(Math.random()-0.5)/80;
+
+        neuron cn = oi.neurons[j].ncopy(nb); 
         li.neurons[j] = cn;
       }
     }
@@ -94,7 +97,11 @@ class net {
         float[] wlay2 = new float[layernc[back]];
         wlay[i] = wlay2;
         for (int k = 0; k<layernc[back]; k++) { //3
-          wlay2[k] = weights[back][i][k] + (float)(Math.random()-0.5)/8;
+
+          //WEIGHT MOD
+          float wm = (float)(Math.random()-0.5)/80;
+
+          wlay2[k] = weights[back][i][k] + wm;
         }
       }
     }
