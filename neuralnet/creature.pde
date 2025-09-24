@@ -50,8 +50,8 @@ class creature {
 
   void rebrain() {
 
-    brain = new net(new int[]{3, 3},
-      new String[]{"nearestX", "nearestY", /*"nearestppX", "nearestppY",*/ "health"},
+    brain = new net(new int[]{5, 5, 3},
+      new String[]{"nearestX", "nearestY", "nearestppX", "nearestppY", "health"},
       new String[]{"vX", "vY", "reproduce"}, 130, 360);
     name = namegen();
   }
@@ -111,12 +111,12 @@ class creature {
     float pny = 0;
     int pcd = 9999;
     for (creature c : creatures) {
-      /*
-      if (c!=this) {
+      
+      if (c!=this & !(c.hatch>0)) {
         float dx = c.posx-this.posx;
         float dy = c.posy-this.posy;
         int cont = (int)(abs(dx)+abs(dy));
-        if (cont<cd) {
+        if (cont<pcd) {
           pnx = dx;
           pny = dy;
         }
@@ -133,18 +133,16 @@ class creature {
           }
         }
       }
-        */
+        
     }
-    pnx/=100;
-    pny/=100;
-
-    nx = (nx>0) ? 0 : 1;
-    ny = (ny>0) ? 0 : 1;
+    pnx/=1000;
+    pny/=1000;
 
 
 
 
-    brain.setinputs(new float[] {nx, ny, /*pnx, pny,*/ log(health)/10-0.5});
+
+    brain.setinputs(new float[] {nx, ny, pnx, pny, log(health)/10-0.5});
 
     neuron[] outputlayer = brain.layers[brain.layers.length-1].neurons;
     posx+=(outputlayer[0].output-0.5)*mm;
