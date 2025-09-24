@@ -1,15 +1,15 @@
 ArrayList<creature> creatures = new ArrayList<>();
 int[] selected;
 
-int simspeed = 1;
-boolean paused = false;
-int arenasize = 1000;
+int simSpeed = 1;
+boolean isPaused = false;
+int worldSize = 1000;
 neuron selectedn;
-int centerx;
-int centery;
-net selectednet;
-creature selectedc = null;
-float ratio = (float)arenasize/350;
+int centerX;
+int centerY;
+net selectedNet;
+creature selectedCreature = null;
+float ratio = (float)worldSize/350;
 ArrayList<int[]> foods = new ArrayList<>();
 void setup() {
   namegen();
@@ -17,14 +17,14 @@ void setup() {
   
   fullScreen();
 
-  centerx = width/2+200;
-  centery = height/2;
+  centerX = width/2+200;
+  centerY = height/2;
   
   for (int i = 0; i<50; i++){
-    cc();
+    spawnCreature();
   }
   
-  selectedc=creatures.get(0);
+  selectedCreature=creatures.get(0);
   
   for (int i = 0; i<30; i++){
       foods.add(rpos());
@@ -32,14 +32,14 @@ void setup() {
   
 }
 
-void cc(){
+void spawnCreature(){
   
     colorMode(HSB,100,100,100);
     int col = (int) (Math.random()*100);
     int c2 = (int) (Math.random()*70+30);
     int c3 = (int) (Math.random()*30+70);
     
-   creatures.add(new creature((int)((Math.random()-0.5)*arenasize*1.8),(int)((Math.random()-0.5)*arenasize*1.8),col,c2,c3)); 
+   creatures.add(new creature((int)((Math.random()-0.5)*worldSize*1.8),(int)((Math.random()-0.5)*worldSize*1.8),col,c2,c3)); 
 }
 
 int curc = 0;
@@ -49,31 +49,31 @@ void keyPressed(){
     int mm = keyCode-49;
     switch (mm){
       case (0):
-        simspeed = 1;
+        simSpeed = 1;
         break;
       case (1):
-        simspeed = 2;
+        simSpeed = 2;
         break;
       case (2):
-        simspeed = 5;
+        simSpeed = 5;
         break;
       case (3):
-        simspeed = 10;
+        simSpeed = 10;
         break;
       case (4):
-        simspeed = 20;
+        simSpeed = 20;
         break;
       case (5):
-        simspeed = 50;
+        simSpeed = 50;
         break;
       case (6):
-        simspeed = 100;
+        simSpeed = 100;
         break;
       case (7):
-        simspeed = 200;
+        simSpeed = 200;
         break;
       case (8):
-        simspeed = 500;
+        simSpeed = 500;
         break;
       
         
@@ -82,48 +82,45 @@ void keyPressed(){
   }
   if (keyCode==9){
     curc=(curc+1)%creatures.size();
-    selectedc=creatures.get(curc);
+    selectedCreature=creatures.get(curc);
   }
   if (key ==' '){
-   paused = !paused; 
+   isPaused = !isPaused; 
   }
   if (key ==']'){
-   simspeed++;
+   simSpeed++;
   }
   if (key =='['){
-   simspeed = max(1,--simspeed);
+   simSpeed = max(1,--simSpeed);
   }
   if (key =='n'){
    creatures = new ArrayList<>();
-   cc();
+   spawnCreature();
   }
 }
-int f = 0;
-int f2 = 0;
 
+int f = 0; int f2 = 0;
 void draw(){
-  if(!paused){
-    for(int i = 0; i<simspeed; i++){
-      supertick();
+
+  if(!isPaused){
+    for(int i = 0; i<simSpeed; i++){
+      simulationTick();
     }
   }
-  rendertick();
-  
-  if (key=='s' & keyPressed) cc();
 
-  
-  renderninfo();
+  renderTick();
+  renderNetInfo();
   
 }
 
-void rendertick(){
+void renderTick(){
   
   background(#222222);
   rectMode(CENTER);
   noStroke();
   fill(#FFFFFF);
-  rect(centerx,centery,arenasize*2/ratio,arenasize*2/ratio);
-  selectedc.brain.render();
+  rect(centerX,centerY,worldSize*2/ratio,worldSize*2/ratio);
+  selectedCreature.brain.render();
   for (int i = 0; i<creatures.size(); i++){
     creature c = creatures.get(i);
     c.render();
@@ -133,14 +130,14 @@ void rendertick(){
   for (int i = 0; i<foods.size(); i++){
     int[] c = foods.get(i);
     fill(#FF00FF);
-    ellipse(centerx+c[0]/ratio,centery+c[1]/ratio,5,5);
+    rect(centerX+c[0]/ratio,centerY+c[1]/ratio,3,3);
     
     //};
   }
   
 }
 
-void supertick(){
+void simulationTick(){
   f = (f+1)%10;
   f2 = (f2+1)%10; 
   
@@ -151,7 +148,7 @@ void supertick(){
       }
   }
   
-  if(f2==0) cc();
+  if(f2==0) spawnCreature();
   
   
   for (int i = 0; i<creatures.size(); i++){
@@ -167,23 +164,23 @@ void supertick(){
   
 }
 
-void renderninfo(){
+void renderNetInfo(){
   colorMode(RGB);
   strokeWeight(5);
     textSize(30);
     fill(255,255,255);
-  text("simspeed: "+simspeed+( (paused)?" (paused)":"" ),100,50);
-  if (selectedc==null) return;
-  if (selectedc.dead) selectedc = creatures.get(0);
+  text("simSpeed: "+simSpeed+( (isPaused)?" (isPaused)":"" ),100,50);
+  if (selectedCreature==null) return;
+  if (selectedCreature.dead) selectedCreature = creatures.get(0);
   
     int cs = 50;
-  text(selectedc.name + " / hp:" + selectedc.health + " / age: "+selectedc.age,100,100);
+  text(selectedCreature.name + "\n gen:"+selectedCreature.gen+" hp:" + selectedCreature.health + " \n age: "+selectedCreature.age,100,100);
   stroke(0,0,0);
   fill(0,0,0,0);
-    ellipse(selectedc.posx/ratio+centerx, selectedc.posy/ratio+centery, cs, cs);
+    ellipse(selectedCreature.posx/ratio+centerX, selectedCreature.posy/ratio+centerY, cs, cs);
     stroke(255,0,0);
     strokeWeight(3);
-    ellipse(selectedc.posx/ratio+centerx, selectedc.posy/ratio+centery, cs, cs);
+    ellipse(selectedCreature.posx/ratio+centerX, selectedCreature.posy/ratio+centerY, cs, cs);
    
     
   
@@ -207,33 +204,33 @@ void renderninfo(){
     if (selected[0]==0){
       m+="N/A (Input Neuron) \n";
     }else{
-     float[] pl = selectednet.weights[selected[0]-1][selected[1]];
+     float[] pl = selectedNet.weights[selected[0]-1][selected[1]];
      int i = 0;
      for (float w : pl){
        m+= "n" + i + ": " + w + " * ";
-       m+=selectednet.layers[selected[0]-1].neurons[i].output + "\n";
+       m+=selectedNet.layers[selected[0]-1].neurons[i].output + "\n";
        i++;
      }
     }
     
     m+= "Output: " + selectedn.output;
     fill(#FFFFFF);
-    text(m , 50, selectednet.ypos+150);
+    text(m , 50, selectedNet.ypos+150);
   
 }
 
 void mousePressed() {
   for (creature c: creatures){
-    float d = sqrt(pow(((mouseX-c.posx/ratio)-centerx),2)+pow(((mouseY-c.posy/ratio)-centery),2));
-    if (d<20) selectedc = c;
+    float d = sqrt(pow(((mouseX-c.posx/ratio)-centerX),2)+pow(((mouseY-c.posy/ratio)-centerY),2));
+    if (d<20) selectedCreature = c;
     
-    net n = selectedc.brain;
+    net n = selectedCreature.brain;
     
     selected = n.checkmouse(mouseX, mouseY);
     
     if (selected!=null){
       selectedn = n.layers[selected[0]].neurons[selected[1]];
-      selectednet=n;
+      selectedNet=n;
       return;
     }
     
