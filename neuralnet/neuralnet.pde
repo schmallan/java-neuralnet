@@ -20,7 +20,7 @@ void setup() {
   centerX = width/2+200;
   centerY = height/2;
   
-  for (int i = 0; i<50; i++){
+  for (int i = 0; i<20; i++){
     spawnCreature();
   }
   
@@ -39,7 +39,13 @@ void spawnCreature(){
     int c2 = (int) (Math.random()*70+30);
     int c3 = (int) (Math.random()*30+70);
     
-   creatures.add(new creature((int)((Math.random()-0.5)*worldSize*1.8),(int)((Math.random()-0.5)*worldSize*1.8),col,c2,c3)); 
+    colorMode(HSB, 100, 100, 100);
+    int myc = color(col, c2, c3);
+
+    creatures.add(new arrow((int)((Math.random()-0.5)*worldSize*1.8),(int)((Math.random()-0.5)*worldSize*1.8),myc));
+ //  critter john = new critter((int)((Math.random()-0.5)*worldSize*1.8),(int)((Math.random()-0.5)*worldSize*1.8),col,c2,c3);
+ 
+   //creatures.add(john);
 }
 
 int curc = 0;
@@ -102,6 +108,8 @@ void keyPressed(){
 int f = 0; int f2 = 0;
 void draw(){
 
+  
+
   if(!isPaused){
     for(int i = 0; i<simSpeed; i++){
       simulationTick();
@@ -138,7 +146,7 @@ void renderTick(){
 }
 
 void simulationTick(){
-  f = (f+1)%10;
+  f = (f+1)%100;
   f2 = (f2+1)%10; 
   
   if (f==0){
@@ -153,11 +161,14 @@ void simulationTick(){
   
   for (int i = 0; i<creatures.size(); i++){
     creature c = creatures.get(i);
-    if (!(c.hatch>0)){
-    c.brain.propagate();
-    }
+
+    //println(c.name);
+    
+    //  print(c.dead);
     c.tick();
-    if (c.dead) {creatures.remove(i); i--;}
+    if (c.dead) {
+   //   println(c.dead);
+      creatures.remove(i); i--;}
     
     //};
   }

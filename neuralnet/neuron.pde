@@ -41,7 +41,7 @@ class layer {
     int gap = circlesize+spacing;
     int sh = y- gap/2*(nc-1);
     for (int i = 0; i<nc; i++) {
-      neuron n = new neuron(xpos, sh+i*gap, (float)(Math.random()-0.5));
+      neuron n = new neuron(xpos, sh+i*gap, (float)(Math.random()-0.5)/4);
       neurons[i] = n;
     }
   }
