@@ -81,7 +81,7 @@ class net {
       for (int j = 0; j<oi.neurons.length; j++){
      
         //NEURON BIAS MOD
-        float nb = (float)(Math.random()-0.5)/80;
+        float nb = (float)(Math.random()-0.5)/3;
 
         neuron cn = oi.neurons[j].ncopy(nb); 
         li.neurons[j] = cn;

@@ -146,15 +146,18 @@ void renderTick(){
 }
 
 void simulationTick(){
-  f = (f+1)%100;
-  f2 = (f2+1)%10; 
+  f = (f+1)%30;
+  f2 = (f2+1)%50; 
   
-  if (f==0){
+  if (f==0 & foods.size()<100){
+    
       for (int i = 0; i<3; i++){
       foods.add(rpos());
         
       }
   }
+
+  if (creatures.size()<50) spawnCreature();
   
   if(f2==0) spawnCreature();
   
