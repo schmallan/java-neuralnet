@@ -3,7 +3,7 @@
 class arrow extends creature{
     int foodsEaten = 0;
     float rot = 0;
-    float size = 18;
+    float size = 20;
     int col = 0;
     arrow(int x, int y, int c){
         health = 1000;
@@ -35,13 +35,13 @@ class arrow extends creature{
 
     if (health<=0){
         dead = true;
-        for (int i= 0; i<foodsEaten; i++){
+        for (int i= 0; i<foodsEaten/2; i++){
           reproduce();
         }
         return;
     }
 
-    if (max(abs(posx),abs(posy))>worldSize) health = 0;
+    if (max(abs(posx),abs(posy))>worldSize){health=0;};
 
 
     if (health>3000){
@@ -55,6 +55,7 @@ class arrow extends creature{
         foods.remove(i);
         foodsEaten+=1;
         health+=455;
+       // reproduce();
       }
     }
 
@@ -99,8 +100,8 @@ class arrow extends creature{
     neuron[] outputlayer = brain.layers[brain.layers.length-1].neurons;
   
     
-    rot+=(outputlayer[0].output-0.5)/3;
-    //rot=(outputlayer[0].output)*2*PI;
+    //rot+=(outputlayer[0].output-0.5)/3;
+    rot=(outputlayer[0].output)*2*PI;
     
 
     float pedal = outputlayer[1].output*3;
@@ -109,7 +110,7 @@ class arrow extends creature{
     posy+=sin(rot)*pedal;
     
 
-    health-=1;
+    //health-=1;
   }
   void render(){
     noStroke();

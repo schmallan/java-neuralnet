@@ -99,7 +99,9 @@ class net {
         for (int k = 0; k<layernc[back]; k++) { //3
 
           //WEIGHT MOD
-          float wm = (float)(Math.random()-0.5)/80;
+          float wm = 0;
+          
+          if (Math.random()<0.05) wm= (float)(Math.random()-0.5)/5;
 
           wlay2[k] = weights[back][i][k] + wm;
         }

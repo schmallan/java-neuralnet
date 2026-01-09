@@ -3,7 +3,7 @@ int[] selected;
 
 int simSpeed = 1;
 boolean isPaused = false;
-int worldSize = 1000;
+int worldSize = 800;
 neuron selectedn;
 int centerX;
 int centerY;
@@ -73,13 +73,13 @@ void keyPressed(){
         simSpeed = 50;
         break;
       case (6):
-        simSpeed = 100;
+        simSpeed = 500;
         break;
       case (7):
-        simSpeed = 200;
+        simSpeed = 1000;
         break;
       case (8):
-        simSpeed = 500;
+        simSpeed = 2000;
         break;
       
         
