@@ -1,6 +1,52 @@
 static int circlesize = 30;
 static int spacing = 20;
 static int sidespacing = 30;
+
+void saveNet(creature myCreature){
+  PrintWriter fout = createWriter("critters/"+myCreature.name+myCreature.gen+".txt");
+  fout.println("creatureType: "+myCreature.creatureType);
+  fout.println("creatureName: "+myCreature.name);
+  fout.println("generation: "+myCreature.gen);
+  fout.println("score: "+myCreature.score);
+
+  net myNet = myCreature.brain;
+      fout.println("inputlayer: ");
+      for (String s : myCreature.brain.inpnames){
+        fout.print(s+" ");
+      }
+  for (int layerN = 0; layerN<myNet.numlayers; layerN++){
+    layer myLayer = myNet.layers[layerN];
+    
+
+    fout.println("layer"+layerN+"-neuronCount: "+myLayer.neuroncount);
+    fout.print("biases: ");
+    for (int i = 0; i<myLayer.neuroncount; i++){
+      fout.print(myLayer.neurons[i].bias+" ");
+    }
+    fout.println();
+    if (layerN!=myNet.numlayers-1){
+      fout.println("weights:");
+      for (int i = 0; i<myNet.weights[layerN].length; i++){
+        fout.print("------neuron"+i+": ");
+        float[] nweights = myNet.weights[layerN][i];
+        for (int j = 0; j<nweights.length; j++){
+          fout.print(nweights[j]);
+          fout.print(" ");
+        }
+        fout.println();
+      }
+    }
+
+  }
+  
+      fout.println("inputlayer: ");
+      for (String s : myCreature.brain.inpnames){
+        fout.print(s+" ");
+      }
+  
+  fout.flush();
+}
+
 class neuron {
   int xpos;
   int ypos;
@@ -9,7 +55,7 @@ class neuron {
   float bias;
   
   neuron ncopy(float bm){
-     return new neuron(xpos,ypos,bias+bm); 
+     return new neuron(xpos,ypos,bm); 
   }
 
   neuron(int x, int y, float b) {
@@ -22,7 +68,7 @@ class neuron {
     int col = 0;
     if (output>0.5) col = 70;
     colorMode(HSB, 255, 50, 255);
-    fill(col, Math.abs(output-0.5)*100, 255);
+    fill(col, Math.abs((float)output-0.5)*100, 255);
     //  strokeWeight(Math.abs(bias));
     ellipse(xpos, ypos, circlesize, circlesize);
   }
@@ -41,7 +87,9 @@ class layer {
     int gap = circlesize+spacing;
     int sh = y- gap/2*(nc-1);
     for (int i = 0; i<nc; i++) {
-      neuron n = new neuron(xpos, sh+i*gap, (float)(Math.random()-0.5)/4);
+      float nd = (float)(Math.random()-0.5)*5;
+      //nd = 0;
+      neuron n = new neuron(xpos, sh+i*gap, nd);
       neurons[i] = n;
     }
   }
@@ -61,7 +109,6 @@ class net {
   int[] layernc;
   float[][][] weights;
   layer[] layers;
-  
   String[] inpnames;
   String[] outnames;
 
@@ -76,14 +123,18 @@ class net {
     //copy neurons
     for (int i = 0; i<numlayers; i++) {
       layer li = new layer(layernc[i], xpos + (sidespacing+circlesize)*i, ypos);
+      layer oi = layers[i];//WHAT THE  ??
       ret.layers[i] = li;
-      layer oi = ret.layers[i];
       for (int j = 0; j<oi.neurons.length; j++){
      
         //NEURON BIAS MOD
-        float nb = (float)(Math.random()-0.5)/3;
+        float nb = 0;
+     if (Math.random()<0.1) nb = (float)(Math.random()-0.5)/4;
 
-        neuron cn = oi.neurons[j].ncopy(nb); 
+        float newBias = oi.neurons[j].bias + nb + 0;
+        //newBias=1;
+
+        neuron cn = oi.neurons[j].ncopy(newBias); 
         li.neurons[j] = cn;
       }
     }
@@ -210,6 +261,7 @@ class net {
        neuron cn = layers[0].neurons[nn];
        fill(255);
        textSize(20);
+       if (inpnames.length<=nn) continue;
        String w = inpnames[nn];
        text(w,cn.xpos-w.length()*10-circlesize/2,cn.ypos+10);
      }
@@ -217,6 +269,7 @@ class net {
        neuron cn = layers[numlayers-1].neurons[nn];
        fill(255);
        textSize(20);
+       if (outnames.length<=nn) continue;
        String w = outnames[nn];
        text(w,cn.xpos+circlesize,cn.ypos+10);
      }
@@ -237,8 +290,8 @@ class net {
           int col = 0;
           if (c>0) col = 70;
           colorMode(HSB, 255, 50, 255);
-          stroke(col, Math.abs(c)*100, 255);
-          strokeWeight(abs(c)*3);
+          stroke(col, Math.abs((float)c)*100, 255);
+          strokeWeight(abs((float)c)*3);
           line(frontn.xpos-h, frontn.ypos, backn.xpos+h, backn.ypos);
 
 
@@ -255,5 +308,5 @@ class net {
 float activationfunction(float x) {
   //return x;
   //return Math.max(0,x); // rectified linear
-  return (1/(1+exp(-x))); //sigmoid function //sigma
+  return (1/(1+exp(-(float)x))); //sigmoid function //sigma
 }

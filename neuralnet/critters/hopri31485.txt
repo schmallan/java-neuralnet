@@ -1,0 +1,22 @@
+creatureType: arrow
+creatureName: hopri
+generation: 31485
+score: 4
+inputlayer: 
+nx ny rot layer0-neuronCount: 3
+biases: 1.6216544 0.47825545 -4.164372 
+weights:
+------neuron0: 1.2219794 -3.7300696 -3.8479497 
+------neuron1: 0.38314506 -2.0848167 -7.5806355 
+------neuron2: 1.1507969 0.4903832 5.797359 
+------neuron3: -3.6513498 0.57677126 5.3293676 
+------neuron4: -0.34523565 -0.19792113 7.2335916 
+------neuron5: 3.571525 -0.4002677 0.31194633 
+layer1-neuronCount: 6
+biases: -1.1007243 3.021386 -4.4271603 -3.8387167 -1.5340016 3.3709283 
+weights:
+------neuron0: 3.9505837 -7.515872 -3.1707551 0.29261458 -7.6230307 0.44953096 
+layer2-neuronCount: 1
+biases: 8.844274 
+inputlayer: 
+nx ny rot 

@@ -39,7 +39,7 @@ class critter extends creature {
     //if (bhealth<hatch*3+1300) return;
     critter offspring = new critter((int)(posx + random(-15,15)), (int)(posy + random(-15,15)), (int)((col+Math.random()-0.5)*1)%100, (int)((c2+Math.random()-0.5)*1)%100, (int)((c3+Math.random()-0.5)*1)%100, name,(int)bhealth,gen+1);
     offspring.brain = brain.ncopy();
-    creatures.add(offspring); 
+  //  creatures.add(offspring); 
   }
 
 

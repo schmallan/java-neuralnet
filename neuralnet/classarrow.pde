@@ -1,11 +1,13 @@
 
 
 class arrow extends creature{
+
     int foodsEaten = 0;
     float rot = 0;
     float size = 20;
     int col = 0;
     arrow(int x, int y, int c){
+      creatureType = "arrow";
         health = 1000;
         posx = x;
         posy = y;
@@ -15,16 +17,17 @@ class arrow extends creature{
 
     void rebrain(){
         name = namegen();
-        brain = new net(new int[]{3,5,5,5,2},new String[]{"nx","ny","rot"},new String[]{"angleMov","velocMov"}, 130, 360);
+        brain = new net(new int[]{3,6,1},new String[]{"nx","ny","rot"},new String[]{"angleMov"}, 130, 360);
     }
 
-  void reproduce() {
+
+  arrow reproduce() {
     //if (bhealth<hatch*3+1300) return;
     arrow offspring = new arrow((int)(posx + random(-35,35)), (int)(posy + random(-35,35)),col);
     offspring.name = name;
     offspring.gen = gen+1;
     offspring.brain = brain.ncopy();
-    creatures.add(offspring); 
+    return (offspring); 
   }
 
   void tick(){
@@ -33,28 +36,30 @@ class arrow extends creature{
     rot = rot%(PI+PI);
     //println(rot);
 
+    
     if (health<=0){
         dead = true;
         for (int i= 0; i<foodsEaten/2; i++){
-          reproduce();
+       //   reproduce();
         }
         return;
     }
 
-    if (max(abs(posx),abs(posy))>worldSize){health=0;};
+    if (max(abs(posx),abs(posy))>worldSize){posx=0; posy=0; score-=5;};
 
 
     if (health>3000){
         health = 2000;
-        reproduce();
+      //  reproduce();
     }
     
     for (int i = 0; i<foods.size(); i++) {
       int[] c = foods.get(i);
       if (abs(posx-c[0])+abs(posy-c[1])<  size  ) {
         foods.remove(i);
-        foodsEaten+=1;
-        health+=455;
+        score++;
+       // foodsEaten+=1;
+      //  health+=455;
        // reproduce();
       }
     }
@@ -100,17 +105,17 @@ class arrow extends creature{
     neuron[] outputlayer = brain.layers[brain.layers.length-1].neurons;
   
     
-    //rot+=(outputlayer[0].output-0.5)/3;
-    rot=(outputlayer[0].output)*2*PI;
+    rot+=(outputlayer[0].output-0.5);
+    //rot=(outputlayer[0].output)*2*PI;
     
 
-    float pedal = outputlayer[1].output*3;
+    float pedal = 5;//outputlayer[1].output;
     //pedal = 1;
     posx+=cos(rot)*pedal;
     posy+=sin(rot)*pedal;
     
 
-    //health-=1;
+  //  health-=1;
   }
   void render(){
     noStroke();
