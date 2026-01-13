@@ -1,6 +1,8 @@
 import java.util.Collections;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Arrays;
+
 ArrayList<arrow> creatures = new ArrayList<>();
 
 int[] selected;
@@ -24,11 +26,8 @@ void setup() {
   centerX = width/2+200;
   centerY = height/2;
   
-  for (int i = 0; i<20; i++){
-    spawnCreature();
-  }
+  //spawnCreature();
   
-  selectedCreature=creatures.get(0);
   
   for (int i = 0; i<30; i++){
       foods.add(rpos());
@@ -36,7 +35,7 @@ void setup() {
   
 }
 
-void spawnCreature(){
+creature spawnCreature(){
   
     colorMode(HSB,100,100,100);
     int col = (int) (Math.random()*100);
@@ -46,11 +45,13 @@ void spawnCreature(){
     colorMode(HSB, 100, 100, 100);
     int myc = color(col, c2, c3);
 
-    creatures.add(new arrow((int)((Math.random()-0.5)*worldSize*1.8),(int)((Math.random()-0.5)*worldSize*1.8),myc));
+    arrow res = (new arrow((int)((Math.random()-0.5)*worldSize*1.8),(int)((Math.random()-0.5)*worldSize*1.8),myc));
  //  critter john = new critter((int)((Math.random()-0.5)*worldSize*1.8),(int)((Math.random()-0.5)*worldSize*1.8),col,c2,c3);
  
-   //creatures.add(john);
-}
+    creatures.add(res);
+    return res;
+
+  }
 
 int curc = 0;
 void keyPressed(){
@@ -90,9 +91,17 @@ void keyPressed(){
         
     }
   }
+  if (keyCode==127){
+    if (selectedCreature!=null){
+      creatures.remove(selectedCreature);
+      selectedCreature=null;
+    }
+  }
   if (keyCode==9){
-    curc=(curc+1)%creatures.size();
-    selectedCreature=creatures.get(curc);
+    if (creatures.size()!=0){
+      curc=(curc+1)%creatures.size();
+      selectedCreature=creatures.get(curc);
+    }
   }
   if (key ==' '){
    isPaused = !isPaused; 
@@ -109,6 +118,10 @@ void keyPressed(){
   }
   if (key =='s'){
    saveNet(selectedCreature);
+  }if (key =='l'){
+   creature load = loadCreature("critters/hopri31478.txt");
+   creature n = spawnCreature();
+   n.brain = load.brain;
   }
 }
 
@@ -140,7 +153,9 @@ void renderTick(){
   noStroke();
   fill(#FFFFFF);
   rect(centerX,centerY,worldSize*2/ratio,worldSize*2/ratio);
+  if (selectedCreature!=null){
   selectedCreature.brain.render();
+  }
   for (int i = 0; i<creatures.size(); i++){
     creature c = creatures.get(i);
     c.render();
@@ -162,7 +177,7 @@ void renderTick(){
 
 void newGen(){
   genNum++;
-
+/*
   creatures.sort(Collections.reverseOrder(Comparator.comparing(creature::getScore)));
   ArrayList<arrow> temp = new ArrayList<>();
 
@@ -178,11 +193,11 @@ void newGen(){
     temp.add(c.reproduce());
   }
   creatures = temp;
-  println(creatures.size());
+  //println(creatures.size());
   while (creatures.size()<40){
     spawnCreature();
   }
-
+*/
 
 }
 
@@ -241,6 +256,7 @@ void renderNetInfo(){
     textSize(10);
     String leaderboard = "";
     for (int i = 0; i<10; i++){
+      if (i>=creatures.size()) break;
       creature c = creatures.get(i);
       leaderboard+="\n"+i+": "+c.name + " - "+c.score;
     }
@@ -298,7 +314,7 @@ void mousePressed() {
   for (arrow c: creatures){
     float d = sqrt(pow(((mouseX-c.posx/ratio)-centerX),2)+pow(((mouseY-c.posy/ratio)-centerY),2));
     if (d<20) selectedCreature = c;
-    
+    if (selectedCreature==null) return;
     net n = selectedCreature.brain;
     
     selected = n.checkmouse(mouseX, mouseY);

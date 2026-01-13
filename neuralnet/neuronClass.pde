@@ -1,6 +1,6 @@
 static int circlesize = 30;
-static int spacing = 20;
-static int sidespacing = 30;
+static int spacing = 70;
+static int sidespacing = 90;
 
 void saveNet(creature myCreature){
   PrintWriter fout = createWriter("critters/"+myCreature.name+myCreature.gen+".txt");
@@ -9,16 +9,25 @@ void saveNet(creature myCreature){
   fout.println("generation: "+myCreature.gen);
   fout.println("score: "+myCreature.score);
 
+  fout.print("netstructure: ");
+  for (int n : myCreature.brain.layernc){
+    fout.print(n);
+  }
+  fout.println();
   net myNet = myCreature.brain;
-      fout.println("inputlayer: ");
+
+      fout.print("inputlayer: ");
       for (String s : myCreature.brain.inpnames){
         fout.print(s+" ");
       }
+      fout.println("outlayer: ");
+      for (String s : myCreature.brain.outnames){
+        fout.print(s+" ");
+      }
+      fout.println();
+
   for (int layerN = 0; layerN<myNet.numlayers; layerN++){
     layer myLayer = myNet.layers[layerN];
-    
-
-    fout.println("layer"+layerN+"-neuronCount: "+myLayer.neuroncount);
     fout.print("biases: ");
     for (int i = 0; i<myLayer.neuroncount; i++){
       fout.print(myLayer.neurons[i].bias+" ");
@@ -39,10 +48,6 @@ void saveNet(creature myCreature){
 
   }
   
-      fout.println("inputlayer: ");
-      for (String s : myCreature.brain.inpnames){
-        fout.print(s+" ");
-      }
   
   fout.flush();
 }

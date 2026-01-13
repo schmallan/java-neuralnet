@@ -2,8 +2,9 @@ creatureType: arrow
 creatureName: hopri
 generation: 31478
 score: -3
-inputlayer: 
-nx ny rot layer0-neuronCount: 3
+net-structure: 3 6 1
+innames: nx ny rot 
+outnames: angleMov
 biases: 2.051234 0.6570785 -4.2001204 
 weights:
 ------neuron0: 1.0789422 -3.8714774 -3.7716126 
@@ -12,11 +13,7 @@ weights:
 ------neuron3: -3.5478737 0.5605873 5.4223824 
 ------neuron4: -0.3829922 -0.28521177 7.249508 
 ------neuron5: 3.6140702 -0.36686614 0.27447933 
-layer1-neuronCount: 6
 biases: -1.3197973 2.5199354 -4.6566987 -3.2879338 -1.1653701 3.1649828 
 weights:
 ------neuron0: 3.9977522 -7.510653 -3.143196 0.16555661 -7.6230307 0.37585574 
-layer2-neuronCount: 1
 biases: 9.113479 
-inputlayer: 
-nx ny rot 
