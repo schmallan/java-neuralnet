@@ -35,15 +35,20 @@ void setup() {
   
 }
 
-creature spawnCreature(){
-  
+int randCol(){
+
     colorMode(HSB,100,100,100);
     int col = (int) (Math.random()*100);
     int c2 = (int) (Math.random()*70+30);
     int c3 = (int) (Math.random()*30+70);
     
     colorMode(HSB, 100, 100, 100);
-    int myc = color(col, c2, c3);
+    return color (col,c2,c3);
+}
+
+creature spawnCreature(){
+  
+    int myc = randCol();
 
     arrow res = (new arrow((int)((Math.random()-0.5)*worldSize*1.8),(int)((Math.random()-0.5)*worldSize*1.8),myc));
  //  critter john = new critter((int)((Math.random()-0.5)*worldSize*1.8),(int)((Math.random()-0.5)*worldSize*1.8),col,c2,c3);
@@ -102,6 +107,13 @@ void keyPressed(){
       curc=(curc+1)%creatures.size();
       selectedCreature=creatures.get(curc);
     }
+  }if (key=='t'){
+    if (creatures.size()!=0){
+      curc=0;
+      selectedCreature=creatures.get(curc);
+    }
+  }if (key=='r'){
+    reColor();
   }
   if (key ==' '){
    isPaused = !isPaused; 
@@ -118,10 +130,12 @@ void keyPressed(){
   }
   if (key =='s'){
    saveNet(selectedCreature);
-  }if (key =='l'){
-   creature load = loadCreature("critters/hopri31478.txt");
+  }
+  if (key =='l'){
+   creature load = loadCreature("critters/ghusti15684.txt");
    creature n = spawnCreature();
    n.brain = load.brain;
+   
   }
 }
 
@@ -175,9 +189,15 @@ void renderTick(){
   
 }
 
+void reColor(){
+  for (creature c : creatures){
+    c.col = randCol();
+  }
+}
+
 void newGen(){
   genNum++;
-/*
+
   creatures.sort(Collections.reverseOrder(Comparator.comparing(creature::getScore)));
   ArrayList<arrow> temp = new ArrayList<>();
 
@@ -197,7 +217,7 @@ void newGen(){
   while (creatures.size()<40){
     spawnCreature();
   }
-*/
+
 
 }
 
@@ -211,6 +231,12 @@ void simulationTick(){
   if (g==0){
     newGen();
   }
+
+//  if (foods.size()<1){
+  //  foods.add(rpos());
+ // }
+ // foods.remove(0);
+ // foods.add(new int[]{(int)((mouseX-centerX)*ratio),(int)((mouseY-centerY)*ratio)});
   
   if (f==0 & foods.size()<100){
     

@@ -3,8 +3,9 @@ class creature {
   net brain = null;
   float posx = 0;
   float posy = 0;
+  int col = 0;
   boolean dead = false;
-  int health = 10;
+  float health = 10;
   int score = 0;
   String name = "null";
   int gen = 0;
@@ -35,6 +36,7 @@ creature loadCreature(String infile){
     layer corrLayer = brain.layers[i];
     float[] biases = parseFloatArray(parseData(lines[cfn])); cfn++;
 
+    println("nc: "+corrLayer.neuroncount);
     for (int k = 0; k<corrLayer.neuroncount; k++){
       neuron cn = corrLayer.neurons[k];
       cn.bias = biases[k];

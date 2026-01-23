@@ -1,14 +1,11 @@
-
-
 class arrow extends creature{
 
     int foodsEaten = 0;
     float rot = 0;
     float size = 20;
-    int col = 0;
     arrow(int x, int y, int c){
       creatureType = "arrow";
-        health = 1000;
+        health = 10000;
         posx = x;
         posy = y;
         rebrain();
@@ -17,7 +14,7 @@ class arrow extends creature{
 
     void rebrain(){
         name = namegen();
-        brain = new net(new int[]{3,6,1},new String[]{"nx","ny","rot"},new String[]{"angleMov"}, 130, 360);
+        brain = new net(new int[]{4,5,2},new String[]{"nx","ny","rot","healthLeft"},new String[]{"angleMov","movSpeed"}, 130, 360);
     }
 
 
@@ -36,22 +33,25 @@ class arrow extends creature{
     rot = rot%(PI+PI);
     //println(rot);
 
-    
     if (health<=0){
-        dead = true;
-        for (int i= 0; i<foodsEaten/2; i++){
-       //   reproduce();
-        }
-        return;
+      size = 5;
+      return;
     }
+    //if (health<=0){
+      //  dead = true;
+       // for (int i= 0; i<foodsEaten/2; i++){
+       //   reproduce();
+      //  }
+       // return;
+    //}
 
     if (max(abs(posx),abs(posy))>worldSize){posx=0; posy=0; score-=5;};
 
 
-    if (health>3000){
-        health = 2000;
+    //if (health>3000){
+      //  health = 2000;
       //  reproduce();
-    }
+    //}
     
     for (int i = 0; i<foods.size(); i++) {
       int[] c = foods.get(i);
@@ -100,16 +100,18 @@ class arrow extends creature{
 
     //x+=0.5;
 
-      brain.setinputs(new float[]{nx,ny,rot/PI/2});
+      brain.setinputs(new float[]{nx,ny,rot/PI/2,health/10000});
     brain.propagate();
     neuron[] outputlayer = brain.layers[brain.layers.length-1].neurons;
   
-    
-    rot+=(outputlayer[0].output-0.5);
+    float op = (outputlayer[0].output-0.5);
+    rot+=op;
+    health-=op*op*10;
     //rot=(outputlayer[0].output)*2*PI;
     
 
-    float pedal = 5;//outputlayer[1].output;
+    float pedal = outputlayer[1].output*5;
+    health-=pedal*pedal;
     //pedal = 1;
     posx+=cos(rot)*pedal;
     posy+=sin(rot)*pedal;

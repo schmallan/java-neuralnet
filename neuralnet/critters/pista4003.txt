@@ -1,0 +1,17 @@
+creatureType: arrow
+creatureName: pista
+generation: 4003
+score: 5
+netstructure: 341
+inputlayer: nx ny rot outlayer: 
+angleMov 
+biases: 1.1633217 2.5010672 0.5825731 
+weights:
+------neuron0: 1.1891761 2.7095258 -3.8419347 
+------neuron1: -0.812426 0.13011259 -4.076213 
+------neuron2: -0.507018 -1.1572723 -2.085666 
+------neuron3: -1.9917427 -2.5635567 -1.3998581 
+biases: 0.95138377 -1.0243456 3.053191 -1.2968314 
+weights:
+------neuron0: 1.1679422 -3.5286522 1.4180142 1.9982412 
+biases: -1.7612067 

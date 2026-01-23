@@ -1,0 +1,17 @@
+creatureType: arrow
+creatureName: yuci
+generation: 23203
+score: 13
+netstructure: 341
+inputlayer: nx ny rot outlayer: 
+angleMov 
+biases: 2.970922 -3.7382045 -5.212885 
+weights:
+------neuron0: -2.8281064 1.9472511 3.8011577 
+------neuron1: 0.36044255 0.25725308 -7.0867114 
+------neuron2: -2.7998254 -1.0377682 -0.9224312 
+------neuron3: -0.67961335 1.1652176 6.2441216 
+biases: -0.70948327 2.5774498 -4.7092423 -3.0008678 
+weights:
+------neuron0: -2.40319 5.1361957 1.5730972 4.5841227 
+biases: -3.1122518 

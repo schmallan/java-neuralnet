@@ -1,0 +1,18 @@
+creatureType: arrow
+creatureName: labrobri
+generation: 23520
+score: 8
+netstructure: 442
+inputlayer: nx ny rot healthLeft outlayer: 
+angleMov movSpeed 
+biases: 1.8817645 2.6163464 -0.91139907 7.245093 
+weights:
+------neuron0: 0.8435887 -1.1449745 -4.9955487 -1.4280493 
+------neuron1: -4.107239 4.7133126 1.5775988 -0.029036723 
+------neuron2: 0.4994661 0.06571962 -4.569482 6.8317757 
+------neuron3: 2.599991 1.6277378 1.4889985 2.5967577 
+biases: 1.8394885 -3.085978 7.4786434 -4.3854184 
+weights:
+------neuron0: -4.1650615 -1.9146941 4.62076 -0.7050389 
+------neuron1: 0.37441415 -0.351246 -6.0910897 -0.47799906 
+biases: 2.1689835 4.8614388 
