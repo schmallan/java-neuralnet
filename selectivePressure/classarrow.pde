@@ -24,6 +24,9 @@ class arrow extends creature{
     offspring.name = name;
     offspring.gen = gen+1;
     offspring.brain = brain.ncopy();
+    int[] rp = rpos();
+    offspring.posx = rp[0];
+    offspring.posy = rp[1];
     return (offspring); 
   }
 

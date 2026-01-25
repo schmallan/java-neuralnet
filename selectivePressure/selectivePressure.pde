@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 ArrayList<arrow> creatures = new ArrayList<>();
 
-int[] selected;
+int[] selected; //? what is this for?
 
 int simSpeed = 1;
 boolean isPaused = false;
@@ -35,109 +35,6 @@ void setup() {
   
 }
 
-int randCol(){
-
-    colorMode(HSB,100,100,100);
-    int col = (int) (Math.random()*100);
-    int c2 = (int) (Math.random()*70+30);
-    int c3 = (int) (Math.random()*30+70);
-    
-    colorMode(HSB, 100, 100, 100);
-    return color (col,c2,c3);
-}
-
-creature spawnCreature(){
-  
-    int myc = randCol();
-
-    arrow res = (new arrow((int)((Math.random()-0.5)*worldSize*1.8),(int)((Math.random()-0.5)*worldSize*1.8),myc));
- //  critter john = new critter((int)((Math.random()-0.5)*worldSize*1.8),(int)((Math.random()-0.5)*worldSize*1.8),col,c2,c3);
- 
-    creatures.add(res);
-    return res;
-
-  }
-
-int curc = 0;
-void keyPressed(){
-  print(keyCode);
-  if (keyCode>=49 && keyCode<=57){
-    int mm = keyCode-49;
-    switch (mm){
-      case (0):
-        simSpeed = 1;
-        break;
-      case (1):
-        simSpeed = 2;
-        break;
-      case (2):
-        simSpeed = 5;
-        break;
-      case (3):
-        simSpeed = 10;
-        break;
-      case (4):
-        simSpeed = 20;
-        break;
-      case (5):
-        simSpeed = 50;
-        break;
-      case (6):
-        simSpeed = 500;
-        break;
-      case (7):
-        simSpeed = 1000;
-        break;
-      case (8):
-        simSpeed = 2000;
-        break;
-      
-        
-        
-    }
-  }
-  if (keyCode==127){
-    if (selectedCreature!=null){
-      creatures.remove(selectedCreature);
-      selectedCreature=null;
-    }
-  }
-  if (keyCode==9){
-    if (creatures.size()!=0){
-      curc=(curc+1)%creatures.size();
-      selectedCreature=creatures.get(curc);
-    }
-  }if (key=='t'){
-    if (creatures.size()!=0){
-      curc=0;
-      selectedCreature=creatures.get(curc);
-    }
-  }if (key=='r'){
-    reColor();
-  }
-  if (key ==' '){
-   isPaused = !isPaused; 
-  }
-  if (key ==']'){
-   simSpeed++;
-  }
-  if (key =='['){
-   simSpeed = max(1,--simSpeed);
-  }
-  if (key =='n'){
-   creatures = new ArrayList<>();
-   spawnCreature();
-  }
-  if (key =='s'){
-   saveNet(selectedCreature);
-  }
-  if (key =='l'){
-   creature load = loadCreature("critters/ghusti15684.txt");
-   creature n = spawnCreature();
-   n.brain = load.brain;
-   
-  }
-}
 
 int f = 0; int f2 = 0;
 void draw(){
@@ -158,7 +55,10 @@ void draw(){
 
 
 void renderTick(){
-  
+  if (gt){
+    getTop();
+  }
+
   background(#222222);
 
   fill(255);
@@ -189,11 +89,6 @@ void renderTick(){
   
 }
 
-void reColor(){
-  for (creature c : creatures){
-    c.col = randCol();
-  }
-}
 
 void newGen(){
   genNum++;
@@ -201,22 +96,24 @@ void newGen(){
   creatures.sort(Collections.reverseOrder(Comparator.comparing(creature::getScore)));
   ArrayList<arrow> temp = new ArrayList<>();
 
+  while (creatures.size()<30){
+    spawnCreature();
+  }
+
   for (int i = 0; i<10; i++){
     if (creatures.size()<=i) continue;
     arrow c = creatures.get(i);
     temp.add(c.reproduce());
     temp.add(c.reproduce());
   }
-  for (int i = 10; i<20; i++){
+  for (int i = 10; i<15; i++){
     if (creatures.size()<=i) continue;
     arrow c = creatures.get(i);
     temp.add(c.reproduce());
   }
   creatures = temp;
   //println(creatures.size());
-  while (creatures.size()<40){
-    spawnCreature();
-  }
+  
 
 
 }
@@ -336,6 +233,8 @@ void renderNetInfo(){
   
   }
 
+
+//selects the creature that you clicked on.
 void mousePressed() {
   for (arrow c: creatures){
     float d = sqrt(pow(((mouseX-c.posx/ratio)-centerX),2)+pow(((mouseY-c.posy/ratio)-centerY),2));
@@ -352,6 +251,4 @@ void mousePressed() {
     }
     
   }
-  
-  
 }
