@@ -10,9 +10,9 @@ class neuron {
   float wsum = -1;
   float output = -1;
   float bias;
-  
-  neuron ncopy(float bm){
-     return new neuron(xpos,ypos,bm); 
+
+  neuron ncopy(float bm) {
+    return new neuron(xpos, ypos, bm);
   }
 
   neuron(int x, int y, float b) {
@@ -72,30 +72,30 @@ class net {
 
   net ncopy() {
     net ret = new net(layernc, inpnames, outnames, xpos, ypos);
-    
+
     ret.numlayers = numlayers;
     ret.layers = new layer[numlayers];
     ret.weights = new float[numlayers-1][][];
-    
+
     //copy neurons
     for (int i = 0; i<numlayers; i++) {
       layer li = new layer(layernc[i], xpos + (sidespacing+circlesize)*i, ypos);
       layer oi = layers[i];//WHAT THE  ??
       ret.layers[i] = li;
-      for (int j = 0; j<oi.neurons.length; j++){
-     
+      for (int j = 0; j<oi.neurons.length; j++) {
+
         //NEURON BIAS MOD
         float nb = 0;
-     if (Math.random()<0.1) nb = (float)(Math.random()-0.5)/4;
+        if (Math.random()<0.1) nb = (float)(Math.random()-0.5)/4;
 
         float newBias = oi.neurons[j].bias + nb + 0;
         //newBias=1;
 
-        neuron cn = oi.neurons[j].ncopy(newBias); 
+        neuron cn = oi.neurons[j].ncopy(newBias);
         li.neurons[j] = cn;
       }
     }
-    
+
     //copy weights
     for (int back = 0; back<numlayers-1; back++) { //1
       int front = back+1;
@@ -108,18 +108,18 @@ class net {
 
           //WEIGHT MOD
           float wm = 0;
-          
+
           if (Math.random()<0.05) wm= (float)(Math.random()-0.5)/5;
 
           wlay2[k] = weights[back][i][k] + wm;
         }
       }
     }
-    
+
     return ret;
   }
 
-  
+
   void recurrent() {
     layer l = layers[numlayers-1];
     layer f = layers[0];
@@ -213,23 +213,23 @@ class net {
       if (i==numlayers-1) stroke(#b6ff85);
       n.render();
     }
-    
-     for (int nn = 0; nn<layernc[0]; nn++){
-       neuron cn = layers[0].neurons[nn];
-       fill(255);
-       textSize(20);
-       if (inpnames.length<=nn) continue;
-       String w = inpnames[nn];
-       text(w,cn.xpos-w.length()*10-circlesize/2,cn.ypos+10);
-     }
-     for (int nn = 0; nn<layernc[numlayers-1]; nn++){
-       neuron cn = layers[numlayers-1].neurons[nn];
-       fill(255);
-       textSize(20);
-       if (outnames.length<=nn) continue;
-       String w = outnames[nn];
-       text(w,cn.xpos+circlesize,cn.ypos+10);
-     }
+
+    for (int nn = 0; nn<layernc[0]; nn++) {
+      neuron cn = layers[0].neurons[nn];
+      fill(255);
+      textSize(20);
+      if (inpnames.length<=nn) continue;
+      String w = inpnames[nn];
+      text(w, cn.xpos-w.length()*10-circlesize/2, cn.ypos+10);
+    }
+    for (int nn = 0; nn<layernc[numlayers-1]; nn++) {
+      neuron cn = layers[numlayers-1].neurons[nn];
+      fill(255);
+      textSize(20);
+      if (outnames.length<=nn) continue;
+      String w = outnames[nn];
+      text(w, cn.xpos+circlesize, cn.ypos+10);
+    }
 
     int ai=0;
     for (float[][] a : weights) {
@@ -237,8 +237,8 @@ class net {
       for (float[] b : a) {
         int ci = 0;
         for (float c : b) {
-          
-          
+
+
 
           neuron frontn = layers[ai+1].neurons[bi];
           neuron backn = layers[ai].neurons[ci];
@@ -267,3 +267,4 @@ float activationfunction(float x) {
   //return Math.max(0,x); // rectified linear
   return (1/(1+exp(-(float)x))); //sigmoid function //sigma
 }
+

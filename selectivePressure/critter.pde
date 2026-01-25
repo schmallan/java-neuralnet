@@ -8,7 +8,7 @@ class critter extends creature {
   int c2;
   int c3;
 
-  float adjr(float m){
+  float adjr(float m) {
     return (float) (Math.random()-0.5)*m;
   }
 
@@ -37,9 +37,9 @@ class critter extends creature {
     int bhealth = (int)( health*0.2);
     health-=bhealth;
     //if (bhealth<hatch*3+1300) return;
-    critter offspring = new critter((int)(posx + random(-15,15)), (int)(posy + random(-15,15)), (int)((col+Math.random()-0.5)*1)%100, (int)((c2+Math.random()-0.5)*1)%100, (int)((c3+Math.random()-0.5)*1)%100, name,(int)bhealth,gen+1);
+    critter offspring = new critter((int)(posx + random(-15, 15)), (int)(posy + random(-15, 15)), (int)((col+Math.random()-0.5)*1)%100, (int)((c2+Math.random()-0.5)*1)%100, (int)((c3+Math.random()-0.5)*1)%100, name, (int)bhealth, gen+1);
     offspring.brain = brain.ncopy();
-  //  creatures.add(offspring); 
+    //  creatures.add(offspring);
   }
 
 
@@ -57,24 +57,27 @@ class critter extends creature {
 
     age++;
     if (age>10000) dead = true;
-    
+
     int mx = (int)max(abs(posx), abs(posy));
     if (health<10) {
       dead = true;
     }
-    if (mx>worldSize){
+    if (mx>worldSize) {
       dead = true;
       /*
       posx = max(posx,-worldSize);
-      posy = max(posy,-worldSize);
-      posx = min(posx,worldSize);
-      posy = min(posy,worldSize);
-    */  
+       posy = max(posy,-worldSize);
+       posx = min(posx,worldSize);
+       posy = min(posy,worldSize);
+       */
     }
 
     if (dead) return;
 
-    if (hatch>0) {hatch-=1; return;}
+    if (hatch>0) {
+      hatch-=1;
+      return;
+    }
     //if (health>3000) health*=0.996;
 
     health-=1;
@@ -121,7 +124,7 @@ class critter extends creature {
         if (cont<size) {
           int div = abs(col-c.col) + abs(c2-c.c2) + abs(c3-c.c3);
           if (div>20) {
-            if (size>c.size){
+            if (size>c.size) {
               c.dead = true;
               c.health=0;
               if (this.health>0) {
@@ -131,7 +134,6 @@ class critter extends creature {
           }
         }
       }
-        
     }
     pnx/=1000;
     pny/=1000;
@@ -145,7 +147,7 @@ class critter extends creature {
     neuron[] outputlayer = brain.layers[brain.layers.length-1].neurons;
     posx+=(outputlayer[0].output-0.5)*mm;
     posy+=(outputlayer[1].output-0.5)*mm;
-    if (outputlayer[2].output > 0.5){
+    if (outputlayer[2].output > 0.5) {
       reproduce();
     }
   }
@@ -154,9 +156,9 @@ class critter extends creature {
     noStroke();
     colorMode(HSB, 100, 100, 100);
     fill(col, c2, c3);
-    if (hatch>0){
-      
-    ellipse(centerX+posx/ratio, centerY+posy/ratio, size/ratio, size/ratio);
+    if (hatch>0) {
+
+      ellipse(centerX+posx/ratio, centerY+posy/ratio, size/ratio, size/ratio);
       return;
     }
     ellipse(centerX+posx/ratio, centerY+posy/ratio, size*2/ratio, size*2/ratio);

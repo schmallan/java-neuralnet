@@ -5,250 +5,91 @@ import java.util.Arrays;
 
 ArrayList<arrow> creatures = new ArrayList<>();
 
-int[] selected; //? what is this for?
+arrow selectedCreature = null;
+net selectedNet;
+int[] selectedNeuronIndex;
+neuron selectedn;
 
 int simSpeed = 1;
 boolean isPaused = false;
 int worldSize = 800;
-neuron selectedn;
 int centerX;
 int centerY;
-net selectedNet;
-arrow selectedCreature = null;
 float ratio = (float)worldSize/350;
+
 ArrayList<int[]> foods = new ArrayList<>();
 void setup() {
   namegen();
   size(1200, 600);
-  
+
   fullScreen();
 
   centerX = width/2+200;
   centerY = height/2;
-  
-  //spawnCreature();
-  
-  
-  for (int i = 0; i<30; i++){
-      foods.add(rpos());
+
+  for (int i = 0; i<30; i++) {
+    foods.add(rpos());
   }
-  
+  while (creatures.size()<30) {
+    spawnCreature();
+  }
 }
 
+void draw() {
 
-int f = 0; int f2 = 0;
-void draw(){
-
-
-  if(!isPaused){
-    for(int i = 0; i<simSpeed; i++){
+  if (!isPaused) {
+    for (int i = 0; i<simSpeed; i++) {
       simulationTick();
     }
   }
 
   renderTick();
   renderNetInfo();
-  
-
 }
 
 
 
-void renderTick(){
-  if (gt){
-    getTop();
-  }
-
-  background(#222222);
-
-  fill(255);
-
-  rectMode(CENTER);
-  noStroke();
-  fill(#FFFFFF);
-  rect(centerX,centerY,worldSize*2/ratio,worldSize*2/ratio);
-  if (selectedCreature!=null){
-  selectedCreature.brain.render();
-  }
-  for (int i = 0; i<creatures.size(); i++){
-    creature c = creatures.get(i);
-    c.render();
-    //};
-  }
- 
-  for (int i = 0; i<foods.size(); i++){
-    int[] c = foods.get(i);
-    fill(#FF00FF);
-    rect(centerX+c[0]/ratio,centerY+c[1]/ratio,3,3);
-    
-    //};
-  }
-
-  fill(255);
-  text("GENERATION: "+genNum+" time: "+(genTime-g),500,50);
-  
-}
-
-
-void newGen(){
+//spawns new generation
+void newGen() {
   genNum++;
 
+  //sort by biggest score
   creatures.sort(Collections.reverseOrder(Comparator.comparing(creature::getScore)));
   ArrayList<arrow> temp = new ArrayList<>();
 
-  while (creatures.size()<30){
-    spawnCreature();
-  }
+  int bracket1 = 10; //creatures in first bracket survive & reproduce
+  int bracket2 = 5; //creatures in second bracket survive
+  //everyone else dies.
 
-  for (int i = 0; i<10; i++){
+  for (int i = 0; i<bracket1; i++) {
     if (creatures.size()<=i) continue;
     arrow c = creatures.get(i);
     temp.add(c.reproduce());
     temp.add(c.reproduce());
   }
-  for (int i = 10; i<15; i++){
+  for (int i = bracket1; i<bracket1+bracket2; i++) {
     if (creatures.size()<=i) continue;
     arrow c = creatures.get(i);
     temp.add(c.reproduce());
   }
   creatures = temp;
   //println(creatures.size());
-  
-
-
 }
 
 int genNum = 0;
 int genTime = 2000;
-int g = 0;
-void simulationTick(){
-  f = (f+1)%30;
-  f2 = (f2+1)%50; 
-  g = (g+1)%genTime;
-  if (g==0){
+int currentTime = 0;
+void simulationTick() {
+  currentTime = (currentTime+1)%genTime;
+  if (currentTime==0) {
     newGen();
   }
 
-//  if (foods.size()<1){
-  //  foods.add(rpos());
- // }
- // foods.remove(0);
- // foods.add(new int[]{(int)((mouseX-centerX)*ratio),(int)((mouseY-centerY)*ratio)});
-  
-  if (f==0 & foods.size()<100){
-    
-      for (int i = 0; i<3; i++){
-      foods.add(rpos());
-        
-      }
-  }
-
- // if (creatures.size()<50) spawnCreature();
-  
-  //if(f2==0) spawnCreature();
-  
-  
-  for (int i = 0; i<creatures.size(); i++){
+  for (int i = 0; i<creatures.size(); i++) {
     creature c = creatures.get(i);
-
-    //println(c.name);
-    
-    //  print(c.dead);
     c.tick();
-    if (c.dead) {
-   //   println(c.dead);
-      creatures.remove(i); i--;}
-    
-    //};
-  }
-  
-}
-
-void renderNetInfo(){
-
-  colorMode(RGB);
-  strokeWeight(5);
-    textSize(30);
-    fill(255,255,255);
-  text("simSpeed: "+simSpeed+( (isPaused)?" (isPaused)":"" ),100,50);
-  if (selectedCreature==null) return;
-  if (selectedCreature.dead) selectedCreature = creatures.get(0);
-  
-  creatures.sort(Collections.reverseOrder(Comparator.comparing(creature::getScore)));
-
-    textSize(10);
-    String leaderboard = "";
-    for (int i = 0; i<10; i++){
-      if (i>=creatures.size()) break;
-      creature c = creatures.get(i);
-      leaderboard+="\n"+i+": "+c.name + " - "+c.score;
-    }
-    text(leaderboard,30,100);
-
-    textSize(30);
-
-    int cs = 50;
-  text(selectedCreature.name + "\n gen:"+selectedCreature.gen+" hp:" + selectedCreature.health + " \n age: "+selectedCreature.age+ " \n score: "+selectedCreature.score,100,100);
-  stroke(0,0,0);
-  fill(0,0,0,0);
-    ellipse(selectedCreature.posx/ratio+centerX, selectedCreature.posy/ratio+centerY, cs, cs);
-    stroke(255,0,0);
-    strokeWeight(3);
-    ellipse(selectedCreature.posx/ratio+centerX, selectedCreature.posy/ratio+centerY, cs, cs);
-   
-    
-  
-  if (selectedn==null) return;
-  if (selected==null) return;
-    
-  
-    strokeWeight(5);
-    stroke(255, 255, 0);
-    fill(0,0,0,100);
-    ellipse(selectedn.xpos, selectedn.ypos, circlesize, circlesize);
-    fill(0,0,0,0);
-    textSize(20);
-    String m = "";
-    m+= "Layer: "; m+=selected[0];
-    m+= "   Neuron no."; m+=selected[1];
-    m+= "\nBias: "; m+= selectedn.bias;
-    
-    m+= "\nWeighted Sum: "; m+= selectedn.wsum;
-    m+= "\nWeights:\n";
-    if (selected[0]==0){
-      m+="N/A (Input Neuron) \n";
-    }else{
-     float[] pl = selectedNet.weights[selected[0]-1][selected[1]];
-     int i = 0;
-     for (float w : pl){
-       m+= "n" + i + ": " + w + " * ";
-       m+=selectedNet.layers[selected[0]-1].neurons[i].output + "\n";
-       i++;
-     }
-    }
-    
-    m+= "Output: " + selectedn.output;
-    fill(#FFFFFF);
-    text(m , 50, selectedNet.ypos+150);
-  
-  }
-
-
-//selects the creature that you clicked on.
-void mousePressed() {
-  for (arrow c: creatures){
-    float d = sqrt(pow(((mouseX-c.posx/ratio)-centerX),2)+pow(((mouseY-c.posy/ratio)-centerY),2));
-    if (d<20) selectedCreature = c;
-    if (selectedCreature==null) return;
-    net n = selectedCreature.brain;
-    
-    selected = n.checkmouse(mouseX, mouseY);
-    
-    if (selected!=null){
-      selectedn = n.layers[selected[0]].neurons[selected[1]];
-      selectedNet=n;
-      return;
-    }
-    
+    if (c.dead){  creatures.remove(i);  i--;  }
   }
 }
+
+
