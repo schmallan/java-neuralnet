@@ -44,8 +44,13 @@ cmake_ninja_workdir = C$:/Users/ali-28/schmallan/java-neuralnet/selectivePressur
 
 build cmake_object_order_depends_target_selectivePressure: phony || .
 
-build CMakeFiles/selectivePressure.dir/selectivePressure.c.obj: C_COMPILER__selectivePressure_unscanned_ C$:/Users/ali-28/schmallan/java-neuralnet/selectivePressureCPP/selectivePressure.c || cmake_object_order_depends_target_selectivePressure
-  DEP_FILE = CMakeFiles\selectivePressure.dir\selectivePressure.c.obj.d
+build CMakeFiles/selectivePressure.dir/selectivePressure.C.obj: CXX_COMPILER__selectivePressure_unscanned_ C$:/Users/ali-28/schmallan/java-neuralnet/selectivePressureCPP/selectivePressure.C || cmake_object_order_depends_target_selectivePressure
+  DEP_FILE = CMakeFiles\selectivePressure.dir\selectivePressure.C.obj.d
+  OBJECT_DIR = CMakeFiles\selectivePressure.dir
+  OBJECT_FILE_DIR = CMakeFiles\selectivePressure.dir
+
+build CMakeFiles/selectivePressure.dir/helper.C.obj: CXX_COMPILER__selectivePressure_unscanned_ C$:/Users/ali-28/schmallan/java-neuralnet/selectivePressureCPP/helper.C || cmake_object_order_depends_target_selectivePressure
+  DEP_FILE = CMakeFiles\selectivePressure.dir\helper.C.obj.d
   OBJECT_DIR = CMakeFiles\selectivePressure.dir
   OBJECT_FILE_DIR = CMakeFiles\selectivePressure.dir
 
@@ -57,7 +62,7 @@ build CMakeFiles/selectivePressure.dir/selectivePressure.c.obj: C_COMPILER__sele
 #############################################
 # Link the executable selectivePressure.exe
 
-build selectivePressure.exe: C_EXECUTABLE_LINKER__selectivePressure_ CMakeFiles/selectivePressure.dir/selectivePressure.c.obj | C$:/msys64/ucrt64/lib/libSDL3.dll.a
+build selectivePressure.exe: CXX_EXECUTABLE_LINKER__selectivePressure_ CMakeFiles/selectivePressure.dir/selectivePressure.C.obj CMakeFiles/selectivePressure.dir/helper.C.obj | C$:/msys64/ucrt64/lib/libSDL3.dll.a
   LINK_LIBRARIES = C:/msys64/ucrt64/lib/libSDL3.dll.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\selectivePressure.dir
   POST_BUILD = cd .

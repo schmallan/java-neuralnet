@@ -7,7 +7,8 @@ add_executable(selectivePressure)
 
 target_sources(selectivePressure
 PRIVATE
-    selectivePressure.c
+    selectivePressure.C
+    helper.C
 )
 
 target_link_libraries(selectivePressure SDL3::SDL3)
