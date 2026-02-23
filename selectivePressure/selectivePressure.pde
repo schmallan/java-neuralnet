@@ -17,7 +17,15 @@ int centerX;
 int centerY;
 float ratio = (float)worldSize/350;
 
-ArrayList<int[]> foods = new ArrayList<>();
+int maxFood = 80;
+int[][] foods = new int[maxFood][2];
+int foodPointer = 0;
+void addFood(int[] in){
+  foods[foodPointer] = in;
+  foodPointer++;
+  foodPointer%=maxFood;
+}
+
 void setup() {
   namegen();
   size(1200, 600);
@@ -28,7 +36,7 @@ void setup() {
   centerY = height/2;
 
   for (int i = 0; i<30; i++) {
-    foods.add(rpos());
+    addFood(rpos());
   }
   while (creatures.size()<30) {
     spawnCreature();
@@ -36,17 +44,19 @@ void setup() {
 }
 
 void draw() {
+  
 
-  if (!isPaused) {
-    for (int i = 0; i<simSpeed; i++) {
-      simulationTick();
-    }
-  }
+  background(#000000);
 
+  renderInfo();
+  
   renderTick();
   renderNetInfo();
-}
 
+  if (!isPaused) for (int i = 0; i<simSpeed; i++) simulationTick();
+  
+
+}
 
 
 //spawns new generation
@@ -76,10 +86,18 @@ void newGen() {
   //println(creatures.size());
 }
 
+int ticksPerFood = 5;
+
 int genNum = 0;
 int genTime = 2000;
+
 int currentTime = 0;
+int foodtick;
 void simulationTick() {
+  foodtick++;
+  foodtick = foodtick%ticksPerFood;
+  if (foodtick==0) addFood(rpos());
+
   currentTime = (currentTime+1)%genTime;
   if (currentTime==0) {
     newGen();
@@ -88,8 +106,9 @@ void simulationTick() {
   for (int i = 0; i<creatures.size(); i++) {
     creature c = creatures.get(i);
     c.tick();
-    if (c.dead){  creatures.remove(i);  i--;  }
+    //if (c.dead){  creatures.remove(i);  i--;  }
   }
+
 }
 
 

@@ -14,7 +14,7 @@ class arrow extends creature {
 
   void rebrain() {
     name = namegen();
-    brain = new net(new int[]{4, 5, 2}, new String[]{"nx", "ny", "rot", "healthLeft"}, new String[]{"angleMov", "movSpeed"}, 130, 360);
+    brain = new net(new int[]{4, 5, 2}, new String[]{"nx", "ny", "rot", "healthLeft"}, new String[]{"angleMov", "movSpeed"}, 130, 460);
   }
 
 
@@ -36,8 +36,10 @@ class arrow extends creature {
     rot = rot%(PI+PI);
     //println(rot);
 
+    if (dead) return;
+
     if (health<=0) {
-      size = 5;
+      dead = true;
       return;
     }
     //if (health<=0){
@@ -60,10 +62,13 @@ class arrow extends creature {
     //  reproduce();
     //}
 
-    for (int i = 0; i<foods.size(); i++) {
-      int[] c = foods.get(i);
+    for (int i = 0; i<maxFood; i++) {
+      int[] c = foods[i];
+
+      if (c[0]==0&c[1]==0) continue;
+
       if (abs(posx-c[0])+abs(posy-c[1])<  size  ) {
-        foods.remove(i);
+        foods[i] = new int[]{0,0};
         score++;
         // foodsEaten+=1;
         //  health+=455;
@@ -76,7 +81,9 @@ class arrow extends creature {
     float ny = 0;
     int cd = 9999999;
     for (int[] f : foods) {
-
+      
+      if (f[0]==0&f[1]==0) continue;
+      
       int cont = (int)( abs(posx-f[0])+abs(posy-f[1]) );
       if (cont<cd) {
         cd=cont;
@@ -129,6 +136,7 @@ class arrow extends creature {
   void render() {
     noStroke();
     fill(col);
+    if(dead) fill(#CCCCCC);
 
     beginShape();
     vertTheta(rot+0, size);

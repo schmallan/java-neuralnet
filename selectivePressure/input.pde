@@ -56,16 +56,19 @@ void mousePressed() {
   for (arrow c : creatures) {
     float d = sqrt(pow(((mouseX-c.posx/ratio)-centerX), 2)+pow(((mouseY-c.posy/ratio)-centerY), 2));
     if (d<20) selectedCreature = c;
-    if (selectedCreature==null) return;
-    net n = selectedCreature.brain;
 
-    selectedNeuronIndex = n.checkmouse(mouseX, mouseY);
+    if (selectedCreature!=null){
+      net n = selectedCreature.brain;
 
-    if (selectedNeuronIndex!=null) {
-      selectedn = n.layers[selectedNeuronIndex[0]].neurons[selectedNeuronIndex[1]];
-      selectedNet=n;
-      return;
+      selectedNeuronIndex = n.checkmouse(mouseX, mouseY);
+
+      if (selectedNeuronIndex!=null) {
+        selectedn = n.layers[selectedNeuronIndex[0]].neurons[selectedNeuronIndex[1]];
+        selectedNet=n;
+        return;
+      }
     }
+    
   }
 }
 

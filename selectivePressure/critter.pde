@@ -47,7 +47,7 @@ class critter extends creature {
     println("braind");
     brain = new net(new int[]{5, 3},
       new String[]{"nearestX", "nearestY", "nearestppX", "nearestppY", "health"},
-      new String[]{"vX", "vY", "reproduce"}, 130, 360);
+      new String[]{"vX", "vY", "reproduce"}, 130, 460);
     name = namegen();
   }
 
@@ -84,10 +84,12 @@ class critter extends creature {
     //size = (int)sqrt(health/3);
 
     //EAT!!
-    for (int i = 0; i<foods.size(); i++) {
-      int[] c = foods.get(i);
+    for (int i = 0; i<maxFood; i++) {
+      int[] c = foods[i];
+      
+      if (c[0]==0&c[1]==0) continue;
       if (abs(posx-c[0])+abs(posy-c[1])<  size  ) {
-        foods.remove(i);
+        foods[i] = new int[]{0,0};
         health+=555;
       }
     }

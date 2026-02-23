@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 static int circlesize = 30;
 static int spacing = 70;
 static int sidespacing = 90;
@@ -263,8 +265,31 @@ class net {
 }
 
 float activationfunction(float x) {
-  //return x;
-  //return Math.max(0,x); // rectified linear
-  return (1/(1+exp(-(float)x))); //sigmoid function //sigma
+
+  return (1/(1+exp(-x)));
+  
 }
 
+/*
+float precision = 0.1;
+  //find closest P's
+  int p1 = (int)(x/precision);
+  if (p1>x) p1-=1;
+  int p2 = p1+1;
+
+  //println("x: "+x+" p1: "+p1+" p2: "+p2);
+
+  return memActivation(p1); //sigmoid function //sigma
+//HashMap<Integer,Float> funcV = new HashMap<Integer,Float>();
+Float[] t = new Float[1000];
+float memActivation(int x){
+  Float res = t[x+500]; //funcV.get(x);
+  if (res==null){
+    println("nv"+x);
+    res = (1/(1+exp(-(float)x*precision)));
+    t[x+500] = res;
+    //funcV.put(x,res);
+  }
+  return res;
+}
+*/

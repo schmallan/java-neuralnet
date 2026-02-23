@@ -2,9 +2,6 @@ void renderTick() {
   if (alwaysShowTop) {
     getTop();
   }
-
-  background(#222222);
-
   fill(255);
 
   rectMode(CENTER);
@@ -20,8 +17,10 @@ void renderTick() {
     //};
   }
 
-  for (int i = 0; i<foods.size(); i++) {
-    int[] c = foods.get(i);
+  for (int i = 0; i<maxFood; i++) {
+    int[] c = foods[i];
+    if (c[0]==0&c[1]==0) continue;
+
     fill(#FF00FF);
     rect(centerX+c[0]/ratio, centerY+c[1]/ratio, 3, 3);
 
@@ -29,26 +28,33 @@ void renderTick() {
   }
 }
 
+void renderInfo() {
+
+  colorMode(RGB);
+  strokeWeight(5);
+  textSize(30);
+  fill(#FFFFFF);
+
+    text("GENERATION: "+genNum+" time: "+(genTime-currentTime), 500, 50);
+    text("simSpeed: "+simSpeed+( (isPaused)?" (isPaused)":"" ), 100, 50);
+
+    showLeaderboard();
+}
+
 void renderNetInfo() { //renders information about the brain of selected creature
   colorMode(RGB);
   strokeWeight(5);
   textSize(30);
 
-
-  fill(255);
-  text("GENERATION: "+genNum+" time: "+(genTime-currentTime), 500, 50);
-
-  fill(255);
-  text("simSpeed: "+simSpeed+( (isPaused)?" (isPaused)":"" ), 100, 50);
-
   if (selectedCreature==null) return;
 
-  showLeaderboard();
 
   textSize(30);
 
+  fill(#FFFFFF);
   int cs = 50;
   text(selectedCreature.name + "\n gen:"+selectedCreature.gen+" hp:" + selectedCreature.health + " \n age: "+selectedCreature.age+ " \n score: "+selectedCreature.score, 100, 100);
+  
   stroke(0, 0, 0);
   fill(0, 0, 0, 0);
   ellipse(selectedCreature.posx/ratio+centerX, selectedCreature.posy/ratio+centerY, cs, cs);
@@ -108,4 +114,3 @@ void showLeaderboard() {
   }
   text(leaderboard, 30, 100);
 }
-

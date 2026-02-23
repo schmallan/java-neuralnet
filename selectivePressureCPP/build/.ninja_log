@@ -1,0 +1,5 @@
+# ninja log v7
+45	261	7935172352557806	CMakeFiles/hello.dir/hello.c.obj	7654e1a02b2fd01f
+263	544	7935172354738241	hello.exe	9382a21e19f4a0ac
+95	308	7935173561902809	CMakeFiles/selectivePressure.dir/selectivePressure.c.obj	1923faee60aadec4
+310	585	7935173564047130	selectivePressure.exe	c487c669c6e85348
