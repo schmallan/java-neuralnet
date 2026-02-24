@@ -7,6 +7,8 @@ extern int screenWidth;
 extern void rect(float x, float y, float w, float h);
 extern void worldRect(float x, float y, float w, float h);
 extern void fill(int r, int g, int b);
+extern void circle(float x, float y, float r);
+extern void angle2Vector(float *ptr,float angle,float mag);
 
 extern void setup();
 extern void draw();

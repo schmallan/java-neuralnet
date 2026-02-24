@@ -1,4 +1,50 @@
+#define _USE_MATH_DEFINES
 #include "headers.h"
+#include <math.h>
+
+void triangle(SDL_Vertex *vertices,float r, float g, float b){
+    for (int n = 0; n<3; n++){
+        vertices[n].color.r = r;
+        vertices[n].color.g = r;
+        vertices[n].color.b = r;
+    }
+    SDL_RenderGeometry(renderer,NULL,vertices,3,NULL,0);
+}
+void circle(float x, float y, float r){
+    const int points = 10;
+    
+    const float fracRad = M_PI*2/points;
+    for (int i = 0; i<points; i++){
+        int j = i+1;
+        if (j==points) j=0;
+        SDL_Vertex verts[points];
+        float vec[2];
+        angle2Vector(vec,fracRad*i,r);
+        float vec2[2];
+        angle2Vector(vec2,fracRad*j,r);
+        verts[0].position.x = vec[0]+x;
+        verts[0].position.y = vec[1]+y;
+        verts[1].position.x = vec2[0]+x;
+        verts[1].position.y = vec2[1]+y;
+        verts[2].position.x = x;
+        verts[2].position.y = y;
+        
+        //printf("i: %d, x: %f, y: %f\n",i,vec[0],vec[1]);
+        triangle(verts,1,1,1);
+
+    }
+
+};
+
+void angle2Vector(float *ptr,float angle,float mag){
+    float x = cos(angle);
+    float y = sin(angle);
+    x*=mag;
+    y*=mag;
+    ptr[0]=x;
+    ptr[1]=y;
+}
+
 
 void rect(float x, float y, float w, float h){
 

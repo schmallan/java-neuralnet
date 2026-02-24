@@ -12,6 +12,7 @@ PRIVATE
     render.C
     body.C
     world.C
+    neural.C
 )
 
 target_link_libraries(selectivePressure SDL3::SDL3)

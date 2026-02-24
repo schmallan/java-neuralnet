@@ -1,5 +1,6 @@
 #include "headers.h"
 #include <math.h>
+#include <SDL3/SDL_render.h>
 
 bool showInfoPanel = true;
 
@@ -20,7 +21,7 @@ void keyDown(int keyCode)
 
     char keyChar = (char)keyCode;
 
-    printf("Key: %c Keycode: %d\n", keyChar, keyCode);
+ //   printf("Key: %c Keycode: %d\n", keyChar, keyCode);
 
     switch (keyChar)
     {
@@ -76,8 +77,8 @@ void draw()
         fill(0, 0, 0);
         rect(0, 0, 500, screenHeight);
     }
-}
 
-void infopane()
-{
+    fill(0,255,0);
+    circle(200,200,50);
+
 }
