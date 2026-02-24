@@ -1,6 +1,7 @@
 #include <SDL3/SDL.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 extern int selectedNeuron[3];
 extern int screenHeight;

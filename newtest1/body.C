@@ -42,7 +42,7 @@ struct neuralNet mynet;
 void setup()
 {
     setupNet(&mynet);
-   // srand((unsigned)time(NULL));
+    srand((unsigned)time(NULL));
     infp();
 }
 

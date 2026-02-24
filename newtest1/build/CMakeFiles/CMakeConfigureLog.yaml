@@ -29,6 +29,7 @@ events:
       - "ninja"
       - "samu"
     candidate_directories:
+      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
@@ -39,7 +40,6 @@ events:
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/dotnet/"
       - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
       - "C:/msys64/usr/bin/"
       - "C:/msys64/ucrt64/bin/"
@@ -49,6 +49,15 @@ events:
       - "C:/Users/ali-28/AppData/Local/bin/NASM/"
       - "C:/Users/ali-28/schmallan/misc/batch/"
     searched_directories:
+      - "C:/Program Files/PowerShell/7/ninja-build.com"
+      - "C:/Program Files/PowerShell/7/ninja-build.exe"
+      - "C:/Program Files/PowerShell/7/ninja-build"
+      - "C:/Program Files/PowerShell/7/ninja.com"
+      - "C:/Program Files/PowerShell/7/ninja.exe"
+      - "C:/Program Files/PowerShell/7/ninja"
+      - "C:/Program Files/PowerShell/7/samu.com"
+      - "C:/Program Files/PowerShell/7/samu.exe"
+      - "C:/Program Files/PowerShell/7/samu"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/ninja-build.com"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/ninja-build.exe"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/ninja-build"
@@ -139,15 +148,6 @@ events:
       - "C:/Program Files/Git/cmd/samu.com"
       - "C:/Program Files/Git/cmd/samu.exe"
       - "C:/Program Files/Git/cmd/samu"
-      - "C:/Program Files/PowerShell/7/ninja-build.com"
-      - "C:/Program Files/PowerShell/7/ninja-build.exe"
-      - "C:/Program Files/PowerShell/7/ninja-build"
-      - "C:/Program Files/PowerShell/7/ninja.com"
-      - "C:/Program Files/PowerShell/7/ninja.exe"
-      - "C:/Program Files/PowerShell/7/ninja"
-      - "C:/Program Files/PowerShell/7/samu.com"
-      - "C:/Program Files/PowerShell/7/samu.exe"
-      - "C:/Program Files/PowerShell/7/samu"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/ninja-build.com"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/ninja-build.exe"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/ninja-build"
@@ -173,6 +173,7 @@ events:
     found: "C:/msys64/ucrt64/bin/ninja.exe"
     search_context:
       ENV{PATH}:
+        - "C:\\Program Files\\PowerShell\\7"
         - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin\\"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
@@ -219,6 +220,7 @@ events:
       - "icx"
       - "clang"
     candidate_directories:
+      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
@@ -229,7 +231,6 @@ events:
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/dotnet/"
       - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
       - "C:/msys64/usr/bin/"
       - "C:/msys64/ucrt64/bin/"
@@ -239,6 +240,27 @@ events:
       - "C:/Users/ali-28/AppData/Local/bin/NASM/"
       - "C:/Users/ali-28/schmallan/misc/batch/"
     searched_directories:
+      - "C:/Program Files/PowerShell/7/cc.com"
+      - "C:/Program Files/PowerShell/7/cc.exe"
+      - "C:/Program Files/PowerShell/7/cc"
+      - "C:/Program Files/PowerShell/7/gcc.com"
+      - "C:/Program Files/PowerShell/7/gcc.exe"
+      - "C:/Program Files/PowerShell/7/gcc"
+      - "C:/Program Files/PowerShell/7/cl.com"
+      - "C:/Program Files/PowerShell/7/cl.exe"
+      - "C:/Program Files/PowerShell/7/cl"
+      - "C:/Program Files/PowerShell/7/bcc.com"
+      - "C:/Program Files/PowerShell/7/bcc.exe"
+      - "C:/Program Files/PowerShell/7/bcc"
+      - "C:/Program Files/PowerShell/7/xlc.com"
+      - "C:/Program Files/PowerShell/7/xlc.exe"
+      - "C:/Program Files/PowerShell/7/xlc"
+      - "C:/Program Files/PowerShell/7/icx.com"
+      - "C:/Program Files/PowerShell/7/icx.exe"
+      - "C:/Program Files/PowerShell/7/icx"
+      - "C:/Program Files/PowerShell/7/clang.com"
+      - "C:/Program Files/PowerShell/7/clang.exe"
+      - "C:/Program Files/PowerShell/7/clang"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/cc.com"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/cc.exe"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/cc"
@@ -449,27 +471,6 @@ events:
       - "C:/Program Files/Git/cmd/clang.com"
       - "C:/Program Files/Git/cmd/clang.exe"
       - "C:/Program Files/Git/cmd/clang"
-      - "C:/Program Files/PowerShell/7/cc.com"
-      - "C:/Program Files/PowerShell/7/cc.exe"
-      - "C:/Program Files/PowerShell/7/cc"
-      - "C:/Program Files/PowerShell/7/gcc.com"
-      - "C:/Program Files/PowerShell/7/gcc.exe"
-      - "C:/Program Files/PowerShell/7/gcc"
-      - "C:/Program Files/PowerShell/7/cl.com"
-      - "C:/Program Files/PowerShell/7/cl.exe"
-      - "C:/Program Files/PowerShell/7/cl"
-      - "C:/Program Files/PowerShell/7/bcc.com"
-      - "C:/Program Files/PowerShell/7/bcc.exe"
-      - "C:/Program Files/PowerShell/7/bcc"
-      - "C:/Program Files/PowerShell/7/xlc.com"
-      - "C:/Program Files/PowerShell/7/xlc.exe"
-      - "C:/Program Files/PowerShell/7/xlc"
-      - "C:/Program Files/PowerShell/7/icx.com"
-      - "C:/Program Files/PowerShell/7/icx.exe"
-      - "C:/Program Files/PowerShell/7/icx"
-      - "C:/Program Files/PowerShell/7/clang.com"
-      - "C:/Program Files/PowerShell/7/clang.exe"
-      - "C:/Program Files/PowerShell/7/clang"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/cc.com"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/cc.exe"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/cc"
@@ -495,6 +496,7 @@ events:
     found: "C:/msys64/usr/bin/cc.exe"
     search_context:
       ENV{PATH}:
+        - "C:\\Program Files\\PowerShell\\7"
         - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin\\"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
@@ -542,6 +544,7 @@ events:
     found: "C:/msys64/ucrt64/share/cmake/Modules/CMakeCCompilerId.c.in"
     search_context:
       ENV{PATH}:
+        - "C:\\Program Files\\PowerShell\\7"
         - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin\\"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
@@ -582,7 +585,7 @@ events:
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
       
       The C compiler identification is GNU, found in:
-        C:/Users/ali-28/schmallan/java-neuralnet/selectivePressureCPP/build/CMakeFiles/4.1.0/CompilerIdC/a.exe
+        C:/Users/ali-28/schmallan/java-neuralnet/newtest1/build/CMakeFiles/4.1.0/CompilerIdC/a.exe
       
   -
     kind: "find-v1"
@@ -605,6 +608,7 @@ events:
       - "ar"
     candidate_directories:
       - "C:/msys64/usr/bin/"
+      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
@@ -615,7 +619,6 @@ events:
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/dotnet/"
       - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/ali-28/AppData/Local/Microsoft/WindowsApps/"
@@ -628,6 +631,7 @@ events:
     found: "C:/msys64/usr/bin/ar.exe"
     search_context:
       ENV{PATH}:
+        - "C:\\Program Files\\PowerShell\\7"
         - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin\\"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
@@ -669,6 +673,7 @@ events:
       - "ranlib"
     candidate_directories:
       - "C:/msys64/usr/bin/"
+      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
@@ -679,7 +684,6 @@ events:
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/dotnet/"
       - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/ali-28/AppData/Local/Microsoft/WindowsApps/"
@@ -692,6 +696,7 @@ events:
     found: "C:/msys64/usr/bin/ranlib.exe"
     search_context:
       ENV{PATH}:
+        - "C:\\Program Files\\PowerShell\\7"
         - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin\\"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
@@ -733,6 +738,7 @@ events:
       - "strip"
     candidate_directories:
       - "C:/msys64/usr/bin/"
+      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
@@ -743,7 +749,6 @@ events:
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/dotnet/"
       - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/ali-28/AppData/Local/Microsoft/WindowsApps/"
@@ -756,6 +761,7 @@ events:
     found: "C:/msys64/usr/bin/strip.exe"
     search_context:
       ENV{PATH}:
+        - "C:\\Program Files\\PowerShell\\7"
         - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin\\"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
@@ -797,6 +803,7 @@ events:
       - "ld"
     candidate_directories:
       - "C:/msys64/usr/bin/"
+      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
@@ -807,7 +814,6 @@ events:
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/dotnet/"
       - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/ali-28/AppData/Local/Microsoft/WindowsApps/"
@@ -820,6 +826,7 @@ events:
     found: "C:/msys64/usr/bin/ld.exe"
     search_context:
       ENV{PATH}:
+        - "C:\\Program Files\\PowerShell\\7"
         - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin\\"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
@@ -861,6 +868,7 @@ events:
       - "nm"
     candidate_directories:
       - "C:/msys64/usr/bin/"
+      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
@@ -871,7 +879,6 @@ events:
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/dotnet/"
       - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/ali-28/AppData/Local/Microsoft/WindowsApps/"
@@ -884,6 +891,7 @@ events:
     found: "C:/msys64/usr/bin/nm.exe"
     search_context:
       ENV{PATH}:
+        - "C:\\Program Files\\PowerShell\\7"
         - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin\\"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
@@ -925,6 +933,7 @@ events:
       - "objdump"
     candidate_directories:
       - "C:/msys64/usr/bin/"
+      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
@@ -935,7 +944,6 @@ events:
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/dotnet/"
       - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/ali-28/AppData/Local/Microsoft/WindowsApps/"
@@ -948,6 +956,7 @@ events:
     found: "C:/msys64/usr/bin/objdump.exe"
     search_context:
       ENV{PATH}:
+        - "C:\\Program Files\\PowerShell\\7"
         - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin\\"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
@@ -989,6 +998,7 @@ events:
       - "objcopy"
     candidate_directories:
       - "C:/msys64/usr/bin/"
+      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
@@ -999,7 +1009,6 @@ events:
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/dotnet/"
       - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/ali-28/AppData/Local/Microsoft/WindowsApps/"
@@ -1012,6 +1021,7 @@ events:
     found: "C:/msys64/usr/bin/objcopy.exe"
     search_context:
       ENV{PATH}:
+        - "C:\\Program Files\\PowerShell\\7"
         - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin\\"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
@@ -1053,6 +1063,7 @@ events:
       - "readelf"
     candidate_directories:
       - "C:/msys64/usr/bin/"
+      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
@@ -1063,7 +1074,6 @@ events:
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/dotnet/"
       - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/ali-28/AppData/Local/Microsoft/WindowsApps/"
@@ -1076,6 +1086,7 @@ events:
     found: "C:/msys64/usr/bin/readelf.exe"
     search_context:
       ENV{PATH}:
+        - "C:\\Program Files\\PowerShell\\7"
         - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin\\"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
@@ -1117,6 +1128,7 @@ events:
       - "dlltool"
     candidate_directories:
       - "C:/msys64/usr/bin/"
+      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
@@ -1127,7 +1139,6 @@ events:
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/dotnet/"
       - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/ali-28/AppData/Local/Microsoft/WindowsApps/"
@@ -1140,6 +1151,7 @@ events:
     found: "C:/msys64/usr/bin/dlltool.exe"
     search_context:
       ENV{PATH}:
+        - "C:\\Program Files\\PowerShell\\7"
         - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin\\"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
@@ -1181,6 +1193,7 @@ events:
       - "addr2line"
     candidate_directories:
       - "C:/msys64/usr/bin/"
+      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
@@ -1191,7 +1204,6 @@ events:
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/dotnet/"
       - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/ali-28/AppData/Local/Microsoft/WindowsApps/"
@@ -1204,6 +1216,7 @@ events:
     found: "C:/msys64/usr/bin/addr2line.exe"
     search_context:
       ENV{PATH}:
+        - "C:\\Program Files\\PowerShell\\7"
         - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin\\"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
@@ -1245,6 +1258,7 @@ events:
       - "tapi"
     candidate_directories:
       - "C:/msys64/usr/bin/"
+      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
@@ -1255,7 +1269,6 @@ events:
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/dotnet/"
       - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/ali-28/AppData/Local/Microsoft/WindowsApps/"
@@ -1267,6 +1280,9 @@ events:
       - "C:/msys64/usr/bin/tapi.com"
       - "C:/msys64/usr/bin/tapi.exe"
       - "C:/msys64/usr/bin/tapi"
+      - "C:/Program Files/PowerShell/7/tapi.com"
+      - "C:/Program Files/PowerShell/7/tapi.exe"
+      - "C:/Program Files/PowerShell/7/tapi"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/tapi.com"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/tapi.exe"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/tapi"
@@ -1297,9 +1313,6 @@ events:
       - "C:/Program Files/Git/cmd/tapi.com"
       - "C:/Program Files/Git/cmd/tapi.exe"
       - "C:/Program Files/Git/cmd/tapi"
-      - "C:/Program Files/PowerShell/7/tapi.com"
-      - "C:/Program Files/PowerShell/7/tapi.exe"
-      - "C:/Program Files/PowerShell/7/tapi"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/tapi.com"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/tapi.exe"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/tapi"
@@ -1324,6 +1337,7 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "C:\\Program Files\\PowerShell\\7"
         - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin\\"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
@@ -1368,6 +1382,7 @@ events:
       - "gcc-ar"
     candidate_directories:
       - "C:/msys64/usr/bin/"
+      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
@@ -1378,7 +1393,6 @@ events:
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/dotnet/"
       - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/ali-28/AppData/Local/Microsoft/WindowsApps/"
@@ -1390,6 +1404,9 @@ events:
       - "C:/msys64/usr/bin/gcc-ar-15.2.com"
       - "C:/msys64/usr/bin/gcc-ar-15.2.exe"
       - "C:/msys64/usr/bin/gcc-ar-15.2"
+      - "C:/Program Files/PowerShell/7/gcc-ar-15.2.com"
+      - "C:/Program Files/PowerShell/7/gcc-ar-15.2.exe"
+      - "C:/Program Files/PowerShell/7/gcc-ar-15.2"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ar-15.2.com"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ar-15.2.exe"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ar-15.2"
@@ -1420,9 +1437,6 @@ events:
       - "C:/Program Files/Git/cmd/gcc-ar-15.2.com"
       - "C:/Program Files/Git/cmd/gcc-ar-15.2.exe"
       - "C:/Program Files/Git/cmd/gcc-ar-15.2"
-      - "C:/Program Files/PowerShell/7/gcc-ar-15.2.com"
-      - "C:/Program Files/PowerShell/7/gcc-ar-15.2.exe"
-      - "C:/Program Files/PowerShell/7/gcc-ar-15.2"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar-15.2.com"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar-15.2.exe"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar-15.2"
@@ -1447,6 +1461,9 @@ events:
       - "C:/msys64/usr/bin/gcc-ar-15.com"
       - "C:/msys64/usr/bin/gcc-ar-15.exe"
       - "C:/msys64/usr/bin/gcc-ar-15"
+      - "C:/Program Files/PowerShell/7/gcc-ar-15.com"
+      - "C:/Program Files/PowerShell/7/gcc-ar-15.exe"
+      - "C:/Program Files/PowerShell/7/gcc-ar-15"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ar-15.com"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ar-15.exe"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ar-15"
@@ -1477,9 +1494,6 @@ events:
       - "C:/Program Files/Git/cmd/gcc-ar-15.com"
       - "C:/Program Files/Git/cmd/gcc-ar-15.exe"
       - "C:/Program Files/Git/cmd/gcc-ar-15"
-      - "C:/Program Files/PowerShell/7/gcc-ar-15.com"
-      - "C:/Program Files/PowerShell/7/gcc-ar-15.exe"
-      - "C:/Program Files/PowerShell/7/gcc-ar-15"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar-15.com"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar-15.exe"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar-15"
@@ -1504,6 +1518,9 @@ events:
       - "C:/msys64/usr/bin/gcc-ar15.com"
       - "C:/msys64/usr/bin/gcc-ar15.exe"
       - "C:/msys64/usr/bin/gcc-ar15"
+      - "C:/Program Files/PowerShell/7/gcc-ar15.com"
+      - "C:/Program Files/PowerShell/7/gcc-ar15.exe"
+      - "C:/Program Files/PowerShell/7/gcc-ar15"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ar15.com"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ar15.exe"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ar15"
@@ -1534,9 +1551,6 @@ events:
       - "C:/Program Files/Git/cmd/gcc-ar15.com"
       - "C:/Program Files/Git/cmd/gcc-ar15.exe"
       - "C:/Program Files/Git/cmd/gcc-ar15"
-      - "C:/Program Files/PowerShell/7/gcc-ar15.com"
-      - "C:/Program Files/PowerShell/7/gcc-ar15.exe"
-      - "C:/Program Files/PowerShell/7/gcc-ar15"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar15.com"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar15.exe"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar15"
@@ -1562,6 +1576,7 @@ events:
     found: "C:/msys64/usr/bin/gcc-ar.exe"
     search_context:
       ENV{PATH}:
+        - "C:\\Program Files\\PowerShell\\7"
         - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin\\"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
@@ -1606,6 +1621,7 @@ events:
       - "gcc-ranlib"
     candidate_directories:
       - "C:/msys64/usr/bin/"
+      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
@@ -1616,7 +1632,6 @@ events:
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/dotnet/"
       - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/ali-28/AppData/Local/Microsoft/WindowsApps/"
@@ -1628,6 +1643,9 @@ events:
       - "C:/msys64/usr/bin/gcc-ranlib-15.2.com"
       - "C:/msys64/usr/bin/gcc-ranlib-15.2.exe"
       - "C:/msys64/usr/bin/gcc-ranlib-15.2"
+      - "C:/Program Files/PowerShell/7/gcc-ranlib-15.2.com"
+      - "C:/Program Files/PowerShell/7/gcc-ranlib-15.2.exe"
+      - "C:/Program Files/PowerShell/7/gcc-ranlib-15.2"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ranlib-15.2.com"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ranlib-15.2.exe"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ranlib-15.2"
@@ -1658,9 +1676,6 @@ events:
       - "C:/Program Files/Git/cmd/gcc-ranlib-15.2.com"
       - "C:/Program Files/Git/cmd/gcc-ranlib-15.2.exe"
       - "C:/Program Files/Git/cmd/gcc-ranlib-15.2"
-      - "C:/Program Files/PowerShell/7/gcc-ranlib-15.2.com"
-      - "C:/Program Files/PowerShell/7/gcc-ranlib-15.2.exe"
-      - "C:/Program Files/PowerShell/7/gcc-ranlib-15.2"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib-15.2.com"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib-15.2.exe"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib-15.2"
@@ -1685,6 +1700,9 @@ events:
       - "C:/msys64/usr/bin/gcc-ranlib-15.com"
       - "C:/msys64/usr/bin/gcc-ranlib-15.exe"
       - "C:/msys64/usr/bin/gcc-ranlib-15"
+      - "C:/Program Files/PowerShell/7/gcc-ranlib-15.com"
+      - "C:/Program Files/PowerShell/7/gcc-ranlib-15.exe"
+      - "C:/Program Files/PowerShell/7/gcc-ranlib-15"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ranlib-15.com"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ranlib-15.exe"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ranlib-15"
@@ -1715,9 +1733,6 @@ events:
       - "C:/Program Files/Git/cmd/gcc-ranlib-15.com"
       - "C:/Program Files/Git/cmd/gcc-ranlib-15.exe"
       - "C:/Program Files/Git/cmd/gcc-ranlib-15"
-      - "C:/Program Files/PowerShell/7/gcc-ranlib-15.com"
-      - "C:/Program Files/PowerShell/7/gcc-ranlib-15.exe"
-      - "C:/Program Files/PowerShell/7/gcc-ranlib-15"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib-15.com"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib-15.exe"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib-15"
@@ -1742,6 +1757,9 @@ events:
       - "C:/msys64/usr/bin/gcc-ranlib15.com"
       - "C:/msys64/usr/bin/gcc-ranlib15.exe"
       - "C:/msys64/usr/bin/gcc-ranlib15"
+      - "C:/Program Files/PowerShell/7/gcc-ranlib15.com"
+      - "C:/Program Files/PowerShell/7/gcc-ranlib15.exe"
+      - "C:/Program Files/PowerShell/7/gcc-ranlib15"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ranlib15.com"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ranlib15.exe"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ranlib15"
@@ -1772,9 +1790,6 @@ events:
       - "C:/Program Files/Git/cmd/gcc-ranlib15.com"
       - "C:/Program Files/Git/cmd/gcc-ranlib15.exe"
       - "C:/Program Files/Git/cmd/gcc-ranlib15"
-      - "C:/Program Files/PowerShell/7/gcc-ranlib15.com"
-      - "C:/Program Files/PowerShell/7/gcc-ranlib15.exe"
-      - "C:/Program Files/PowerShell/7/gcc-ranlib15"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib15.com"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib15.exe"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib15"
@@ -1800,6 +1815,7 @@ events:
     found: "C:/msys64/usr/bin/gcc-ranlib.exe"
     search_context:
       ENV{PATH}:
+        - "C:\\Program Files\\PowerShell\\7"
         - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin\\"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
@@ -1851,6 +1867,7 @@ events:
     found: "C:/msys64/usr/bin/c++.exe"
     search_context:
       ENV{PATH}:
+        - "C:\\Program Files\\PowerShell\\7"
         - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin\\"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
@@ -1898,6 +1915,7 @@ events:
     found: "C:/msys64/ucrt64/share/cmake/Modules/CMakeCXXCompilerId.cpp.in"
     search_context:
       ENV{PATH}:
+        - "C:\\Program Files\\PowerShell\\7"
         - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin\\"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
@@ -1938,7 +1956,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
       
       The CXX compiler identification is GNU, found in:
-        C:/Users/ali-28/schmallan/java-neuralnet/selectivePressureCPP/build/CMakeFiles/4.1.0/CompilerIdCXX/a.exe
+        C:/Users/ali-28/schmallan/java-neuralnet/newtest1/build/CMakeFiles/4.1.0/CompilerIdCXX/a.exe
       
   -
     kind: "find-v1"
@@ -1964,6 +1982,7 @@ events:
       - "gcc-ar"
     candidate_directories:
       - "C:/msys64/usr/bin/"
+      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
@@ -1974,7 +1993,6 @@ events:
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/dotnet/"
       - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/ali-28/AppData/Local/Microsoft/WindowsApps/"
@@ -1986,6 +2004,9 @@ events:
       - "C:/msys64/usr/bin/gcc-ar-15.2.com"
       - "C:/msys64/usr/bin/gcc-ar-15.2.exe"
       - "C:/msys64/usr/bin/gcc-ar-15.2"
+      - "C:/Program Files/PowerShell/7/gcc-ar-15.2.com"
+      - "C:/Program Files/PowerShell/7/gcc-ar-15.2.exe"
+      - "C:/Program Files/PowerShell/7/gcc-ar-15.2"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ar-15.2.com"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ar-15.2.exe"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ar-15.2"
@@ -2016,9 +2037,6 @@ events:
       - "C:/Program Files/Git/cmd/gcc-ar-15.2.com"
       - "C:/Program Files/Git/cmd/gcc-ar-15.2.exe"
       - "C:/Program Files/Git/cmd/gcc-ar-15.2"
-      - "C:/Program Files/PowerShell/7/gcc-ar-15.2.com"
-      - "C:/Program Files/PowerShell/7/gcc-ar-15.2.exe"
-      - "C:/Program Files/PowerShell/7/gcc-ar-15.2"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar-15.2.com"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar-15.2.exe"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar-15.2"
@@ -2043,6 +2061,9 @@ events:
       - "C:/msys64/usr/bin/gcc-ar-15.com"
       - "C:/msys64/usr/bin/gcc-ar-15.exe"
       - "C:/msys64/usr/bin/gcc-ar-15"
+      - "C:/Program Files/PowerShell/7/gcc-ar-15.com"
+      - "C:/Program Files/PowerShell/7/gcc-ar-15.exe"
+      - "C:/Program Files/PowerShell/7/gcc-ar-15"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ar-15.com"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ar-15.exe"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ar-15"
@@ -2073,9 +2094,6 @@ events:
       - "C:/Program Files/Git/cmd/gcc-ar-15.com"
       - "C:/Program Files/Git/cmd/gcc-ar-15.exe"
       - "C:/Program Files/Git/cmd/gcc-ar-15"
-      - "C:/Program Files/PowerShell/7/gcc-ar-15.com"
-      - "C:/Program Files/PowerShell/7/gcc-ar-15.exe"
-      - "C:/Program Files/PowerShell/7/gcc-ar-15"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar-15.com"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar-15.exe"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar-15"
@@ -2100,6 +2118,9 @@ events:
       - "C:/msys64/usr/bin/gcc-ar15.com"
       - "C:/msys64/usr/bin/gcc-ar15.exe"
       - "C:/msys64/usr/bin/gcc-ar15"
+      - "C:/Program Files/PowerShell/7/gcc-ar15.com"
+      - "C:/Program Files/PowerShell/7/gcc-ar15.exe"
+      - "C:/Program Files/PowerShell/7/gcc-ar15"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ar15.com"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ar15.exe"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ar15"
@@ -2130,9 +2151,6 @@ events:
       - "C:/Program Files/Git/cmd/gcc-ar15.com"
       - "C:/Program Files/Git/cmd/gcc-ar15.exe"
       - "C:/Program Files/Git/cmd/gcc-ar15"
-      - "C:/Program Files/PowerShell/7/gcc-ar15.com"
-      - "C:/Program Files/PowerShell/7/gcc-ar15.exe"
-      - "C:/Program Files/PowerShell/7/gcc-ar15"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar15.com"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar15.exe"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar15"
@@ -2158,6 +2176,7 @@ events:
     found: "C:/msys64/usr/bin/gcc-ar.exe"
     search_context:
       ENV{PATH}:
+        - "C:\\Program Files\\PowerShell\\7"
         - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin\\"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
@@ -2202,6 +2221,7 @@ events:
       - "gcc-ranlib"
     candidate_directories:
       - "C:/msys64/usr/bin/"
+      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
@@ -2212,7 +2232,6 @@ events:
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/dotnet/"
       - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/ali-28/AppData/Local/Microsoft/WindowsApps/"
@@ -2224,6 +2243,9 @@ events:
       - "C:/msys64/usr/bin/gcc-ranlib-15.2.com"
       - "C:/msys64/usr/bin/gcc-ranlib-15.2.exe"
       - "C:/msys64/usr/bin/gcc-ranlib-15.2"
+      - "C:/Program Files/PowerShell/7/gcc-ranlib-15.2.com"
+      - "C:/Program Files/PowerShell/7/gcc-ranlib-15.2.exe"
+      - "C:/Program Files/PowerShell/7/gcc-ranlib-15.2"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ranlib-15.2.com"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ranlib-15.2.exe"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ranlib-15.2"
@@ -2254,9 +2276,6 @@ events:
       - "C:/Program Files/Git/cmd/gcc-ranlib-15.2.com"
       - "C:/Program Files/Git/cmd/gcc-ranlib-15.2.exe"
       - "C:/Program Files/Git/cmd/gcc-ranlib-15.2"
-      - "C:/Program Files/PowerShell/7/gcc-ranlib-15.2.com"
-      - "C:/Program Files/PowerShell/7/gcc-ranlib-15.2.exe"
-      - "C:/Program Files/PowerShell/7/gcc-ranlib-15.2"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib-15.2.com"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib-15.2.exe"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib-15.2"
@@ -2281,6 +2300,9 @@ events:
       - "C:/msys64/usr/bin/gcc-ranlib-15.com"
       - "C:/msys64/usr/bin/gcc-ranlib-15.exe"
       - "C:/msys64/usr/bin/gcc-ranlib-15"
+      - "C:/Program Files/PowerShell/7/gcc-ranlib-15.com"
+      - "C:/Program Files/PowerShell/7/gcc-ranlib-15.exe"
+      - "C:/Program Files/PowerShell/7/gcc-ranlib-15"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ranlib-15.com"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ranlib-15.exe"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ranlib-15"
@@ -2311,9 +2333,6 @@ events:
       - "C:/Program Files/Git/cmd/gcc-ranlib-15.com"
       - "C:/Program Files/Git/cmd/gcc-ranlib-15.exe"
       - "C:/Program Files/Git/cmd/gcc-ranlib-15"
-      - "C:/Program Files/PowerShell/7/gcc-ranlib-15.com"
-      - "C:/Program Files/PowerShell/7/gcc-ranlib-15.exe"
-      - "C:/Program Files/PowerShell/7/gcc-ranlib-15"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib-15.com"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib-15.exe"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib-15"
@@ -2338,6 +2357,9 @@ events:
       - "C:/msys64/usr/bin/gcc-ranlib15.com"
       - "C:/msys64/usr/bin/gcc-ranlib15.exe"
       - "C:/msys64/usr/bin/gcc-ranlib15"
+      - "C:/Program Files/PowerShell/7/gcc-ranlib15.com"
+      - "C:/Program Files/PowerShell/7/gcc-ranlib15.exe"
+      - "C:/Program Files/PowerShell/7/gcc-ranlib15"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ranlib15.com"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ranlib15.exe"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/gcc-ranlib15"
@@ -2368,9 +2390,6 @@ events:
       - "C:/Program Files/Git/cmd/gcc-ranlib15.com"
       - "C:/Program Files/Git/cmd/gcc-ranlib15.exe"
       - "C:/Program Files/Git/cmd/gcc-ranlib15"
-      - "C:/Program Files/PowerShell/7/gcc-ranlib15.com"
-      - "C:/Program Files/PowerShell/7/gcc-ranlib15.exe"
-      - "C:/Program Files/PowerShell/7/gcc-ranlib15"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib15.com"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib15.exe"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib15"
@@ -2396,6 +2415,7 @@ events:
     found: "C:/msys64/usr/bin/gcc-ranlib.exe"
     search_context:
       ENV{PATH}:
+        - "C:\\Program Files\\PowerShell\\7"
         - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin\\"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
@@ -2439,6 +2459,7 @@ events:
       - "windres"
       - "windres"
     candidate_directories:
+      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
@@ -2449,7 +2470,6 @@ events:
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/dotnet/"
       - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/PowerShell/7/"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
       - "C:/msys64/usr/bin/"
       - "C:/msys64/ucrt64/bin/"
@@ -2471,6 +2491,9 @@ events:
       - "C:/Program Files (x86)/selectivePressure/sbin/"
       - "C:/Program Files (x86)/selectivePressure/"
     searched_directories:
+      - "C:/Program Files/PowerShell/7/windres.com"
+      - "C:/Program Files/PowerShell/7/windres.exe"
+      - "C:/Program Files/PowerShell/7/windres"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/windres.com"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/windres.exe"
       - "C:/Program Files (x86)/VMware/VMware Workstation/bin/windres"
@@ -2501,9 +2524,6 @@ events:
       - "C:/Program Files/Git/cmd/windres.com"
       - "C:/Program Files/Git/cmd/windres.exe"
       - "C:/Program Files/Git/cmd/windres"
-      - "C:/Program Files/PowerShell/7/windres.com"
-      - "C:/Program Files/PowerShell/7/windres.exe"
-      - "C:/Program Files/PowerShell/7/windres"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/windres.com"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/windres.exe"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/windres"
@@ -2511,6 +2531,7 @@ events:
     found: "C:/msys64/usr/bin/windres.exe"
     search_context:
       ENV{PATH}:
+        - "C:\\Program Files\\PowerShell\\7"
         - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin\\"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
@@ -2546,8 +2567,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/ali-28/schmallan/java-neuralnet/selectivePressureCPP/build/CMakeFiles/CMakeScratch/TryCompile-94tave"
-      binary: "C:/Users/ali-28/schmallan/java-neuralnet/selectivePressureCPP/build/CMakeFiles/CMakeScratch/TryCompile-94tave"
+      source: "C:/Users/ali-28/schmallan/java-neuralnet/newtest1/build/CMakeFiles/CMakeScratch/TryCompile-qvp80r"
+      binary: "C:/Users/ali-28/schmallan/java-neuralnet/newtest1/build/CMakeFiles/CMakeScratch/TryCompile-qvp80r"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -2556,10 +2577,10 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/ali-28/schmallan/java-neuralnet/selectivePressureCPP/build/CMakeFiles/CMakeScratch/TryCompile-94tave'
+        Change Dir: 'C:/Users/ali-28/schmallan/java-neuralnet/newtest1/build/CMakeFiles/CMakeScratch/TryCompile-qvp80r'
         
-        Run Build Command(s): C:/msys64/ucrt64/bin/ninja.exe -v cmTC_422ce
-        [1/2] C:\\msys64\\usr\\bin\\cc.exe   -v -o CMakeFiles/cmTC_422ce.dir/CMakeCCompilerABI.c.obj -c C:/msys64/ucrt64/share/cmake/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): C:/msys64/ucrt64/bin/ninja.exe -v cmTC_c9fce
+        [1/2] C:\\msys64\\usr\\bin\\cc.exe   -v -o CMakeFiles/cmTC_c9fce.dir/CMakeCCompilerABI.c.obj -c C:/msys64/ucrt64/share/cmake/Modules/CMakeCCompilerABI.c
         Using built-in specs.
         COLLECT_GCC=/usr/bin/cc
         Target: x86_64-pc-cygwin
@@ -2567,8 +2588,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib
         gcc version 15.2.0 (GCC) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_422ce.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_422ce.dir/'
-         /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/cc1.exe -quiet -v -idirafter /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../include/w32api -idirafter /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/lib/../../include/w32api C:/msys64/ucrt64/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_422ce.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=nocona -version -o /c/Users/ali-28/AppData/Local/Temp/cc8KAMEI.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c9fce.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_c9fce.dir/'
+         /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/cc1.exe -quiet -v -idirafter /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../include/w32api -idirafter /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/lib/../../include/w32api C:/msys64/ucrt64/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_c9fce.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=nocona -version -o /c/Users/ali-28/AppData/Local/Temp/cciq6kEp.s
         GNU C23 (GCC) version 15.2.0 (x86_64-pc-cygwin)
         	compiled by GNU C version 15.2.0, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.3.1, isl version isl-0.27-GMP
         
@@ -2584,13 +2605,13 @@ events:
          /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../include/w32api
         End of search list.
         Compiler executable checksum: 3ed07188a841f49cd6e76fe450b88516
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_422ce.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_422ce.dir/'
-         /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/bin/as.exe -v -o CMakeFiles/cmTC_422ce.dir/CMakeCCompilerABI.c.obj /c/Users/ali-28/AppData/Local/Temp/cc8KAMEI.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c9fce.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_c9fce.dir/'
+         /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/bin/as.exe -v -o CMakeFiles/cmTC_c9fce.dir/CMakeCCompilerABI.c.obj /c/Users/ali-28/AppData/Local/Temp/cciq6kEp.s
         GNU assembler version 2.45 (x86_64-pc-cygwin) using BFD version (GNU Binutils) 2.45
         COMPILER_PATH=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/bin/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/lib/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_422ce.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_422ce.dir/CMakeCCompilerABI.c.'
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\msys64\\usr\\bin\\cc.exe  -v -Wl,-v CMakeFiles/cmTC_422ce.dir/CMakeCCompilerABI.c.obj -o cmTC_422ce.exe -Wl,--out-implib,libcmTC_422ce.dll.a -Wl,--major-image-version,0,--minor-image-version,0   && cd ."
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c9fce.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_c9fce.dir/CMakeCCompilerABI.c.'
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\msys64\\usr\\bin\\cc.exe  -v -Wl,-v CMakeFiles/cmTC_c9fce.dir/CMakeCCompilerABI.c.obj -o cmTC_c9fce.exe -Wl,--out-implib,libcmTC_c9fce.dll.a -Wl,--major-image-version,0,--minor-image-version,0   && cd ."
         Using built-in specs.
         COLLECT_GCC=/usr/bin/cc
         COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/lto-wrapper.exe
@@ -2601,12 +2622,12 @@ events:
         gcc version 15.2.0 (GCC) 
         COMPILER_PATH=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/bin/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/lib/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_422ce.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_422ce.'
-         /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/collect2.exe -plugin /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/msys-lto_plugin.dll -plugin-opt=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=/c/Users/ali-28/AppData/Local/Temp/cceRyN1g.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmsys-2.0 -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id -m i386pep --wrap _Znwm --wrap _Znam --wrap _ZdlPv --wrap _ZdaPv --wrap _ZnwmRKSt9nothrow_t --wrap _ZnamRKSt9nothrow_t --wrap _ZdlPvRKSt9nothrow_t --wrap _ZdaPvRKSt9nothrow_t -Bdynamic --dll-search-prefix=msys- --tsaware -o cmTC_422ce.exe /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../crt0.o /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtbegin.o -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0 -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/lib -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../.. -L/usr/lib -v CMakeFiles/cmTC_422ce.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_422ce.dll.a --major-image-version 0 --minor-image-version 0 -lgcc_s -lgcc -lmsys-2.0 -ladvapi32 -lshell32 -luser32 -lkernel32 -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../default-manifest.o /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtend.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c9fce.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_c9fce.'
+         /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/collect2.exe -plugin /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/msys-lto_plugin.dll -plugin-opt=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=/c/Users/ali-28/AppData/Local/Temp/ccDTWwoB.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmsys-2.0 -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id -m i386pep --wrap _Znwm --wrap _Znam --wrap _ZdlPv --wrap _ZdaPv --wrap _ZnwmRKSt9nothrow_t --wrap _ZnamRKSt9nothrow_t --wrap _ZdlPvRKSt9nothrow_t --wrap _ZdaPvRKSt9nothrow_t -Bdynamic --dll-search-prefix=msys- --tsaware -o cmTC_c9fce.exe /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../crt0.o /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtbegin.o -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0 -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/lib -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../.. -L/usr/lib -v CMakeFiles/cmTC_c9fce.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_c9fce.dll.a --major-image-version 0 --minor-image-version 0 -lgcc_s -lgcc -lmsys-2.0 -ladvapi32 -lshell32 -luser32 -lkernel32 -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../default-manifest.o /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtend.o
         collect2 version 15.2.0
-        /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/bin/ld -plugin /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/msys-lto_plugin.dll -plugin-opt=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=/c/Users/ali-28/AppData/Local/Temp/cceRyN1g.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmsys-2.0 -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id -m i386pep --wrap _Znwm --wrap _Znam --wrap _ZdlPv --wrap _ZdaPv --wrap _ZnwmRKSt9nothrow_t --wrap _ZnamRKSt9nothrow_t --wrap _ZdlPvRKSt9nothrow_t --wrap _ZdaPvRKSt9nothrow_t -Bdynamic --dll-search-prefix=msys- --tsaware -o cmTC_422ce.exe /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../crt0.o /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtbegin.o -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0 -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/lib -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../.. -L/usr/lib -v CMakeFiles/cmTC_422ce.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_422ce.dll.a --major-image-version 0 --minor-image-version 0 -lgcc_s -lgcc -lmsys-2.0 -ladvapi32 -lshell32 -luser32 -lkernel32 -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../default-manifest.o /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtend.o
+        /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/bin/ld -plugin /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/msys-lto_plugin.dll -plugin-opt=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=/c/Users/ali-28/AppData/Local/Temp/ccDTWwoB.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmsys-2.0 -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id -m i386pep --wrap _Znwm --wrap _Znam --wrap _ZdlPv --wrap _ZdaPv --wrap _ZnwmRKSt9nothrow_t --wrap _ZnamRKSt9nothrow_t --wrap _ZdlPvRKSt9nothrow_t --wrap _ZdaPvRKSt9nothrow_t -Bdynamic --dll-search-prefix=msys- --tsaware -o cmTC_c9fce.exe /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../crt0.o /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtbegin.o -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0 -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/lib -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../.. -L/usr/lib -v CMakeFiles/cmTC_c9fce.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_c9fce.dll.a --major-image-version 0 --minor-image-version 0 -lgcc_s -lgcc -lmsys-2.0 -ladvapi32 -lshell32 -luser32 -lkernel32 -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../default-manifest.o /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtend.o
         GNU ld (GNU Binutils) 2.45
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_422ce.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_422ce.'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c9fce.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_c9fce.'
         
       exitCode: 0
   -
@@ -2641,10 +2662,10 @@ events:
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: 'C:/Users/ali-28/schmallan/java-neuralnet/selectivePressureCPP/build/CMakeFiles/CMakeScratch/TryCompile-94tave']
+        ignore line: [Change Dir: 'C:/Users/ali-28/schmallan/java-neuralnet/newtest1/build/CMakeFiles/CMakeScratch/TryCompile-qvp80r']
         ignore line: []
-        ignore line: [Run Build Command(s): C:/msys64/ucrt64/bin/ninja.exe -v cmTC_422ce]
-        ignore line: [[1/2] C:\\msys64\\usr\\bin\\cc.exe   -v -o CMakeFiles/cmTC_422ce.dir/CMakeCCompilerABI.c.obj -c C:/msys64/ucrt64/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): C:/msys64/ucrt64/bin/ninja.exe -v cmTC_c9fce]
+        ignore line: [[1/2] C:\\msys64\\usr\\bin\\cc.exe   -v -o CMakeFiles/cmTC_c9fce.dir/CMakeCCompilerABI.c.obj -c C:/msys64/ucrt64/share/cmake/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/cc]
         ignore line: [Target: x86_64-pc-cygwin]
@@ -2652,8 +2673,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib]
         ignore line: [gcc version 15.2.0 (GCC) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_422ce.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_422ce.dir/']
-        ignore line: [ /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/cc1.exe -quiet -v -idirafter /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../include/w32api -idirafter /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/lib/../../include/w32api C:/msys64/ucrt64/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_422ce.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=nocona -version -o /c/Users/ali-28/AppData/Local/Temp/cc8KAMEI.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c9fce.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_c9fce.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/cc1.exe -quiet -v -idirafter /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../include/w32api -idirafter /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/lib/../../include/w32api C:/msys64/ucrt64/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_c9fce.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=nocona -version -o /c/Users/ali-28/AppData/Local/Temp/cciq6kEp.s]
         ignore line: [GNU C23 (GCC) version 15.2.0 (x86_64-pc-cygwin)]
         ignore line: [	compiled by GNU C version 15.2.0  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.3.1  isl version isl-0.27-GMP]
         ignore line: []
@@ -2669,13 +2690,13 @@ events:
         ignore line: [ /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../include/w32api]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 3ed07188a841f49cd6e76fe450b88516]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_422ce.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_422ce.dir/']
-        ignore line: [ /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/bin/as.exe -v -o CMakeFiles/cmTC_422ce.dir/CMakeCCompilerABI.c.obj /c/Users/ali-28/AppData/Local/Temp/cc8KAMEI.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c9fce.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_c9fce.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/bin/as.exe -v -o CMakeFiles/cmTC_c9fce.dir/CMakeCCompilerABI.c.obj /c/Users/ali-28/AppData/Local/Temp/cciq6kEp.s]
         ignore line: [GNU assembler version 2.45 (x86_64-pc-cygwin) using BFD version (GNU Binutils) 2.45]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/bin/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/lib/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_422ce.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_422ce.dir/CMakeCCompilerABI.c.']
-        ignore line: [[2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\msys64\\usr\\bin\\cc.exe  -v -Wl -v CMakeFiles/cmTC_422ce.dir/CMakeCCompilerABI.c.obj -o cmTC_422ce.exe -Wl --out-implib libcmTC_422ce.dll.a -Wl --major-image-version 0 --minor-image-version 0   && cd ."]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c9fce.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_c9fce.dir/CMakeCCompilerABI.c.']
+        ignore line: [[2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\msys64\\usr\\bin\\cc.exe  -v -Wl -v CMakeFiles/cmTC_c9fce.dir/CMakeCCompilerABI.c.obj -o cmTC_c9fce.exe -Wl --out-implib libcmTC_c9fce.dll.a -Wl --major-image-version 0 --minor-image-version 0   && cd ."]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/cc]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/lto-wrapper.exe]
@@ -2686,13 +2707,13 @@ events:
         ignore line: [gcc version 15.2.0 (GCC) ]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/bin/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/lib/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_422ce.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_422ce.']
-        link line: [ /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/collect2.exe -plugin /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/msys-lto_plugin.dll -plugin-opt=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=/c/Users/ali-28/AppData/Local/Temp/cceRyN1g.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmsys-2.0 -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id -m i386pep --wrap _Znwm --wrap _Znam --wrap _ZdlPv --wrap _ZdaPv --wrap _ZnwmRKSt9nothrow_t --wrap _ZnamRKSt9nothrow_t --wrap _ZdlPvRKSt9nothrow_t --wrap _ZdaPvRKSt9nothrow_t -Bdynamic --dll-search-prefix=msys- --tsaware -o cmTC_422ce.exe /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../crt0.o /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtbegin.o -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0 -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/lib -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../.. -L/usr/lib -v CMakeFiles/cmTC_422ce.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_422ce.dll.a --major-image-version 0 --minor-image-version 0 -lgcc_s -lgcc -lmsys-2.0 -ladvapi32 -lshell32 -luser32 -lkernel32 -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../default-manifest.o /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtend.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c9fce.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_c9fce.']
+        link line: [ /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/collect2.exe -plugin /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/msys-lto_plugin.dll -plugin-opt=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=/c/Users/ali-28/AppData/Local/Temp/ccDTWwoB.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmsys-2.0 -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id -m i386pep --wrap _Znwm --wrap _Znam --wrap _ZdlPv --wrap _ZdaPv --wrap _ZnwmRKSt9nothrow_t --wrap _ZnamRKSt9nothrow_t --wrap _ZdlPvRKSt9nothrow_t --wrap _ZdaPvRKSt9nothrow_t -Bdynamic --dll-search-prefix=msys- --tsaware -o cmTC_c9fce.exe /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../crt0.o /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtbegin.o -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0 -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/lib -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../.. -L/usr/lib -v CMakeFiles/cmTC_c9fce.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_c9fce.dll.a --major-image-version 0 --minor-image-version 0 -lgcc_s -lgcc -lmsys-2.0 -ladvapi32 -lshell32 -luser32 -lkernel32 -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../default-manifest.o /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtend.o]
           arg [/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/collect2.exe] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/msys-lto_plugin.dll] ==> ignore
           arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/lto-wrapper.exe] ==> ignore
-          arg [-plugin-opt=-fresolution=/c/Users/ali-28/AppData/Local/Temp/cceRyN1g.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/c/Users/ali-28/AppData/Local/Temp/ccDTWwoB.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lmsys-2.0] ==> ignore
@@ -2725,7 +2746,7 @@ events:
           arg [--dll-search-prefix=msys-] ==> ignore
           arg [--tsaware] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_422ce.exe] ==> ignore
+          arg [cmTC_c9fce.exe] ==> ignore
           arg [/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../crt0.o] ==> obj [/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../crt0.o]
           arg [/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtbegin.o] ==> obj [/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtbegin.o]
           arg [-L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0] ==> dir [/usr/lib/gcc/x86_64-pc-cygwin/15.2.0]
@@ -2733,9 +2754,9 @@ events:
           arg [-L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../..]
           arg [-L/usr/lib] ==> dir [/usr/lib]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_422ce.dir/CMakeCCompilerABI.c.obj] ==> ignore
+          arg [CMakeFiles/cmTC_c9fce.dir/CMakeCCompilerABI.c.obj] ==> ignore
           arg [--out-implib] ==> ignore
-          arg [libcmTC_422ce.dll.a] ==> ignore
+          arg [libcmTC_c9fce.dll.a] ==> ignore
           arg [--major-image-version] ==> ignore
           arg [0] ==> ignore
           arg [--minor-image-version] ==> ignore
@@ -2752,7 +2773,7 @@ events:
           arg [/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../default-manifest.o] ==> obj [/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../default-manifest.o]
           arg [/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtend.o] ==> obj [/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtend.o]
         ignore line: [collect2 version 15.2.0]
-        ignore line: [/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/bin/ld -plugin /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/msys-lto_plugin.dll -plugin-opt=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=/c/Users/ali-28/AppData/Local/Temp/cceRyN1g.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmsys-2.0 -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id -m i386pep --wrap _Znwm --wrap _Znam --wrap _ZdlPv --wrap _ZdaPv --wrap _ZnwmRKSt9nothrow_t --wrap _ZnamRKSt9nothrow_t --wrap _ZdlPvRKSt9nothrow_t --wrap _ZdaPvRKSt9nothrow_t -Bdynamic --dll-search-prefix=msys- --tsaware -o cmTC_422ce.exe /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../crt0.o /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtbegin.o -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0 -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/lib -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../.. -L/usr/lib -v CMakeFiles/cmTC_422ce.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_422ce.dll.a --major-image-version 0 --minor-image-version 0 -lgcc_s -lgcc -lmsys-2.0 -ladvapi32 -lshell32 -luser32 -lkernel32 -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../default-manifest.o /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtend.o]
+        ignore line: [/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/bin/ld -plugin /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/msys-lto_plugin.dll -plugin-opt=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=/c/Users/ali-28/AppData/Local/Temp/ccDTWwoB.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmsys-2.0 -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id -m i386pep --wrap _Znwm --wrap _Znam --wrap _ZdlPv --wrap _ZdaPv --wrap _ZnwmRKSt9nothrow_t --wrap _ZnamRKSt9nothrow_t --wrap _ZdlPvRKSt9nothrow_t --wrap _ZdaPvRKSt9nothrow_t -Bdynamic --dll-search-prefix=msys- --tsaware -o cmTC_c9fce.exe /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../crt0.o /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtbegin.o -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0 -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/lib -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../.. -L/usr/lib -v CMakeFiles/cmTC_c9fce.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_c9fce.dll.a --major-image-version 0 --minor-image-version 0 -lgcc_s -lgcc -lmsys-2.0 -ladvapi32 -lshell32 -luser32 -lkernel32 -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../default-manifest.o /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtend.o]
         linker tool for 'C': /usr/x86_64-pc-cygwin/bin/ld
         collapse obj [/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../crt0.o] ==> [/usr/lib/crt0.o]
         collapse obj [/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../default-manifest.o] ==> [/usr/lib/default-manifest.o]
@@ -2805,8 +2826,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/ali-28/schmallan/java-neuralnet/selectivePressureCPP/build/CMakeFiles/CMakeScratch/TryCompile-q24euk"
-      binary: "C:/Users/ali-28/schmallan/java-neuralnet/selectivePressureCPP/build/CMakeFiles/CMakeScratch/TryCompile-q24euk"
+      source: "C:/Users/ali-28/schmallan/java-neuralnet/newtest1/build/CMakeFiles/CMakeScratch/TryCompile-r46e1p"
+      binary: "C:/Users/ali-28/schmallan/java-neuralnet/newtest1/build/CMakeFiles/CMakeScratch/TryCompile-r46e1p"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -2816,10 +2837,10 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/ali-28/schmallan/java-neuralnet/selectivePressureCPP/build/CMakeFiles/CMakeScratch/TryCompile-q24euk'
+        Change Dir: 'C:/Users/ali-28/schmallan/java-neuralnet/newtest1/build/CMakeFiles/CMakeScratch/TryCompile-r46e1p'
         
-        Run Build Command(s): C:/msys64/ucrt64/bin/ninja.exe -v cmTC_a4a78
-        [1/2] C:\\msys64\\usr\\bin\\c++.exe   -v -o CMakeFiles/cmTC_a4a78.dir/CMakeCXXCompilerABI.cpp.obj -c C:/msys64/ucrt64/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): C:/msys64/ucrt64/bin/ninja.exe -v cmTC_98c9f
+        [1/2] C:\\msys64\\usr\\bin\\c++.exe   -v -o CMakeFiles/cmTC_98c9f.dir/CMakeCXXCompilerABI.cpp.obj -c C:/msys64/ucrt64/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         Target: x86_64-pc-cygwin
@@ -2827,8 +2848,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib
         gcc version 15.2.0 (GCC) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a4a78.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_a4a78.dir/'
-         /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/cc1plus.exe -quiet -v -idirafter /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../include/w32api -idirafter /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/lib/../../include/w32api C:/msys64/ucrt64/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_a4a78.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=nocona -version -o /c/Users/ali-28/AppData/Local/Temp/ccNIQM9D.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_98c9f.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_98c9f.dir/'
+         /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/cc1plus.exe -quiet -v -idirafter /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../include/w32api -idirafter /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/lib/../../include/w32api C:/msys64/ucrt64/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_98c9f.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=nocona -version -o /c/Users/ali-28/AppData/Local/Temp/ccHImDYB.s
         GNU C++17 (GCC) version 15.2.0 (x86_64-pc-cygwin)
         	compiled by GNU C version 15.2.0, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.3.1, isl version isl-0.27-GMP
         
@@ -2847,13 +2868,13 @@ events:
          /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../include/w32api
         End of search list.
         Compiler executable checksum: 3a9cd7496f053e16c42169824ef6e47b
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a4a78.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_a4a78.dir/'
-         /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/bin/as.exe -v -o CMakeFiles/cmTC_a4a78.dir/CMakeCXXCompilerABI.cpp.obj /c/Users/ali-28/AppData/Local/Temp/ccNIQM9D.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_98c9f.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_98c9f.dir/'
+         /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/bin/as.exe -v -o CMakeFiles/cmTC_98c9f.dir/CMakeCXXCompilerABI.cpp.obj /c/Users/ali-28/AppData/Local/Temp/ccHImDYB.s
         GNU assembler version 2.45 (x86_64-pc-cygwin) using BFD version (GNU Binutils) 2.45
         COMPILER_PATH=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/bin/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/lib/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a4a78.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_a4a78.dir/CMakeCXXCompilerABI.cpp.'
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\msys64\\usr\\bin\\c++.exe  -v -Wl,-v CMakeFiles/cmTC_a4a78.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_a4a78.exe -Wl,--out-implib,libcmTC_a4a78.dll.a -Wl,--major-image-version,0,--minor-image-version,0   && cd ."
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_98c9f.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_98c9f.dir/CMakeCXXCompilerABI.cpp.'
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\msys64\\usr\\bin\\c++.exe  -v -Wl,-v CMakeFiles/cmTC_98c9f.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_98c9f.exe -Wl,--out-implib,libcmTC_98c9f.dll.a -Wl,--major-image-version,0,--minor-image-version,0   && cd ."
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/lto-wrapper.exe
@@ -2864,12 +2885,12 @@ events:
         gcc version 15.2.0 (GCC) 
         COMPILER_PATH=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/bin/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/lib/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a4a78.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_a4a78.'
-         /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/collect2.exe -plugin /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/msys-lto_plugin.dll -plugin-opt=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=/c/Users/ali-28/AppData/Local/Temp/ccwJ15BH.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmsys-2.0 -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id -m i386pep --wrap _Znwm --wrap _Znam --wrap _ZdlPv --wrap _ZdaPv --wrap _ZnwmRKSt9nothrow_t --wrap _ZnamRKSt9nothrow_t --wrap _ZdlPvRKSt9nothrow_t --wrap _ZdaPvRKSt9nothrow_t -Bdynamic --dll-search-prefix=msys- --tsaware -o cmTC_a4a78.exe /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../crt0.o /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtbegin.o -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0 -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/lib -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../.. -L/usr/lib -v CMakeFiles/cmTC_a4a78.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_a4a78.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lgcc_s -lgcc -lmsys-2.0 -ladvapi32 -lshell32 -luser32 -lkernel32 -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../default-manifest.o /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtend.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_98c9f.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_98c9f.'
+         /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/collect2.exe -plugin /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/msys-lto_plugin.dll -plugin-opt=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=/c/Users/ali-28/AppData/Local/Temp/cctzisMB.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmsys-2.0 -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id -m i386pep --wrap _Znwm --wrap _Znam --wrap _ZdlPv --wrap _ZdaPv --wrap _ZnwmRKSt9nothrow_t --wrap _ZnamRKSt9nothrow_t --wrap _ZdlPvRKSt9nothrow_t --wrap _ZdaPvRKSt9nothrow_t -Bdynamic --dll-search-prefix=msys- --tsaware -o cmTC_98c9f.exe /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../crt0.o /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtbegin.o -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0 -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/lib -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../.. -L/usr/lib -v CMakeFiles/cmTC_98c9f.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_98c9f.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lgcc_s -lgcc -lmsys-2.0 -ladvapi32 -lshell32 -luser32 -lkernel32 -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../default-manifest.o /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtend.o
         collect2 version 15.2.0
-        /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/bin/ld -plugin /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/msys-lto_plugin.dll -plugin-opt=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=/c/Users/ali-28/AppData/Local/Temp/ccwJ15BH.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmsys-2.0 -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id -m i386pep --wrap _Znwm --wrap _Znam --wrap _ZdlPv --wrap _ZdaPv --wrap _ZnwmRKSt9nothrow_t --wrap _ZnamRKSt9nothrow_t --wrap _ZdlPvRKSt9nothrow_t --wrap _ZdaPvRKSt9nothrow_t -Bdynamic --dll-search-prefix=msys- --tsaware -o cmTC_a4a78.exe /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../crt0.o /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtbegin.o -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0 -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/lib -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../.. -L/usr/lib -v CMakeFiles/cmTC_a4a78.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_a4a78.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lgcc_s -lgcc -lmsys-2.0 -ladvapi32 -lshell32 -luser32 -lkernel32 -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../default-manifest.o /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtend.o
+        /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/bin/ld -plugin /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/msys-lto_plugin.dll -plugin-opt=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=/c/Users/ali-28/AppData/Local/Temp/cctzisMB.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmsys-2.0 -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id -m i386pep --wrap _Znwm --wrap _Znam --wrap _ZdlPv --wrap _ZdaPv --wrap _ZnwmRKSt9nothrow_t --wrap _ZnamRKSt9nothrow_t --wrap _ZdlPvRKSt9nothrow_t --wrap _ZdaPvRKSt9nothrow_t -Bdynamic --dll-search-prefix=msys- --tsaware -o cmTC_98c9f.exe /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../crt0.o /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtbegin.o -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0 -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/lib -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../.. -L/usr/lib -v CMakeFiles/cmTC_98c9f.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_98c9f.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lgcc_s -lgcc -lmsys-2.0 -ladvapi32 -lshell32 -luser32 -lkernel32 -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../default-manifest.o /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtend.o
         GNU ld (GNU Binutils) 2.45
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a4a78.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_a4a78.'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_98c9f.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_98c9f.'
         
       exitCode: 0
   -
@@ -2910,10 +2931,10 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: 'C:/Users/ali-28/schmallan/java-neuralnet/selectivePressureCPP/build/CMakeFiles/CMakeScratch/TryCompile-q24euk']
+        ignore line: [Change Dir: 'C:/Users/ali-28/schmallan/java-neuralnet/newtest1/build/CMakeFiles/CMakeScratch/TryCompile-r46e1p']
         ignore line: []
-        ignore line: [Run Build Command(s): C:/msys64/ucrt64/bin/ninja.exe -v cmTC_a4a78]
-        ignore line: [[1/2] C:\\msys64\\usr\\bin\\c++.exe   -v -o CMakeFiles/cmTC_a4a78.dir/CMakeCXXCompilerABI.cpp.obj -c C:/msys64/ucrt64/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): C:/msys64/ucrt64/bin/ninja.exe -v cmTC_98c9f]
+        ignore line: [[1/2] C:\\msys64\\usr\\bin\\c++.exe   -v -o CMakeFiles/cmTC_98c9f.dir/CMakeCXXCompilerABI.cpp.obj -c C:/msys64/ucrt64/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [Target: x86_64-pc-cygwin]
@@ -2921,8 +2942,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib]
         ignore line: [gcc version 15.2.0 (GCC) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a4a78.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_a4a78.dir/']
-        ignore line: [ /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/cc1plus.exe -quiet -v -idirafter /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../include/w32api -idirafter /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/lib/../../include/w32api C:/msys64/ucrt64/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_a4a78.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=nocona -version -o /c/Users/ali-28/AppData/Local/Temp/ccNIQM9D.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_98c9f.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_98c9f.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/cc1plus.exe -quiet -v -idirafter /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../include/w32api -idirafter /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/lib/../../include/w32api C:/msys64/ucrt64/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_98c9f.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=nocona -version -o /c/Users/ali-28/AppData/Local/Temp/ccHImDYB.s]
         ignore line: [GNU C++17 (GCC) version 15.2.0 (x86_64-pc-cygwin)]
         ignore line: [	compiled by GNU C version 15.2.0  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.3.1  isl version isl-0.27-GMP]
         ignore line: []
@@ -2941,13 +2962,13 @@ events:
         ignore line: [ /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../include/w32api]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 3a9cd7496f053e16c42169824ef6e47b]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a4a78.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_a4a78.dir/']
-        ignore line: [ /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/bin/as.exe -v -o CMakeFiles/cmTC_a4a78.dir/CMakeCXXCompilerABI.cpp.obj /c/Users/ali-28/AppData/Local/Temp/ccNIQM9D.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_98c9f.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_98c9f.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/bin/as.exe -v -o CMakeFiles/cmTC_98c9f.dir/CMakeCXXCompilerABI.cpp.obj /c/Users/ali-28/AppData/Local/Temp/ccHImDYB.s]
         ignore line: [GNU assembler version 2.45 (x86_64-pc-cygwin) using BFD version (GNU Binutils) 2.45]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/bin/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/lib/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a4a78.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_a4a78.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [[2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\msys64\\usr\\bin\\c++.exe  -v -Wl -v CMakeFiles/cmTC_a4a78.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_a4a78.exe -Wl --out-implib libcmTC_a4a78.dll.a -Wl --major-image-version 0 --minor-image-version 0   && cd ."]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_98c9f.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_98c9f.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [[2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\msys64\\usr\\bin\\c++.exe  -v -Wl -v CMakeFiles/cmTC_98c9f.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_98c9f.exe -Wl --out-implib libcmTC_98c9f.dll.a -Wl --major-image-version 0 --minor-image-version 0   && cd ."]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/lto-wrapper.exe]
@@ -2958,13 +2979,13 @@ events:
         ignore line: [gcc version 15.2.0 (GCC) ]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/bin/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/lib/:/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a4a78.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_a4a78.']
-        link line: [ /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/collect2.exe -plugin /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/msys-lto_plugin.dll -plugin-opt=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=/c/Users/ali-28/AppData/Local/Temp/ccwJ15BH.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmsys-2.0 -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id -m i386pep --wrap _Znwm --wrap _Znam --wrap _ZdlPv --wrap _ZdaPv --wrap _ZnwmRKSt9nothrow_t --wrap _ZnamRKSt9nothrow_t --wrap _ZdlPvRKSt9nothrow_t --wrap _ZdaPvRKSt9nothrow_t -Bdynamic --dll-search-prefix=msys- --tsaware -o cmTC_a4a78.exe /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../crt0.o /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtbegin.o -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0 -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/lib -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../.. -L/usr/lib -v CMakeFiles/cmTC_a4a78.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_a4a78.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lgcc_s -lgcc -lmsys-2.0 -ladvapi32 -lshell32 -luser32 -lkernel32 -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../default-manifest.o /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtend.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_98c9f.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_98c9f.']
+        link line: [ /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/collect2.exe -plugin /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/msys-lto_plugin.dll -plugin-opt=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=/c/Users/ali-28/AppData/Local/Temp/cctzisMB.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmsys-2.0 -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id -m i386pep --wrap _Znwm --wrap _Znam --wrap _ZdlPv --wrap _ZdaPv --wrap _ZnwmRKSt9nothrow_t --wrap _ZnamRKSt9nothrow_t --wrap _ZdlPvRKSt9nothrow_t --wrap _ZdaPvRKSt9nothrow_t -Bdynamic --dll-search-prefix=msys- --tsaware -o cmTC_98c9f.exe /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../crt0.o /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtbegin.o -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0 -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/lib -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../.. -L/usr/lib -v CMakeFiles/cmTC_98c9f.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_98c9f.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lgcc_s -lgcc -lmsys-2.0 -ladvapi32 -lshell32 -luser32 -lkernel32 -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../default-manifest.o /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtend.o]
           arg [/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/collect2.exe] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/msys-lto_plugin.dll] ==> ignore
           arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/lto-wrapper.exe] ==> ignore
-          arg [-plugin-opt=-fresolution=/c/Users/ali-28/AppData/Local/Temp/ccwJ15BH.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/c/Users/ali-28/AppData/Local/Temp/cctzisMB.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lmsys-2.0] ==> ignore
@@ -2997,7 +3018,7 @@ events:
           arg [--dll-search-prefix=msys-] ==> ignore
           arg [--tsaware] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_a4a78.exe] ==> ignore
+          arg [cmTC_98c9f.exe] ==> ignore
           arg [/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../crt0.o] ==> obj [/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../crt0.o]
           arg [/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtbegin.o] ==> obj [/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtbegin.o]
           arg [-L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0] ==> dir [/usr/lib/gcc/x86_64-pc-cygwin/15.2.0]
@@ -3005,9 +3026,9 @@ events:
           arg [-L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../..]
           arg [-L/usr/lib] ==> dir [/usr/lib]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_a4a78.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
+          arg [CMakeFiles/cmTC_98c9f.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
           arg [--out-implib] ==> ignore
-          arg [libcmTC_a4a78.dll.a] ==> ignore
+          arg [libcmTC_98c9f.dll.a] ==> ignore
           arg [--major-image-version] ==> ignore
           arg [0] ==> ignore
           arg [--minor-image-version] ==> ignore
@@ -3025,7 +3046,7 @@ events:
           arg [/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../default-manifest.o] ==> obj [/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../default-manifest.o]
           arg [/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtend.o] ==> obj [/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtend.o]
         ignore line: [collect2 version 15.2.0]
-        ignore line: [/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/bin/ld -plugin /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/msys-lto_plugin.dll -plugin-opt=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=/c/Users/ali-28/AppData/Local/Temp/ccwJ15BH.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmsys-2.0 -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id -m i386pep --wrap _Znwm --wrap _Znam --wrap _ZdlPv --wrap _ZdaPv --wrap _ZnwmRKSt9nothrow_t --wrap _ZnamRKSt9nothrow_t --wrap _ZdlPvRKSt9nothrow_t --wrap _ZdaPvRKSt9nothrow_t -Bdynamic --dll-search-prefix=msys- --tsaware -o cmTC_a4a78.exe /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../crt0.o /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtbegin.o -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0 -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/lib -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../.. -L/usr/lib -v CMakeFiles/cmTC_a4a78.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_a4a78.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lgcc_s -lgcc -lmsys-2.0 -ladvapi32 -lshell32 -luser32 -lkernel32 -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../default-manifest.o /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtend.o]
+        ignore line: [/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/bin/ld -plugin /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/msys-lto_plugin.dll -plugin-opt=/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=/c/Users/ali-28/AppData/Local/Temp/cctzisMB.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmsys-2.0 -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id -m i386pep --wrap _Znwm --wrap _Znam --wrap _ZdlPv --wrap _ZdaPv --wrap _ZnwmRKSt9nothrow_t --wrap _ZnamRKSt9nothrow_t --wrap _ZdlPvRKSt9nothrow_t --wrap _ZdaPvRKSt9nothrow_t -Bdynamic --dll-search-prefix=msys- --tsaware -o cmTC_98c9f.exe /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../crt0.o /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtbegin.o -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0 -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../../x86_64-pc-cygwin/lib -L/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../.. -L/usr/lib -v CMakeFiles/cmTC_98c9f.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_98c9f.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lgcc_s -lgcc -lmsys-2.0 -ladvapi32 -lshell32 -luser32 -lkernel32 -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../default-manifest.o /usr/lib/gcc/x86_64-pc-cygwin/15.2.0/crtend.o]
         linker tool for 'CXX': /usr/x86_64-pc-cygwin/bin/ld
         collapse obj [/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../crt0.o] ==> [/usr/lib/crt0.o]
         collapse obj [/usr/lib/gcc/x86_64-pc-cygwin/15.2.0/../../../default-manifest.o] ==> [/usr/lib/default-manifest.o]
@@ -3105,11 +3126,19 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "C:/Users/ali-28/schmallan/java-neuralnet/selectivePressureCPP/build/CMakeFiles/pkgRedirects/SDL3Config.cmake"
+        path: "C:/Users/ali-28/schmallan/java-neuralnet/newtest1/build/CMakeFiles/pkgRedirects/SDL3Config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "C:/Users/ali-28/schmallan/java-neuralnet/selectivePressureCPP/build/CMakeFiles/pkgRedirects/sdl3-config.cmake"
+        path: "C:/Users/ali-28/schmallan/java-neuralnet/newtest1/build/CMakeFiles/pkgRedirects/sdl3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/PowerShell/7/SDL3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/PowerShell/7/sdl3-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
@@ -3185,14 +3214,6 @@ events:
         mode: "config"
         reason: "no_exist"
       -
-        path: "C:/Program Files/PowerShell/7/SDL3Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "C:/Program Files/PowerShell/7/sdl3-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
         path: "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/SDL3Config.cmake"
         mode: "config"
         reason: "no_exist"
@@ -3222,6 +3243,7 @@ events:
       version: "3.2.20"
     search_context:
       ENV{PATH}:
+        - "C:\\Program Files\\PowerShell\\7"
         - "C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin\\"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
