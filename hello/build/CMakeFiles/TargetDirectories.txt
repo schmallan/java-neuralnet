@@ -1,0 +1,3 @@
+C:/Users/ali-28/schmallan/java-neuralnet/hello/build/CMakeFiles/hello.dir
+C:/Users/ali-28/schmallan/java-neuralnet/hello/build/CMakeFiles/edit_cache.dir
+C:/Users/ali-28/schmallan/java-neuralnet/hello/build/CMakeFiles/rebuild_cache.dir
