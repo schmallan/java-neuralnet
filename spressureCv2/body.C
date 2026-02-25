@@ -2,6 +2,12 @@
 #include <math.h>
 #include <SDL3/SDL_render.h>
 
+
+struct neuralNet mynet;
+//note: add guard rails on selecting neurons/biases that dont exist. just in case
+//node, layer, pnode
+int selectedNeuron[4] = {-1,-1,-1,0};
+
 bool showInfoPanel = true;
 int paneSize = 800;
 void infp(){
@@ -22,6 +28,10 @@ void keyDown(int keyCode)
     char keyChar = (char)keyCode;
 
  //   printf("Key: %c Keycode: %d\n", keyChar, keyCode);
+    if (keyCode == 9){
+        selectedNeuron[3] = selectedNeuron[3]+1;
+        selectedNeuron[3] = selectedNeuron[3]%layerSizes[selectedNeuron[2]-1];
+    }
 
     switch (keyChar)
     {
@@ -29,6 +39,28 @@ void keyDown(int keyCode)
         showInfoPanel=!showInfoPanel;
         infp();
         break;
+    case 'p':
+        propagateNet(&mynet);
+        break;
+    case '=':
+        mynet.outputs[selectedNeuron[2]][selectedNeuron[1]] += 0.1;
+        break;
+    case '-':
+        mynet.outputs[selectedNeuron[2]][selectedNeuron[1]] -= 0.1;
+        break;
+    case '\'':
+        mynet.biases[selectedNeuron[2]][selectedNeuron[1]] += 0.1;
+        break;
+    case ';':
+        mynet.biases[selectedNeuron[2]][selectedNeuron[1]] -= 0.1;
+        break;
+    case '[':
+        mynet.weights[selectedNeuron[2]][selectedNeuron[1]][selectedNeuron[3]] -=0.5;
+        break;
+    case ']':
+        mynet.weights[selectedNeuron[2]][selectedNeuron[1]][selectedNeuron[3]] +=0.5;
+        break;
+    
     
     }
 }
@@ -38,7 +70,6 @@ void keyUp(int keyCode)
 }
 
 float canvasCenter[2];
-struct neuralNet mynet;
 void setup()
 {
     setupNet(&mynet);
@@ -46,7 +77,6 @@ void setup()
     infp();
 }
 
-int selectedNeuron[3] = {-1,-1,-1};
 
 void draw()
 {
@@ -81,12 +111,22 @@ void draw()
     if (showInfoPanel){
         fill(0, 0, 0);
         rect(0, 0, paneSize, screenHeight);
+        fill(255,255,255);
+        
+        char msg[50];
+        sprintf(msg,"neuron output: %f",mynet.outputs[selectedNeuron[2]][selectedNeuron[1]]);
+        SDL_RenderDebugText(renderer,100,600,msg);
+        sprintf(msg,"neuron bias: %f",mynet.biases[selectedNeuron[2]][selectedNeuron[1]]);
+        SDL_RenderDebugText(renderer,100,630,msg);
+        sprintf(msg,"weight: %f",mynet.weights[selectedNeuron[2]][selectedNeuron[1]][selectedNeuron[3]]);
+        SDL_RenderDebugText(renderer,100,660,msg);
+
+        renderNet(&mynet);
     }
 
-    renderNet(&mynet);
 
-    fill(255,255,255);
-    SDL_RenderDebugText(renderer,100,100,"hello");
+    
+
 
 }
 
@@ -110,6 +150,7 @@ void mouseDown(SDL_Event *event){
             if (diff<neuronSize){
                selectedNeuron[1] = node;
                selectedNeuron[2] = layer;
+               selectedNeuron[3] = 0;
                brk = true;
                break;
             }   

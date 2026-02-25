@@ -1,4 +1,4 @@
-#define _USE_MATH_DEFINES
+#define M_PI 3.14159265358979323846
 #include "headers.h"
 #include <math.h>
 
@@ -68,6 +68,7 @@ void rect(float x, float y, float w, float h){
     SDL_RenderFillRect(renderer,&myrect);
 
 }
+
 void worldRect(float x, float y, float w, float h){
     float pos[2] = {x,y};
     world2screen(pos);

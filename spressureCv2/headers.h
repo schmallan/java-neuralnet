@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-extern int selectedNeuron[3];
+extern int selectedNeuron[4];
 extern int screenHeight;
 extern int screenWidth;
 
@@ -34,7 +34,7 @@ extern void setupNet(struct neuralNet *net);
 const int layerSizes[] = {3,4,3};
 
 #define layers sizeof(layerSizes)/sizeof(layerSizes[0])
-#define biggestLayer 5
+#define biggestLayer 6
 
 const int xspacing = 130;
 const int yspacing = 130;
@@ -54,9 +54,13 @@ struct neuralNet{
     float outputs[layers][biggestLayer];
 
     //which layer, which neuron, which preceding neuron
+    //first row of array is useless
     float weights[layers][biggestLayer][biggestLayer];
 
 };
+
+extern void propagateNet(struct neuralNet *net);
+extern void propagateLayer(struct neuralNet *net,int layer);
 
 extern float canvasCenter[2];
 

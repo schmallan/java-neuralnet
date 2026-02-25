@@ -1,5 +1,5 @@
 #include "headers.h"
-
+#include <math.h>
 
 void calcNodePos(int *tuple, int node, int lnc, int layer)
 {
@@ -11,8 +11,32 @@ void calcNodePos(int *tuple, int node, int lnc, int layer)
 
 // double random_num = (double)rand() / (double)RAND_MAX;
 
-void propagateLayer(struct neuralNet *net)
+float activationFunc(float in){
+    return 1/(1+pow(3,-in));
+}
+
+void propagateLayer(struct neuralNet *net,int layer)
 {
+    for (int node = 0; node<layerSizes[layer]; node++){
+        float weightedSum = 0;
+        for (int pnode = 0; pnode<layerSizes[layer-1]; pnode++){
+            float output = net->outputs[layer-1][pnode];
+            float weight = net->weights[layer][node][pnode];
+            float weightedOutput = output*weight;
+            weightedSum+=weightedOutput;
+        }
+        
+        float bias = net->biases[layer][node];
+        weightedSum+=bias;
+        float finalOut = activationFunc(weightedSum);
+        net->outputs[layer][node] = finalOut;
+    }
+}
+
+void propagateNet(struct neuralNet *net){
+    for (int layer = 1; layer<layers; layer++){
+        propagateLayer(net,layer);
+    }
 }
 
 void setupNet(struct neuralNet *net)
@@ -36,7 +60,7 @@ void setupNet(struct neuralNet *net)
                 for (int pnode = 0; pnode < prevLayerNodeCount; pnode++)
                 {
                     float rn = (((double)rand() / (double)RAND_MAX)-0.5)*5;
-                    net->biases[node][pnode] = rn;
+                    net->weights[layer][node][pnode] = rn;
                 }
             }
         }
@@ -61,10 +85,16 @@ void renderNet(struct neuralNet *net)
                     int vp[2];
                     calcNodePos(vp, pnode, prevLayerNodeCount, layer - 1);
 
-                    float weightval = net->biases[node][pnode];
+                    float weightval = net->weights[layer][node][pnode];
+                    
+                    if (layer == selectedNeuron[2] & node == selectedNeuron[1] & pnode == selectedNeuron[3]){
+                        fill(0,0,255);
+                        thickLine(np[0], np[1], vp[0], vp[1], abs(weightval)+5+5*abs(node-pnode));
+                    }
 
                     if (weightval > 0) { fill(0, 255, 0); }
                     else { fill(255, 0, 0); }
+
 
                     thickLine(np[0], np[1], vp[0], vp[1], abs(weightval));
                     fill(255, 255, 255);
@@ -77,24 +107,30 @@ void renderNet(struct neuralNet *net)
             int xy[2];
             calcNodePos(xy, node, layerNodeCount, layer);
 
+            //draw a box around the neuron if it is selected
+            if (node==selectedNeuron[1]&layer==selectedNeuron[2]){
+                fill(0,0,255);
+                rect(xy[0]-neuronSize-10,xy[1]-neuronSize-10,neuronSize*2+20,neuronSize*2+20);
+            }  
+
+            //draw the bias as a colored border around neuron
             float biasval = net->biases[layer][node];
             float a = 255-abs(biasval)*100;
+            a = fmax(0,fmin(255,a));
             if (biasval>0){
                 fill(a,255,a);
             } else {
                 fill(255,a,a);
             }
-            if (node==selectedNeuron[1]&layer==selectedNeuron[2]) fill(255,255,0);
             circle(xy[0], xy[1], neuronSize+3);
 
+            //draw the neuron as a colored circle
             float nodeval = net->outputs[layer][node];
+            nodeval = fmax(0,fmin(1,nodeval));
             int cnv = 255 * nodeval;
             fill(cnv, cnv, cnv);
-            if (node==selectedNeuron[1]&layer==selectedNeuron[2]) fill(0,255,255);
             circle(xy[0], xy[1], neuronSize);
             
-
-
         }
     }
 }
