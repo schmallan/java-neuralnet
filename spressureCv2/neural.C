@@ -1,5 +1,6 @@
 #include "headers.h"
 #include <math.h>
+#include "neural.h"
 
 void calcNodePos(int *tuple, int node, int lnc, int layer)
 {
@@ -15,7 +16,7 @@ float activationFunc(float in){
     return 1/(1+pow(3,-in));
 }
 
-void propagateLayer(struct neuralNet *net,int layer)
+void propagateLayer(neuralNet *net,int layer)
 {
     for (int node = 0; node<layerSizes[layer]; node++){
         float weightedSum = 0;
@@ -33,13 +34,13 @@ void propagateLayer(struct neuralNet *net,int layer)
     }
 }
 
-void propagateNet(struct neuralNet *net){
+void propagateNet(neuralNet *net){
     for (int layer = 1; layer<layers; layer++){
         propagateLayer(net,layer);
     }
 }
 
-void setupNet(struct neuralNet *net)
+void setupNet(neuralNet *net)
 {
     for (int layer = 0; layer < layers; layer++)
     {
@@ -47,7 +48,7 @@ void setupNet(struct neuralNet *net)
 
         for (int node = 0; node < layerNodeCount; node++)
         {
-            net->outputs[layer][node] = (double)rand() / (double)RAND_MAX;
+           // net->outputs[layer][node] = (double)rand() / (double)RAND_MAX;
             net->biases[layer][node] = ((double)rand() / (double)RAND_MAX-0.5)*5;
         }
 
@@ -59,7 +60,7 @@ void setupNet(struct neuralNet *net)
             {
                 for (int pnode = 0; pnode < prevLayerNodeCount; pnode++)
                 {
-                    float rn = (((double)rand() / (double)RAND_MAX)-0.5)*5;
+                    float rn = (((double)rand() / (double)RAND_MAX)-0.5)*10;
                     net->weights[layer][node][pnode] = rn;
                 }
             }
@@ -67,7 +68,7 @@ void setupNet(struct neuralNet *net)
     }
 }
 
-void renderNet(struct neuralNet *net)
+void renderNet(neuralNet *net)
 {
     for (int layer = 0; layer < layers; layer++)
     {
@@ -109,7 +110,7 @@ void renderNet(struct neuralNet *net)
 
             //draw a box around the neuron if it is selected
             if (node==selectedNeuron[2]&layer==selectedNeuron[1]){
-                fill(0,0,255);
+                fill(255,0,255);
                 rect(xy[0]-neuronSize-10,xy[1]-neuronSize-10,neuronSize*2+20,neuronSize*2+20);
             }  
 

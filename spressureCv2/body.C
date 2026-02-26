@@ -1,8 +1,9 @@
 #include "headers.h"
 #include <math.h>
 #include <SDL3/SDL_render.h>
+#include "neural.h"
 
-struct neuralNet mynet;
+neuralNet *mynet;
 //note: add guard rails on selecting neurons/biases that dont exist. just in case
 //node, layer, pnode
 int selectedNeuron[4] = {-1,-1,-1,0};
@@ -27,7 +28,7 @@ void keyDown(int keyCode)
     char keyChar = (char)keyCode;
 
     printf("Key: %c Keycode: %d\n", keyChar, keyCode);
-    if (keyCode == 9){
+    if (keyCode == 9 & selectedNeuron[1]>0){
         selectedNeuron[3] = selectedNeuron[3]+1;
         selectedNeuron[3] = selectedNeuron[3]%layerSizes[selectedNeuron[1]-1];
     }
@@ -39,28 +40,31 @@ void keyDown(int keyCode)
         infp();
         break;
     case 'p':
-        propagateNet(&mynet);
+        propagateNet(mynet);
         break;
     case '=':
-        mynet.outputs[selectedNeuron[1]][selectedNeuron[2]] += 0.1;
+        mynet->outputs[selectedNeuron[1]][selectedNeuron[2]] += 0.1;
         break;
     case '-':
-        mynet.outputs[selectedNeuron[1]][selectedNeuron[2]] -= 0.1;
+        mynet->outputs[selectedNeuron[1]][selectedNeuron[2]] -= 0.1;
         break;
     case '\'':
-        mynet.biases[selectedNeuron[1]][selectedNeuron[2]] += 0.1;
+        mynet->biases[selectedNeuron[1]][selectedNeuron[2]] += 0.1;
         break;
     case ';':
-        mynet.biases[selectedNeuron[1]][selectedNeuron[2]] -= 0.1;
+        mynet->biases[selectedNeuron[1]][selectedNeuron[2]] -= 0.1;
         break;
     case '[':
-        mynet.weights[selectedNeuron[1]][selectedNeuron[2]][selectedNeuron[3]] -=0.5;
+        mynet->weights[selectedNeuron[1]][selectedNeuron[2]][selectedNeuron[3]] -=0.5;
         break;
     case ']':
-        mynet.weights[selectedNeuron[1]][selectedNeuron[2]][selectedNeuron[3]] +=0.5;
+        mynet->weights[selectedNeuron[1]][selectedNeuron[2]][selectedNeuron[3]] +=0.5;
         break;
     
     
+    case 'n':
+    spawnCreature();
+    break;
     }
 }
 void keyUp(int keyCode)
@@ -71,15 +75,31 @@ void keyUp(int keyCode)
 float canvasCenter[2];
 void setup()
 {
-    setupNet(&mynet);
+   // mynet = &myCreatures[crc-1].brain;
+    //setupNet(&mynet);
    // srand((unsigned)time(NULL));
     infp();
 }
 
+void renderTick(){
+    
+    for (int i = 0; i<crc; i++){
+        renderCreature(&myCreatures[i]);
+    }
+}
+
+void worldTick(){
+    
+    for (int i = 0; i<crc; i++){
+        tickCreature(&myCreatures[i]);
+    }
+}
 
 void draw()
-{
-    printf("oh myg odbruh");
+{   
+    selectedNeuron[0] = crc-1;
+    mynet = &myCreatures[selectedNeuron[0]].brain;
+
     float spd = 0.5/scale;
     if (keys[(int)'w']) camOffy-=spd;
     if (keys[(int)'s']) camOffy+=spd;
@@ -92,42 +112,61 @@ void draw()
     fill(100, 100, 100);
     SDL_RenderClear(renderer);
 
+    const int bgSize = 25;
+    const int bgg = borderSize/bgSize;
     //draw a grid
-    for (int i = 0; i<10; i++){
-        for (int j = 0; j<10; j++){
-            int x = i*50-250;
-            int y = j*50-250;
-            fill(200,200,200);
+    for (int i = -bgg; i<bgg; i++){
+        for (int j = -bgg; j<bgg; j++){
+            int x = i*bgSize;
+            int y = j*bgSize;
+            fill(230,230,230);
             if ((i+j)%2==0) fill(255,255,255);
-            worldRect(x,y,50,50);
+            worldRect(x,y,bgSize,bgSize);
         }
     }
 
-    fill(255, 0, 0);
-    worldRect(0,0,50,50);
-    fill(9, 0, 255);
-    worldRect(30,-20,10,90);
-    
+
     if (showInfoPanel){
         fill(0, 0, 0);
         rect(0, 0, paneSize, screenHeight);
-        fill(255,255,255);
-        
-        char msg[50];
-        sprintf(msg,"neuron output: %f",mynet.outputs[selectedNeuron[1]][selectedNeuron[2]]);
-        SDL_RenderDebugText(renderer,100,600,msg);
-        sprintf(msg,"neuron bias: %f",mynet.biases[selectedNeuron[1]][selectedNeuron[2]]);
-        SDL_RenderDebugText(renderer,100,630,msg);
-        sprintf(msg,"weight: %f",mynet.weights[selectedNeuron[1]][selectedNeuron[2]][selectedNeuron[3]]);
-        SDL_RenderDebugText(renderer,100,660,msg);
 
-        renderNet(&mynet);
+        fill(255,255,200);
+        char msg[] = "Click on a neuron to view info\n"
+            "Press <TAB> to cycle through weights\n"
+            "Press <?/?> to manually adjust values\n";
+        renderStr(msg,1.5,50,120);
+
+        if (selectedNeuron[2]!=-1){
+            char msg[50];
+            int tx = 50;
+            int ty = 250;
+            float ts = 1.5;
+            fill(255,200,255);
+            sprintf(msg,"<+/-> neuron output: \n    %f \n"
+                        "<;/'> neuron bias: \n    %f - %d"
+                        ,mynet->outputs[selectedNeuron[1]][selectedNeuron[2]]
+                        ,mynet->biases[selectedNeuron[1]][selectedNeuron[2]],crc);
+            renderStr(msg,ts,tx,ty);
+            if (selectedNeuron[1]>0){
+                fill(200,200,255);
+                sprintf(msg,"<[/]> weight: \n    %f",mynet->weights[selectedNeuron[1]][selectedNeuron[2]][selectedNeuron[3]]);
+                renderStr(msg,ts,tx,ty+100);
+            }
+        }
+        
+        
+        if (selectedNeuron[0]!=-1){
+        renderNet(mynet);
+        }
     }
 
-
     
+    fill(255,255,255);
+    char msg[] = "SELECTIVE PRESSURE \nPress <H> to toggle info panel";
+    renderStr(msg,1.5,10,20);
 
-
+    worldTick();
+    renderTick();
 }
 
 void mouseDown(SDL_Event *event){

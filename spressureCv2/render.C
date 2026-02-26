@@ -16,6 +16,19 @@ void triangle(SDL_Vertex *vertices){
     }
     SDL_RenderGeometry(renderer,NULL,vertices,3,NULL,0);
 }
+void worldTriangle(SDL_Vertex *vertices){
+    for (int n = 0; n<3; n++){
+        float xy[2];
+        xy[0]=vertices[n].position.x;
+        xy[1]=vertices[n].position.y;
+        world2screen(xy);
+        vertices[n].position.x = xy[0];
+        vertices[n].position.y = xy[1];
+        
+    }
+    triangle(vertices);
+
+}
 void circle(float x, float y, float r){
     const int points = 16;
     
@@ -72,7 +85,7 @@ void rect(float x, float y, float w, float h){
 void worldRect(float x, float y, float w, float h){
     float pos[2] = {x,y};
     world2screen(pos);
-    rect(pos[0]+canvasCenter[0], pos[1]+canvasCenter[1], w*scale, h*scale);
+    rect(pos[0], pos[1], w*scale, h*scale);
     fill(0,0,255);
 }
 
