@@ -87,7 +87,7 @@ void renderNet(struct neuralNet *net)
 
                     float weightval = net->weights[layer][node][pnode];
                     
-                    if (layer == selectedNeuron[2] & node == selectedNeuron[1] & pnode == selectedNeuron[3]){
+                    if (layer == selectedNeuron[1] & node == selectedNeuron[2] & pnode == selectedNeuron[3]){
                         fill(0,0,255);
                         thickLine(np[0], np[1], vp[0], vp[1], abs(weightval)+5+5*abs(node-pnode));
                     }
@@ -108,7 +108,7 @@ void renderNet(struct neuralNet *net)
             calcNodePos(xy, node, layerNodeCount, layer);
 
             //draw a box around the neuron if it is selected
-            if (node==selectedNeuron[1]&layer==selectedNeuron[2]){
+            if (node==selectedNeuron[2]&layer==selectedNeuron[1]){
                 fill(0,0,255);
                 rect(xy[0]-neuronSize-10,xy[1]-neuronSize-10,neuronSize*2+20,neuronSize*2+20);
             }  

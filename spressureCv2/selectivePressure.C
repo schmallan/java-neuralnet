@@ -2,6 +2,7 @@
 #include "headers.h"
 #include <windows.h>
 #include <SDL3/SDL_main.h>
+#include <SDL_ttf.h>
 
  SDL_Renderer *renderer = NULL;
  SDL_Window *window = NULL;

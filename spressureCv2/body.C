@@ -2,7 +2,6 @@
 #include <math.h>
 #include <SDL3/SDL_render.h>
 
-
 struct neuralNet mynet;
 //note: add guard rails on selecting neurons/biases that dont exist. just in case
 //node, layer, pnode
@@ -30,7 +29,7 @@ void keyDown(int keyCode)
  //   printf("Key: %c Keycode: %d\n", keyChar, keyCode);
     if (keyCode == 9){
         selectedNeuron[3] = selectedNeuron[3]+1;
-        selectedNeuron[3] = selectedNeuron[3]%layerSizes[selectedNeuron[2]-1];
+        selectedNeuron[3] = selectedNeuron[3]%layerSizes[selectedNeuron[1]-1];
     }
 
     switch (keyChar)
@@ -43,22 +42,22 @@ void keyDown(int keyCode)
         propagateNet(&mynet);
         break;
     case '=':
-        mynet.outputs[selectedNeuron[2]][selectedNeuron[1]] += 0.1;
+        mynet.outputs[selectedNeuron[1]][selectedNeuron[2]] += 0.1;
         break;
     case '-':
-        mynet.outputs[selectedNeuron[2]][selectedNeuron[1]] -= 0.1;
+        mynet.outputs[selectedNeuron[1]][selectedNeuron[2]] -= 0.1;
         break;
     case '\'':
-        mynet.biases[selectedNeuron[2]][selectedNeuron[1]] += 0.1;
+        mynet.biases[selectedNeuron[1]][selectedNeuron[2]] += 0.1;
         break;
     case ';':
-        mynet.biases[selectedNeuron[2]][selectedNeuron[1]] -= 0.1;
+        mynet.biases[selectedNeuron[1]][selectedNeuron[2]] -= 0.1;
         break;
     case '[':
-        mynet.weights[selectedNeuron[2]][selectedNeuron[1]][selectedNeuron[3]] -=0.5;
+        mynet.weights[selectedNeuron[1]][selectedNeuron[2]][selectedNeuron[3]] -=0.5;
         break;
     case ']':
-        mynet.weights[selectedNeuron[2]][selectedNeuron[1]][selectedNeuron[3]] +=0.5;
+        mynet.weights[selectedNeuron[1]][selectedNeuron[2]][selectedNeuron[3]] +=0.5;
         break;
     
     
@@ -114,11 +113,11 @@ void draw()
         fill(255,255,255);
         
         char msg[50];
-        sprintf(msg,"neuron output: %f",mynet.outputs[selectedNeuron[2]][selectedNeuron[1]]);
+        sprintf(msg,"neuron output: %f",mynet.outputs[selectedNeuron[1]][selectedNeuron[2]]);
         SDL_RenderDebugText(renderer,100,600,msg);
-        sprintf(msg,"neuron bias: %f",mynet.biases[selectedNeuron[2]][selectedNeuron[1]]);
+        sprintf(msg,"neuron bias: %f",mynet.biases[selectedNeuron[1]][selectedNeuron[2]]);
         SDL_RenderDebugText(renderer,100,630,msg);
-        sprintf(msg,"weight: %f",mynet.weights[selectedNeuron[2]][selectedNeuron[1]][selectedNeuron[3]]);
+        sprintf(msg,"weight: %f",mynet.weights[selectedNeuron[1]][selectedNeuron[2]][selectedNeuron[3]]);
         SDL_RenderDebugText(renderer,100,660,msg);
 
         renderNet(&mynet);
@@ -148,8 +147,8 @@ void mouseDown(SDL_Event *event){
 
             int diff = fmax(abs(nx-x),abs(ny-y));
             if (diff<neuronSize){
-               selectedNeuron[1] = node;
-               selectedNeuron[2] = layer;
+               selectedNeuron[2] = node;
+               selectedNeuron[1] = layer;
                selectedNeuron[3] = 0;
                brk = true;
                break;
@@ -159,8 +158,8 @@ void mouseDown(SDL_Event *event){
     }
     if (!brk){
         selectedNeuron[0] = -1;
-        selectedNeuron[1] = -1;
         selectedNeuron[2] = -1;
+        selectedNeuron[1] = -1;
         
     }
 
