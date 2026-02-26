@@ -26,7 +26,7 @@ void keyDown(int keyCode)
 
     char keyChar = (char)keyCode;
 
- //   printf("Key: %c Keycode: %d\n", keyChar, keyCode);
+    printf("Key: %c Keycode: %d\n", keyChar, keyCode);
     if (keyCode == 9){
         selectedNeuron[3] = selectedNeuron[3]+1;
         selectedNeuron[3] = selectedNeuron[3]%layerSizes[selectedNeuron[1]-1];
@@ -79,6 +79,7 @@ void setup()
 
 void draw()
 {
+    printf("oh myg odbruh");
     float spd = 0.5/scale;
     if (keys[(int)'w']) camOffy-=spd;
     if (keys[(int)'s']) camOffy+=spd;
